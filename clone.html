@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html class="__variable_8d7572 __variable_a4a72a" lang="en">
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+
+    <head>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="preload" href="css/fonts/086c5b4d13fbef8d-s.p.otf" as="font" crossorigin="" type="font/otf" />
+        <link rel="preload" href="css/fonts/13971731025ec697-s.p.woff2" as="font" crossorigin="" type="font/woff2" />
+        <link rel="stylesheet" href="styles.css" />
+        <link rel="stylesheet" href="css/extra.css" />
+        <link rel="stylesheet" href="css/main.css" />
+        <meta name="next-size-adjust" content="" />
+        <link href="favicon.ico" rel="icon" sizes="32x32" />
+        <link rel="icon" href="share.html" type="image/&lt;generated&gt;" sizes="&lt;generated&gt;" />
+        <link rel="apple-touch-icon" href="apple-touch-icon9eb0.html?<generated>" type="image/&lt;generated&gt;"
+            sizes="&lt;generated&gt;" />
+        <meta name="theme-color" content="white" />
+        <title>Falcon Of Codes</title>
+        <meta name="description" content="" />
+        <meta property="og:title" content="Falcon Of Codes" />
+        <meta property="og:description" content="" />
+        <meta property="og:url" content="" />
+        <meta property="og:site_name" content="Signals" />
+        <meta property="og:image" content="" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:creator" content="@unmirrorstudio" />
+        <meta name="twitter:title" content="Falcon Of Codes" />
+        <meta name="twitter:description" content="" />
+        <meta name="twitter:image" content="" />
+    </head>
+
+    <body class="w-full min-h-screen antialiased relative bg-background">
+        <div style="z-index:999" class="fixed top-0 left-0 w-screen h-[100lvh] flex pointer-events-none"></div>
+        <div style="z-index:1000"
+            class="fixed top-0 left-0 w-screen h-[100lvh] flex items-center justify-center bg-neutral-950 pointer-events-none opacity-0">
+            <div></div>
+        </div>
+        <div class="admin-bar py-2 fixed top-[70px] bg-black/10 backdrop-blur-md text-white w-fit right-0 z-50 hidden">
+            <div class="container"></div>
+        </div>
+        <div id="menu-overlay" class="fixed top-0 left-0 inset-0 z-40 bg-black/30 opacity-0 hidden"></div>
+        <div id="menu-container" class="fixed top-0 right-0 z-50 size-full select-none">
+            <div class="flex flex-col gap-2 w-full items-end pt-2 md:pt-6">
+                <div class=" bg-white w-[50vw] xl:w-[30vw] h-[50px] menu-block translate-x-full will-change-transform">
+                </div>
+                <div
+                    class=" bg-white w-[75vw] xl:w-[40vw] h-[44svh] menu-block translate-x-full flex flex-col justify-between px-4 py-3 will-change-transform">
+                    <span class="text-[#8A8A8A] font-sans">Explore</span>
+                    <div class="flex flex-col gap-3 w-full relative"><a
+                            class="group overflow-hidden flex items-center gap-1 md:gap-2 text-xl font-gothic text-zinc-950 max-w-fit hover:opacity-60 transition-opacity duration-300"
+                            href="home.html">Home</a><a
+                            class="group overflow-hidden flex items-center gap-1 md:gap-2 text-xl font-gothic text-zinc-950 max-w-fit hover:opacity-60 transition-opacity duration-300"
+                            href="about.html">About us</a><a
+                            class="group overflow-hidden flex items-center gap-1 md:gap-2 text-xl font-gothic text-zinc-950 max-w-fit hover:opacity-60 transition-opacity duration-300"
+                            href="services.html">Services</a><a
+                            class="group overflow-hidden flex items-center gap-1 md:gap-2 text-xl font-gothic text-zinc-950 max-w-fit hover:opacity-60 transition-opacity duration-300"
+                            rel="noopener noreferrer" target="_blank" href="/">Jobs Board</a><a
+                            class="group overflow-hidden flex items-center gap-1 md:gap-2 text-xl font-gothic text-zinc-950 max-w-fit hover:opacity-60 transition-opacity duration-300"
+                            rel="noopener noreferrer" target="_blank" href="">Directory</a></div>
+                </div>
+                <div
+                    class=" bg-white w-[90vw] xl:w-[55vw] h-[39svh] menu-block translate-x-full flex flex-col justify-between px-4 py-3 will-change-transform">
+                    <span class="text-[#8A8A8A] font-sans">Engage</span>
+                    <div class="flex flex-col gap-3 w-full relative"><a
+                            class="group overflow-hidden flex items-center gap-1 md:gap-2 text-xl font-gothic text-zinc-950 max-w-fit"
+                            rel="noopener noreferrer" target="_blank" href="/">Newsletter<div
+                                class="hidden md:block opacity-0 group-hover:opacity-100 translate-x-[-8px] translate-y-[8px] group-hover:translate-x-0 group-hover:translate-y-0 transition-all duration-300 ease-out">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-arrow-up-right">
+                                    <path d="M7 7h10v10"></path>
+                                    <path d="M7 17 17 7"></path>
+                                </svg>
+                            </div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-arrow-up-right md:hidden">
+                                <path d="M7 7h10v10"></path>
+                                <path d="M7 17 17 7"></path>
+                            </svg></a><a
+                            class="group overflow-hidden flex items-center gap-1 md:gap-2 text-xl font-gothic text-zinc-950 max-w-fit"
+                            rel="noopener noreferrer" target="_blank" href="">Apply to sponsor<div
+                                class="hidden md:block opacity-0 group-hover:opacity-100 translate-x-[-8px] translate-y-[8px] group-hover:translate-x-0 group-hover:translate-y-0 transition-all duration-300 ease-out">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-arrow-up-right">
+                                    <path d="M7 7h10v10"></path>
+                                    <path d="M7 17 17 7"></path>
+                                </svg>
+                            </div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-arrow-up-right md:hidden">
+                                <path d="M7 7h10v10"></path>
+                                <path d="M7 17 17 7"></path>
+                            </svg></a><a
+                            class="group overflow-hidden flex items-center gap-1 md:gap-2 text-xl font-gothic text-zinc-950 max-w-fit"
+                            rel="noopener noreferrer" target="_blank" href="">Work with FalconCode<div
+                                class="hidden md:block opacity-0 group-hover:opacity-100 translate-x-[-8px] translate-y-[8px] group-hover:translate-x-0 group-hover:translate-y-0 transition-all duration-300 ease-out">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-arrow-up-right">
+                                    <path d="M7 7h10v10"></path>
+                                    <path d="M7 17 17 7"></path>
+                                </svg>
+                            </div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-arrow-up-right md:hidden">
+                                <path d="M7 7h10v10"></path>
+                                <path d="M7 17 17 7"></path>
+                            </svg></a></div>
+                </div>
+            </div>
+        </div>
+        <header id="header" class="fixed w-full top-0 z-50 mix-blend-difference pt-2 md:pt-6">
+            <div class="container size-full flex items-center justify-between h-[50px] ">
+                <a aria-label="Homepage" href="index.html">
+                    <img src="assets/logo.svg" alt="Falcons Logo" class="main_logo">
+                </a>
+                <div
+                    class="flex flex-row items-center gap-1 font-gothic relative text-white justify-self-end cursor-pointer h-full justify-center group">
+                    <div class="relative overflow-hidden px-1">
+                        <div class="top-0 flex size-full items-center justify-center relative will-change-transform "
+                            id="open-menu-text"><span class="">Menu</span></div>
+                        <div class="absolute top-[110%] size-full left-0 z-20 will-change-transform"
+                            id="close-menu-text"><span class="">Close</span></div>
+                    </div>
+                    <div
+                        class="h-2 w-3 bg-white  relative group-hover:bg-brand-emerald transition-colors duration-300 ease-out">
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="fixed inset-0 -z-10 h-[100dvh] w-screen overflow-hidden">
+            <div class="gradient-canvas"></div>
+        </div>
+        <article class="relative w-full min-h-screen ">
+            <div class="overlay fixed inset-0 z-50 antialiased">
+                
+                <div class="overlay">
+                    <div class="loader-container number-loader">
+                        <div class="tube">
+                        <h1 class="line">00</h1>
+                        <h1 class="line">23</h1>
+                        <h1 class="line">55</h1>
+                        <h1 class="line">78</h1>
+                        <h1 class="line">99</h1>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="absolute size-full flex z-40">
+                    <div style="clip-path:polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)"
+                        class="block h-full w-[34vw] bg-slate-300 -mr-1"></div>
+                    <div style="clip-path:polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)"
+                        class="block h-full w-[34vw] bg-slate-300 -mr-1"></div>
+                    <div style="clip-path:polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)"
+                        class="block h-full w-[35vw] bg-slate-300 -mr-2"></div>
+                </div>
+                <div class="overlay absolute top-0 left-0 size-full overflow-hidden z-50">
+                    <div
+                        class="progress-bar fixed top-0 right-0 w-2 h-screen bg-black flex origin-bottom scale-y-0 z-50">
+                    </div>
+                    <div class="counter absolute bottom-6 left-6 z-50   ">
+                        <div class="count fixed bottom-6 left-6 flex font-gothic text-9xl text-black ">
+                            <div style="clip-path:polygon(0 0, 100% 0, 100% 100%, 0% 100%);" class="digit flex-1 pt-4">
+                                <p class="will-change-transform relative translate-y-[120%]">0</p>
+                            </div>
+                            <div style="clip-path:polygon(0 0, 100% 0, 100% 100%, 0% 100%);" class="digit flex-1 pt-4">
+                                <p class="will-change-transform relative translate-y-[120%]">0</p>
+                            </div>
+                        </div>
+                        <div class="count fixed bottom-6 left-6 flex font-gothic text-9xl text-black ">
+                            <div style="clip-path:polygon(0 0, 100% 0, 100% 100%, 0% 100%);" class="digit flex-1 pt-4">
+                                <p class="will-change-transform relative translate-y-[120%]">5</p>
+                            </div>
+                            <div style="clip-path:polygon(0 0, 100% 0, 100% 100%, 0% 100%);" class="digit flex-1 pt-4">
+                                <p class="will-change-transform relative translate-y-[120%]">6</p>
+                            </div>
+                        </div>
+                        <div class="count fixed bottom-6 left-6 flex font-gothic text-9xl text-black ">
+                            <div style="clip-path:polygon(0 0, 100% 0, 100% 100%, 0% 100%);" class="digit flex-1 pt-4">
+                                <p class="will-change-transform relative translate-y-[120%]">7</p>
+                            </div>
+                            <div style="clip-path:polygon(0 0, 100% 0, 100% 100%, 0% 100%);" class="digit flex-1 pt-4">
+                                <p class="will-change-transform relative translate-y-[120%]">8</p>
+                            </div>
+                        </div>
+                        <div class="count fixed bottom-6 left-6 flex font-gothic text-9xl text-black ">
+                            <div style="clip-path:polygon(0 0, 100% 0, 100% 100%, 0% 100%);" class="digit flex-1 pt-4">
+                                <p class="will-change-transform relative translate-y-[120%]">9</p>
+                            </div>
+                            <div style="clip-path:polygon(0 0, 100% 0, 100% 100%, 0% 100%);" class="digit flex-1 pt-4">
+                                <p class="will-change-transform relative translate-y-[120%]">9</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>            
+            </div>
+            
+            <div class="relative h-[200vh] md:h-[350vh] w-full -mb-[100vh] ">
+                <div class="sticky top-0 h-[100vh] w-full overflow-hidden">
+                    <div class="relative w-full h-[100svh] md:justify-end flex flex-col pb-4 md:pb-8 xl:pb-2 mix-blend-difference pt-[63svh] md:pt-0">
+                        <div class="flex flex-col gap-1 container text-black select-none hero-text md:-translate-y-0 main-copy-wrapper">
+                            <h1 class="sr-only">Information Technology</h1>
+                            <div aria-hidden="true" class="w-full flex items-end justify-between "><span
+                                    class="leading-none font-gothic max-w-1/2 title-p1">Information</span>
+                                <div class="hidden md:block">
+                                    <p class="sr-only"></p>
+                                    <p class="font-sans text-sm max-w-xs description-content">At Falcon Code, we don't just offer technical services; we provide a well-structured digital environment that helps you develop, outperform competitors, and transform all your technological investments into tangible results.</p>
+                                </div>
+                            </div>
+                            <div aria-hidden="true" class="w-full flex items-end justify-end "><span
+                                    class="leading-none font-gothic title-p2">Technology</span></div>
+                            <div class="md:hidden">
+                                <p class="sr-only">
+                                    At Falcon Code, we don't just offer technical services; we provide a well-structured digital environment that helps you develop, outperform competitors, and transform all your technological investments into tangible results.
+                                </p>
+                                <p aria-hidden="true" class="font-sans text-xs sm:text-sm pt-4 md:pt-10 max-w-xs justify-self-end description-content">
+                                    At Falcon Code, we don't just offer technical services; we provide a well-structured digital environment that helps you develop, outperform competitors, and transform all your technological investments into tangible results.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-0 left-0 max-w-fit hero-cta-container opacity-0"><a
+                                rel="noopener noreferrer" target="_blank" class="inline-block" href=""><button
+                                    class="inline-flex items-center justify-center whitespace-nowrap text-sm font-gothic ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-12 py-5 px-8 bg-brand-yellow text-gray-950 hover:bg-brand-yellow/90 relative overflow-hidden">
+                                    <div
+                                        class="og-text flex size-full items-center justify-center top-0 relative will-change-transform gap-2">
+                                        Sign Up<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-arrow-up-right">
+                                            <path d="M7 7h10v10"></path>
+                                            <path d="M7 17 17 7"></path>
+                                        </svg></div>
+                                    <div
+                                        class="button-overlay absolute bg-black top-[110%] size-full left-0 z-20 will-change-transform">
+                                        <div class="flex items-center justify-center size-full invert gap-2">Sign Up<svg
+                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="lucide lucide-arrow-up-right">
+                                                <path d="M7 7h10v10"></path>
+                                                <path d="M7 17 17 7"></path>
+                                            </svg></div>
+                                    </div>
+                                </button></a></div>
+                    </div>
+                    <div
+                        class="small-box absolute top-0 right-0 w-[72vw] md:w-screen h-[47svh] sm:h-[44svh] md:h-[100dvh] z-20 origin-top-right scale-[1]">
+                        <div class="flex size-full relative">
+                            <div
+                                class="flex flex-col gap-1 size-full z-30 items-end justify-end text-brand-rose p-5 md:p-20 small-box-text leading-none mix-blend-luminosity text-center md:-translate-x-[7vw]">
+                                <span class="sr-only">Driving Change</span><span aria-hidden="true"
+                                    class="small-box-text font-gothic opacity-0 md:translate-x-[30%] will-change-transform">Driving</span><span
+                                    aria-hidden="true"
+                                    class="small-box-text font-gothic opacity-0 will-change-transform md:translate-x-[2vw]">Change</span>
+                            </div>
+                            <div class="absolute size-full overflow-hidden">
+                                <div><video autoPlay="" class="object-cover size-auto absolute min-w-full min-h-full"
+                                        loop="" muted="" playsInline="">
+                                        <source src="assets/Story-transcode" />
+                                    </video></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="medium-box video-sync-emerald absolute top-0 right-0 w-[100vw] md:w-screen h-[58svh] md:h-[100dvh] bg-brand-emerald z-10 origin-top md:origin-top-right scale-[1] ">
+                        <div
+                            class="font-size-spical relative flex flex-col size-full items-start justify-end md:px-4 py-2 md:py-4 container font-gothic medium-box-text text-brand-yellow gap-1 mix-blend-luminosity leading-none ">
+                            <span class="sr-only">In Depth</span><span aria-hidden="true">In</span><span
+                                aria-hidden="true">Depth</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="z-10 relative">
+                <div class="">
+                    <div class="relative bg-background py-block-mobile sm:py-block w-full flex select-none">
+                        <div class="absolute left-0 top-0 h-[50%] w-3 md:w-5 bg-brand-yellow"></div>
+                        <div
+                            class="absolute left-0 top-1/2 h-[50%] w-3 md:w-5 bg-brand-yellow movable-side-block will-change-transform ">
+                        </div>
+                        <div
+                            class="container flex items-center justify-center size-full text-center mask-text-container">
+                            <span class="sr-only">Your source for data driven insights shaping the future of kidney
+                                care</span>
+                            <p aria-hidden="true"
+                                class="content-text text-[9vw] xl:text-[7.5rem] font-gothic max-w-[90%] text-black leading-none">
+                                Integrated software and technology solutions that enable companies to lead the digital
+                                transformation in the Arab region.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="">
+                    <div class="w-full overflow-x-hidden">
+                        <div class="relative select-none overflow-hidden py-block-mobile md:py-0 bg-background w-full">
+                            <div class="absolute left-3 md:left-5 top-0 h-12 md:h-[50%] w-3 md:w-5 bg-brand-yellow">
+                            </div>
+                            <div
+                                class="absolute left-0 top-1/2 h-[50%] w-3 md:w-5 bg-brand-yellow movable-side-block will-change-transform hidden md:block">
+                            </div>
+                            <div
+                                class="relative flex flex-col w-full md:h-[100vh] overflow-hidden gap-5 md:gap-0 container md:max-w-none md:px-0 md:mx-0">
+                                <div
+                                    class="article-card md:absolute will-change-transform w-full md:w-1/2 h-[80vh] md:h-[100vh] top-0 overflow-hidden">
+                                    <div class="relative flex flex-col bg-white overflow-hidden size-full"
+                                        style="background-color:#14A586">
+                                        <div class="relative w-full h-[40vh] md:h-[50vh] overflow-hidden">
+                                            <div class="absolute w-[8%] h-[10%] top-0 left-0 bg-brand-emerald z-20">
+                                            </div>
+                                            <div
+                                                class="absolute w-[8%] h-[75%] top-[10%] left-[8%] bg-brand-emerald z-20 move-to-right-block will-change-transform">
+                                            </div>
+                                            <div class="absolute w-[8%] h-[25%] top-[85%] left-0 bg-brand-emerald z-20">
+                                            </div>
+                                            <div
+                                                class="absolute w-[30%] h-[25%] top-[85%] left-[16%] bg-brand-emerald z-20">
+                                            </div>
+                                            <div class="absolute w-[8%] h-[50%] top-0 right-0 bg-brand-emerald z-20 ">
+                                            </div>
+                                            <div
+                                                class="absolute w-[8%] h-[50%] top-[50%] right-[8%] bg-brand-emerald z-20 move-to-left-block will-change-transform">
+                                            </div>
+                                            <div>
+                                                <picture class=""><img alt="" loading="lazy" decoding="async"
+                                                        data-nimg="fill"
+                                                        class="isParallax object-cover grayscale brightness-110 contrast-125"
+                                                        style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent;background-size:cover;background-position:50% 50%;background-repeat:no-repeat;background-image:url('');"
+                                                        sizes="(max-width: 1920px) 3840w, (max-width: 1536px) 3072w, (max-width: 1280px) 2560w, (max-width: 1024px) 2048w, (max-width: 768px) 1536w, (max-width: 640px) 1280w"
+                                                        srcSet="" src="" />
+                                                </picture>
+                                            </div>
+                                        </div>
+                                        <div style="background-color:#14A586"
+                                            class="relative flex flex-col flex-1 text-zinc-950 justify-between -mt-1">
+                                            <div class="flex flex-col p-5 w-full gap-1 overflow-hidden">
+                                                <p class="font-gothic text-xl md:text-3xl xl:text-4xl line-clamp-3 ">
+                                                </p>
+                                                <p
+                                                    class="font-sans text-zinc-950 text-sm md:text-base line-clamp-4 max-w-[80%] leading-tight">
+                                                </p>
+                                            </div>
+                                            <div class="flex items-end justify-between w-full pr-5"><a
+                                                    rel="noopener noreferrer" target="_blank" class="inline-block"
+                                                    href=""><button
+                                                        class="inline-flex items-center justify-center whitespace-nowrap text-sm font-gothic ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 bg-brand-yellow text-gray-950 hover:bg-brand-yellow/90 relative overflow-hidden">
+                                                        <div
+                                                            class="og-text flex size-full items-center justify-center top-0 relative will-change-transform gap-2">
+                                                            Read More</div>
+                                                        <div
+                                                            class="button-overlay absolute bg-black top-[110%] size-full left-0 z-20 will-change-transform">
+                                                            <div
+                                                                class="flex items-center justify-center size-full invert gap-2">
+                                                                Read More</div>
+                                                        </div>
+                                                    </button></a>
+                                                <div
+                                                    class="flex flex-col font-gothic text-sm  text-end pb-2 leading-tight">
+                                                    <span>June 29</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="article-card md:absolute will-change-transform w-full md:w-1/2 h-[80vh] md:h-[100vh] top-0 overflow-hidden">
+                                    <div class="relative flex flex-col bg-white overflow-hidden size-full"
+                                        style="background-color:#0A0A0A">
+                                        <div class="relative w-full h-[40vh] md:h-[50vh] overflow-hidden">
+                                            <div class="absolute w-[84%] h-[15%] top-0 left-0 bg-zinc-950 z-20"></div>
+                                            <div class="absolute w-[8%] h-[15%] top-0 right-0 bg-zinc-950 z-20"></div>
+                                            <div
+                                                class="absolute w-[8%] h-[60%] top-[15%] right-[8%] bg-zinc-950 z-20 move-to-left-block will-change-transform">
+                                            </div>
+                                            <div class="absolute w-[8%] h-[25%] top-[75%] right-0 bg-zinc-950 z-20">
+                                            </div>
+                                            <div>
+                                                <picture class=""><img alt="Kidney Care Navigators Image" loading="lazy"
+                                                        decoding="async" data-nimg="fill"
+                                                        class="isParallax object-cover grayscale brightness-110 contrast-125"
+                                                        style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent;background-size:cover;background-position:50% 50%;background-repeat:no-repeat;background-image:url();"
+                                                        sizes="(max-width: 1920px) 3840w, (max-width: 1536px) 3072w, (max-width: 1280px) 2560w, (max-width: 1024px) 2048w, (max-width: 768px) 1536w, (max-width: 640px) 1280w"
+                                                        srcSet="" src="" />
+                                                </picture>
+                                            </div>
+                                        </div>
+                                        <div style="background-color:#0A0A0A"
+                                            class="relative flex flex-col flex-1 justify-between -mt-1 text-zinc-50">
+                                            <div class="flex flex-col p-5 w-full gap-1 overflow-hidden">
+                                                <p class="font-gothic text-xl md:text-3xl xl:text-4xl line-clamp-3 ">
+                                                    Developing smartphone applications</p>
+                                                <p
+                                                    class="font-sans text-sm md:text-base line-clamp-4 max-w-[80%] leading-tight text-neutral-200">
+                                                    We focus on ease of use, and we bring your idea to life by
+                                                    delivering it to your customers daily. We design and develop smart
+                                                    applications for iOS and Android systems, with stability and
+                                                    scalability.</p>
+                                            </div>
+                                            <div class="flex items-end justify-between w-full pr-5"><a
+                                                    rel="noopener noreferrer" target="_blank" class="inline-block"
+                                                    href=""><button
+                                                        class="inline-flex items-center justify-center whitespace-nowrap text-sm font-gothic ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 bg-brand-yellow text-gray-950 hover:bg-brand-yellow/90 relative overflow-hidden">
+                                                        <div
+                                                            class="og-text flex size-full items-center justify-center top-0 relative will-change-transform gap-2">
+                                                            Read More</div>
+                                                        <div
+                                                            class="button-overlay absolute bg-black top-[110%] size-full left-0 z-20 will-change-transform">
+                                                            <div
+                                                                class="flex items-center justify-center size-full invert gap-2">
+                                                                Read More</div>
+                                                        </div>
+                                                    </button></a>
+                                                <div
+                                                    class="flex flex-col font-gothic text-sm  text-end pb-2 leading-tight">
+                                                    <span>May 04</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="article-card md:absolute will-change-transform w-full md:w-1/2 h-[80vh] md:h-[100vh] top-0 overflow-hidden">
+                                    <div class="relative flex flex-col bg-white overflow-hidden size-full"
+                                        style="background-color:#FFFFFF">
+                                        <div class="relative w-full h-[40vh] md:h-[50vh] overflow-hidden">
+                                            <div class="absolute w-[84%] h-[15%] top-0 left-0 bg-white z-20"></div>
+                                            <div class="absolute w-[8%] h-[15%] top-0 right-0 bg-white z-20"></div>
+                                            <div
+                                                class="absolute w-[8%] h-[60%] top-[15%] right-[8%] bg-white z-20 move-to-left-block will-change-transform">
+                                            </div>
+                                            <div class="absolute w-[8%] h-[25%] top-[75%] right-0 bg-white z-20"></div>
+                                            <div>
+                                                <picture class=""><img
+                                                        alt="Technical Consulting and Digital Compliance image"
+                                                        loading="lazy" decoding="async" data-nimg="fill"
+                                                        class="isParallax object-cover grayscale brightness-110 contrast-125"
+                                                        style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent;background-size:cover;background-position:50% 50%;background-repeat:no-repeat;background-image:url();"
+                                                        sizes="(max-width: 1920px) 3840w, (max-width: 1536px) 3072w, (max-width: 1280px) 2560w, (max-width: 1024px) 2048w, (max-width: 768px) 1536w, (max-width: 640px) 1280w"
+                                                        srcSet="" src="" />
+                                                </picture>
+                                            </div>
+                                        </div>
+                                        <div style="background-color:#FFFFFF"
+                                            class="relative flex flex-col flex-1 text-zinc-950 justify-between -mt-1">
+                                            <div class="flex flex-col p-5 w-full gap-1 overflow-hidden">
+                                                <p class="font-gothic text-xl md:text-3xl xl:text-4xl line-clamp-3 ">
+                                                    Technical Consulting and Digital Compliance</p>
+                                                <p
+                                                    class="font-sans text-zinc-950 text-sm md:text-base line-clamp-4 max-w-[80%] leading-tight">
+                                                    The largest survey of its kind reveals the daily toll of transplant
+                                                    drugs — and the case for rewriting the playbook through advocacy,
+                                                    policy, and innovation</p>
+                                            </div>
+                                            <div class="flex items-end justify-between w-full pr-5"><a
+                                                    rel="noopener noreferrer" target="_blank" class="inline-block"
+                                                    href=""><button
+                                                        class="inline-flex items-center justify-center whitespace-nowrap text-sm font-gothic ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 bg-brand-yellow text-gray-950 hover:bg-brand-yellow/90 relative overflow-hidden">
+                                                        <div
+                                                            class="og-text flex size-full items-center justify-center top-0 relative will-change-transform gap-2">
+                                                            Read More</div>
+                                                        <div
+                                                            class="button-overlay absolute bg-black top-[110%] size-full left-0 z-20 will-change-transform">
+                                                            <div
+                                                                class="flex items-center justify-center size-full invert gap-2">
+                                                                Read More</div>
+                                                        </div>
+                                                    </button></a>
+                                                <div
+                                                    class="flex flex-col font-gothic text-sm  text-end pb-2 leading-tight">
+                                                    <span>August 17</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="article-card md:absolute will-change-transform w-full md:w-1/2 h-[80vh] md:h-[100vh] top-0 overflow-hidden">
+                                    <div class="relative flex flex-col bg-white overflow-hidden size-full"
+                                        style="background-color:#FFB8E0">
+                                        <div class="relative w-full h-[40vh] md:h-[50vh] overflow-hidden">
+                                            <div class="absolute w-[8%] h-[10%] top-0 right-0 bg-brand-rose z-20"></div>
+                                            <div
+                                                class="absolute w-[8%] h-[75%] top-[10%] right-[8%] bg-brand-rose z-20 move-to-right-block will-change-transform">
+                                            </div>
+                                            <div class="absolute w-[8%] h-[25%] top-[85%] right-0 bg-brand-rose z-20">
+                                            </div>
+                                            <div
+                                                class="absolute w-[30%] h-[25%] top-[85%] right-[16%] bg-brand-rose z-20 ">
+                                            </div>
+                                            <div class="absolute w-[8%] h-[50%] top-0 left-0 bg-brand-rose z-20 "></div>
+                                            <div
+                                                class="absolute w-[8%] h-[50%] top-[50%] left-[8%] bg-brand-rose z-20 move-to-left-block will-change-transform">
+                                            </div>
+                                            <div>
+                                                <picture class=""><img alt="" loading="lazy" decoding="async"
+                                                        data-nimg="fill"
+                                                        class="isParallax object-cover grayscale brightness-110 contrast-125"
+                                                        style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent;background-size:cover;background-position:50% 50%;background-repeat:no-repeat;background-image:url();"
+                                                        sizes="(max-width: 1920px) 3840w, (max-width: 1536px) 3072w, (max-width: 1280px) 2560w, (max-width: 1024px) 2048w, (max-width: 768px) 1536w, (max-width: 640px) 1280w"
+                                                        srcSet="" src="" />
+                                                </picture>
+                                            </div>
+                                        </div>
+                                        <div style="background-color:#FFB8E0"
+                                            class="relative flex flex-col flex-1 text-zinc-950 justify-between -mt-1">
+                                            <div class="flex flex-col p-5 w-full gap-1 overflow-hidden">
+                                                <p class="font-gothic text-xl md:text-3xl xl:text-4xl line-clamp-3 ">
+                                                    Graphic design and package printing</p>
+                                                <p
+                                                    class="font-sans text-zinc-950 text-sm md:text-base line-clamp-4 max-w-[80%] leading-tight">
+                                                    We focus on the layers on graphic design, packages and see the
+                                                    visual identities businesses strive for. </p>
+                                            </div>
+                                            <div class="flex items-end justify-between w-full pr-5"><a
+                                                    rel="noopener noreferrer" target="_blank" class="inline-block"
+                                                    href=""><button
+                                                        class="inline-flex items-center justify-center whitespace-nowrap text-sm font-gothic ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 bg-brand-yellow text-gray-950 hover:bg-brand-yellow/90 relative overflow-hidden">
+                                                        <div
+                                                            class="og-text flex size-full items-center justify-center top-0 relative will-change-transform gap-2">
+                                                            Read More</div>
+                                                        <div
+                                                            class="button-overlay absolute bg-black top-[110%] size-full left-0 z-20 will-change-transform">
+                                                            <div
+                                                                class="flex items-center justify-center size-full invert gap-2">
+                                                                Read More</div>
+                                                        </div>
+                                                    </button></a>
+                                                <div
+                                                    class="flex flex-col font-gothic text-sm  text-end pb-2 leading-tight">
+                                                    <span>January 03</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="">
+                    <div
+                        class="relative bg-background h-[70vh] xl:h-[120vh] w-full flex select-none overflow-hidden z-20 bg-black">
+                        <div class="absolute bottom-0 left-0 flex items-start z-30 overflow-hidden w-full -mt-3">
+                            <div
+                                class="movable-block w-[34vw] h-[70vh] md:h-[120vh] bg-background md:bg-white md:border-t border-t-background will-change-transform -mr-1">
+                            </div>
+                            <div
+                                class="movable-block w-[34vw] h-[70vh] md:h-[120vh] bg-background md:bg-white border-x border-x-background border-t md:border-t-background will-change-transform -mr-1">
+                            </div>
+                            <div
+                                class="movable-block w-[34vw] h-[70vh] md:h-[120vh] bg-background md:bg-white md:border-t border-t-background will-change-transform -mr-1">
+                            </div>
+                        </div>
+                        <div>
+                            <picture class=""><img alt="Dummy image" loading="lazy" decoding="async" data-nimg="fill"
+                                    class="isParallax object-cover absolute opacity-90"
+                                    style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent;background-size:cover;background-position:50% 50%;background-repeat:no-repeat;background-image:url();"
+                                    sizes="(max-width: 1920px) 3840w, (max-width: 1536px) 3072w, (max-width: 1280px) 2560w, (max-width: 1024px) 2048w, (max-width: 768px) 1536w, (max-width: 640px) 1280w"
+                                    srcSet="" src="" />
+                            </picture>
+                        </div>
+                        <div class="relative size-full flex flex-col justify-between overflow-hidden py-6 md:py-10">
+                            <div class="relative w-full flex flex-col gap-4 container">
+                                <div class="flex flex-col w-full z-20 mix-blend-plus-lighter overflow-hidden">
+                                    <p
+                                        class="font-gothic text-[15vw] md:text-[15vw] lg:text-[16vw] text-center text-slate-500 uppercase leading-none">
+                                        Community</p>
+                                    <div class="w-full h-[2px] bg-slate-500 gradient-divider mt-3"></div>
+                                </div>
+                                <div
+                                    class="flex items-start justify-between z-40 w-full text-background md:text-white ">
+                                    <div
+                                        class="flex items-center md:gap-16 font-gothic text-base md:text-lg justify-between md:justify-start ">
+                                        <a class="group overflow-hidden max-w-fit flex items-center gap-1 md:gap-2"
+                                            rel="noopener noreferrer" target="_blank" href="">
+                                            <div class="bg-background md:bg-white h-2 w-3"></div>Join Waitlist<div
+                                                class="hidden md:block opacity-0 group-hover:opacity-100 translate-x-[-8px] translate-y-[8px] group-hover:translate-x-0 group-hover:translate-y-0 transition-all duration-300 ease-out">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+                                                    class="lucide lucide-arrow-up-right">
+                                                    <path d="M7 7h10v10"></path>
+                                                    <path d="M7 17 17 7"></path>
+                                                </svg>
+                                            </div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="lucide lucide-arrow-up-right md:hidden">
+                                                <path d="M7 7h10v10"></path>
+                                                <path d="M7 17 17 7"></path>
+                                            </svg>
+                                        </a><a
+                                            class="group overflow-hidden max-w-fit flex items-center gap-1 md:gap-2 hover:opacity-80"
+                                            rel="noopener noreferrer" target="_blank" href="">Read More</a>
+                                    </div>
+                                    <p
+                                        class="font-sans font-medium text-gray-50 self-end max-w-xs text-sm line-clamp-3">
+                                        Connect with a global group of your peers</p>
+                                </div>
+                            </div>
+                            <div class="container flex w-full">
+                                <p class="font-gothic text-gray-50 text-xl sm:text-3xl md:text-5xl xl:text-[3.5rem]">Get
+                                    firsthand knowledge on topics across care delivery, industry, academia, advocacy,
+                                    policy, and more.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="">
+                    <div class="w-full py-block-mobile sm:py-block flex flex-col gap-20 bg-background">
+                        <div
+                            class="w-full container flex flex-col md:flex-row items-start justify-between gap-4 md:gap-10">
+                            <span class="text-zinc-900 font-gothic uppercase text-sm sm:text-base w-full">About</span>
+                            <div class="flex flex-col w-full items-end max-w-xl">
+                                <div class="w-full flex flex-col text-start gap-5">
+                                    <p class="text-gray-950 font-semibold text-2xl sm:text-2xl lg:text-3xl font-gothic">
+                                        Why Chose Falcon Code? </p>
+                                    <p class="text-zinc-600 font-sans">Signals Group leverages media and research to
+                                        advance a shared mission. Together with our partners, we explore the ideas,
+                                        innovations, and investments shaping kidney, cardio, and metabolic health.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 lg:grid-cols-5 w-full container place-items-center lg:gap-16">
+                            <div class="lg:col-span-3 flex lg:justify-end w-full">
+                                <div class="relative w-full aspect-square lg:w-[50vw] max-h-[24rem]">
+                                    <div class="absolute -top-10 right-0 max-w-fit"><a rel="noopener noreferrer"
+                                            target="_blank" class="inline-block" href=""><button
+                                                class="inline-flex items-center justify-center whitespace-nowrap text-sm font-gothic ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 bg-brand-yellow text-gray-950 hover:bg-brand-yellow/90 relative overflow-hidden">
+                                                <div
+                                                    class="og-text flex size-full items-center justify-center top-0 relative will-change-transform gap-2">
+                                                    Tim&#x27;s Story</div>
+                                                <div
+                                                    class="button-overlay absolute bg-black top-[110%] size-full left-0 z-20 will-change-transform">
+                                                    <div
+                                                        class="flex items-center justify-center size-full invert gap-2">
+                                                        Tim&#x27;s Story</div>
+                                                </div>
+                                            </button></a></div>
+                                    <div
+                                        class="absolute flex z-10 -bottom-1 top-auto left-4 lg:left-14 right-auto items-end">
+                                        <div class="movable-block bg-background -mr-1 w-32 h-12 md:h-12"></div>
+                                        <div class="movable-block bg-background -mr-2 w-28 h-8 md:h-8"></div>
+                                    </div>
+                                    <div class="absolute size-full top-0 left-0 overflow-hidden w-full ">
+                                        <div class="relative size-full w-full h-[110vw] lg:h-[80vw] max-h-[27rem] ">
+                                            <picture class=""><img alt="" loading="lazy" decoding="async"
+                                                    data-nimg="fill" class="isParallax object-cover object-top"
+                                                    style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent;background-size:cover;background-position:50% 50%;background-repeat:no-repeat;background-image:url()"
+                                                    sizes="(max-width: 1920px) 3840w, (max-width: 1536px) 3072w, (max-width: 1280px) 2560w, (max-width: 1024px) 2048w, (max-width: 768px) 1536w, (max-width: 640px) 1280w"
+                                                    srcSet="assets/5966edc3-2550-4775-a3fd-b2640faf6d8d.webp"
+                                                    src="assets/5966edc3-2550-4775-a3fd-b2640faf6d8d.webp" />
+                                            </picture>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-span-2  mt-8">
+                                <div class="payload-richtext max-w-none mx-auto prose md:prose-md dark:prose-invert">
+                                    <p><strong>Through our flagship newsletter, community, and advisory work, we
+                                            highlight opportunities, share knowledge, and connect people shaping the
+                                            future of care.</strong></p>
+                                    <p>Founded by <a href="" rel="noopener noreferrer" target="_blank"><span
+                                                style="text-decoration:underline">Tim Fitzpatrick</span></a>, Signals
+                                        Group builds on a decade of experience at the frontlines of kidney health and
+                                        innovation. Tim’s work spans entrepreneurship, media, and storytelling —
+                                        creating new ways for patients, clinicians, and industry leaders to learn,
+                                        connect, and drive progress.</p>
+                                    <p>Beyond Signals, Tim is a serial entrepreneur who writes and speaks regularly
+                                        about innovation, health, and the future of care delivery.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="">
+                    <div class="relative overflow-hidden bg-background z-20 w-full  ">
+                        <div class="absolute top-0 w-full bg-brand-blue z-0 h-[80%]"></div>
+                        <div class="absolute bottom-0 right-0 w-20 h-[20%] bg-brand-blue"></div>
+                        <div class="absolute top-0 right-5 flex items-start z-10">
+                            <div class="movable-block bg-background -mr-1 w-44 h-14"></div>
+                            <div class="movable-block bg-background -mr-2 w-44 h-8"></div>
+                        </div>
+                        <div
+                            class="flex flex-col size-full container md:max-w-[80vw] items-center justify-center overflow-hidden pt-32 z-10">
+                            <div class="w-full flex flex-col md:flex-row items-end md:justify-end">
+                                <div
+                                    class="relative min-w-fit md:h-[12vw] self-start md:self-end md:justify-end flex md:items-end">
+                                    <a rel="noopener noreferrer" target="_blank" class="inline-block" href=""><button
+                                            class="inline-flex whitespace-nowrap text-sm font-gothic ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 bg-brand-yellow text-gray-950 hover:bg-brand-yellow/90 items-center justify-center relative overflow-hidden">
+                                            <div
+                                                class="og-text flex size-full items-center justify-center top-0 relative will-change-transform gap-2">
+                                                Work With Us<svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                                    height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                    class="lucide lucide-arrow-up-right">
+                                                    <path d="M7 7h10v10"></path>
+                                                    <path d="M7 17 17 7"></path>
+                                                </svg></div>
+                                            <div
+                                                class="button-overlay absolute bg-black top-[110%] size-full left-0 z-20 will-change-transform">
+                                                <div class="flex items-center justify-center size-full invert gap-2">
+                                                    Work With Us<svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                                        height="24" viewBox="0 0 24 24" fill="none"
+                                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                        stroke-linejoin="round" class="lucide lucide-arrow-up-right">
+                                                        <path d="M7 7h10v10"></path>
+                                                        <path d="M7 17 17 7"></path>
+                                                    </svg></div>
+                                            </div>
+                                        </button></a>
+                                </div>
+                                <div class="relative flex overflow-hidden min-w-fit justify-end">
+                                    <div
+                                        class="bg-background absolute top-0 left-0 h-full w-[90%] highlight will-change-transform">
+                                    </div><span
+                                        class="font-gothic text-[24vw] md:text-[16vw] uppercase z-10 tracking-wide leading-none">Share</span>
+                                </div>
+                            </div>
+                            <div class="w-full flex items-start ">
+                                <div class="relative flex overflow-hidden min-w-fit -mt-1">
+                                    <div
+                                        class="bg-background absolute top-0 left-0 size-full highlight will-change-transform">
+                                    </div><span
+                                        class="font-gothic text-[24vw] md:text-[16vw] uppercase z-10 tracking-wide leading-none">Your</span>
+                                </div>
+                            </div>
+                            <div class="w-full flex flex-col md:flex-row items-end md:items-start justify-end ">
+                                <div
+                                    class="hidden md:flex relative w-[16vw] h-[12vw] overflow-hidden justify-end items-end bg-transparent">
+                                </div>
+                                <div class="relative flex md:ps-4 overflow-hidden -mt-1 min-w-fit">
+                                    <div
+                                        class="bg-background absolute top-0 left-0 size-full highlight will-change-transform">
+                                    </div><span
+                                        class="font-gothic text-[24vw] md:text-[16vw] uppercase z-10 tracking-wide leading-none">Vision</span>
+                                </div>
+                                <div
+                                    class="flex md:hidden relative w-full aspect-square overflow-hidden self-start bg-transparent">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="">
+                    <div class="relative h-[350lvh] -mb-[100lvh] bg-background">
+                        <div
+                            class="sticky top-0 h-[100lvh] overflow-hidden flex items-center justify-center bg-background w-full ">
+                            <h4 class="sr-only">Information Technology</h4>
+                            <div class="absolute size-full flex flex-col">
+                                <div class="absolute top-0 right-0 w-20 aspect-[9/16] bg-brand-blue "></div>
+                                <div class="absolute top-20 right-[20%] size-24 bg-brand-emerald floating-block-square">
+                                </div>
+                                <div class="absolute top-20 left-[5%] size-32 bg-brand-rose floating-block-square">
+                                </div>
+                                <div
+                                    class="absolute top-[30%] left-[20%] w-10 aspect-[9/16] bg-brand-yellow floating-block-vertical hidden md:block">
+                                </div>
+                                <div
+                                    class="absolute bottom-0 left-0 w-20 aspect-[9/16] bg-brand-blue floating-block-vertical">
+                                </div>
+                                <div class="absolute bottom-20 right-[5%] size-32 bg-brand-rose floating-block-square">
+                                </div>
+                                <div
+                                    class="absolute bottom-20 left-[40%] size-24 bg-brand-emerald floating-block-square">
+                                </div>
+                                <div
+                                    class="absolute bottom-[30%] right-[20%] w-10 aspect-[9/16] bg-brand-yellow floating-block-vertical">
+                                </div>
+                            </div>
+                            <div
+                                class="zoom-img-container absolute size-full top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 will-change-transform overflow-hidden z-10 ">
+                                <div class="relative size-full">
+                                    <picture class=""><img alt="" loading="lazy" decoding="async" data-nimg="fill"
+                                            class="isParallax object-cover"
+                                            style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent;background-size:cover;background-position:50% 50%;background-repeat:no-repeat;background-image:url()"
+                                            sizes="(max-width: 1920px) 3840w, (max-width: 1536px) 3072w, (max-width: 1280px) 2560w, (max-width: 1024px) 2048w, (max-width: 768px) 1536w, (max-width: 640px) 1280w"
+                                            srcSet="" src="" />
+                                    </picture>
+                                </div>
+                            </div>
+                            <div aria-hidden="true"
+                                class="text-center font-gothic text-3xl md:text-5xl text-zinc-900 flex"><span
+                                    class="will-change-transform zoom-left-text">Information </span><span> </span><span
+                                    class="will-change-transform zoom-right-text">Technology</span><span> </span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="">
+                </div>
+                <div class="">
+                    <div class="bg-background py-block-mobile sm:py-block w-full overflow-hidden relative">
+                        <div class="flex flex-col w-full relative container">
+                            <div class="w-fit relative h-fit overflow-hidden flex">
+                                <div
+                                    class="bg-brand-blue absolute bottom-0 left-0 w-full h-[70%] full-highlight will-change-transform z-0">
+                                </div><span class="text-3xl md:text-6xl xl:text-8xl font-gothic z-20">Focused On
+                                    Data</span>
+                            </div>
+                            <div class="w-full relative text-end overflow-hidden flex justify-end">
+                                <div
+                                    class="bg-brand-emerald absolute top-0 left-0 size-full full-highlight will-change-transform z-0">
+                                </div><span class="text-3xl md:text-6xl xl:text-8xl font-gothic z-20">Driven By
+                                    Curiosity</span>
+                            </div>
+                            <div class="ps-10"><a class="inline-block" href="/"><button
+                                        class="inline-flex items-center justify-center whitespace-nowrap text-sm font-gothic ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 bg-brand-yellow text-gray-950 hover:bg-brand-yellow/90 relative overflow-hidden">
+                                        <div
+                                            class="og-text flex size-full items-center justify-center top-0 relative will-change-transform gap-2">
+                                            Subscribe To Our Newsletter<svg xmlns="http://www.w3.org/2000/svg"
+                                                width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" class="lucide lucide-arrow-up-right">
+                                                <path d="M7 7h10v10"></path>
+                                                <path d="M7 17 17 7"></path>
+                                            </svg></div>
+                                        <div
+                                            class="button-overlay absolute bg-black top-[110%] size-full left-0 z-20 will-change-transform">
+                                            <div class="flex items-center justify-center size-full invert gap-2">
+                                                Subscribe To Our Newsletter<svg xmlns="http://www.w3.org/2000/svg"
+                                                    width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" class="lucide lucide-arrow-up-right">
+                                                    <path d="M7 7h10v10"></path>
+                                                    <path d="M7 17 17 7"></path>
+                                                </svg></div>
+                                        </div>
+                                    </button></a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+        <footer id="footer" class="relative h-[100vh]" style="clip-path:polygon(0% 0, 100% 0%, 100% 100%, 0 100%)">
+            <div
+                class="fixed bottom-0 h-[100vh] w-full flex flex-col justify-between pt-10 pb-2 md:pb-6 bg-neutral-900">
+                <div
+                    class="relative flex flex-col lg:flex-row items-start w-full md:justify-between gap-10 container pt-8 bg-neutral-900">
+                    <div class="flex items-start gap-6 max-w-xs text-xs text-white font-sans"><img alt="Signals Icon"
+                            loading="lazy" width="77" height="77" decoding="async" data-nimg="1" class="invert"
+                            style="color:transparent"
+                            srcSet="assets/android-chrome-192x192.png"
+                            src="assets/android-chrome-192x192.png" />
+                        <p>At Code Falcon, we don't just offer technical services; we provide a well-structured digital environment that helps you develop, outperform competitors, and transform all your technological investments into tangible results.</p>
+                    </div>
+                    <div class="grid grid-cols-2 lg:grid-cols-3 gap-10 lg:justify-end text-white">
+                        <div class="col-span-1 flex flex-col gap-2 "><a
+                                class="group overflow-hidden max-w-fit flex items-center gap-1 md:gap-2 hover:opacity-80 transition-opacity duration-300"
+                                href="/home">Home</a><a
+                                class="group overflow-hidden max-w-fit flex items-center gap-1 md:gap-2 hover:opacity-80 transition-opacity duration-300"
+                                href="/about">About us</a><a
+                                class="group overflow-hidden max-w-fit flex items-center gap-1 md:gap-2 hover:opacity-80 transition-opacity duration-300"
+                                href="/data-room">Data Room</a><a
+                                class="group overflow-hidden max-w-fit flex items-center gap-1 md:gap-2 hover:opacity-80 transition-opacity duration-300"
+                                rel="noopener noreferrer" target="_blank" href="https://jobs.signalsfs.com">Careers</a>
+                        </div>
+                        <div class="col-span-1 flex flex-col gap-2  "><a
+                                class="group overflow-hidden max-w-fit flex items-center gap-1 md:gap-2 min-w-fit"
+                                rel="noopener noreferrer" target="_blank" href="https://media.signalsfs.com">Newsletter
+                                <div
+                                    class="hidden md:block opacity-0 group-hover:opacity-100 translate-x-[-8px] translate-y-[8px] group-hover:translate-x-0 group-hover:translate-y-0 transition-all duration-300 ease-out">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"
+                                        stroke-linejoin="round" class="lucide lucide-arrow-up-right">
+                                        <path d="M7 7h10v10"></path>
+                                        <path d="M7 17 17 7"></path>
+                                    </svg>
+                                </div></a><a
+                                class="group overflow-hidden max-w-fit flex items-center gap-1 md:gap-2 min-w-fit"
+                                rel="noopener noreferrer" target="_blank"
+                                href="https://signalsfs.docsend.com/view/qj4g26xt8ysc6w9i">Apply to sponsor<div
+                                    class="hidden md:block opacity-0 group-hover:opacity-100 translate-x-[-8px] translate-y-[8px] group-hover:translate-x-0 group-hover:translate-y-0 transition-all duration-300 ease-out">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"
+                                        stroke-linejoin="round" class="lucide lucide-arrow-up-right">
+                                        <path d="M7 7h10v10"></path>
+                                        <path d="M7 17 17 7"></path>
+                                    </svg>
+                                </div></a><a
+                                class="group overflow-hidden max-w-fit flex items-center gap-1 md:gap-2 min-w-fit"
+                                rel="noopener noreferrer" target="_blank"
+                                href="https://forms.gle/HxBFEQdU8irTFiTm9">Work with us<div
+                                    class="hidden md:block opacity-0 group-hover:opacity-100 translate-x-[-8px] translate-y-[8px] group-hover:translate-x-0 group-hover:translate-y-0 transition-all duration-300 ease-out">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"
+                                        stroke-linejoin="round" class="lucide lucide-arrow-up-right">
+                                        <path d="M7 7h10v10"></path>
+                                        <path d="M7 17 17 7"></path>
+                                    </svg>
+                                </div></a></div>
+                        <div class="col-span-1 flex flex-col gap-2 "><a
+                                class="group overflow-hidden max-w-fit flex items-center gap-1 md:gap-2"
+                                rel="noopener noreferrer" target="_blank"
+                                href="https://www.linkedin.com/company/signals-group/">LinkedIn<div
+                                    class="hidden md:block opacity-0 group-hover:opacity-100 translate-x-[-8px] translate-y-[8px] group-hover:translate-x-0 group-hover:translate-y-0 transition-all duration-300 ease-out">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"
+                                        stroke-linejoin="round" class="lucide lucide-arrow-up-right">
+                                        <path d="M7 7h10v10"></path>
+                                        <path d="M7 17 17 7"></path>
+                                    </svg>
+                                </div></a><a class="group overflow-hidden max-w-fit flex items-center gap-1 md:gap-2"
+                                rel="noopener noreferrer" target="_blank" href="https://media.signalsfs.com/">Substack
+                                <div
+                                    class="hidden md:block opacity-0 group-hover:opacity-100 translate-x-[-8px] translate-y-[8px] group-hover:translate-x-0 group-hover:translate-y-0 transition-all duration-300 ease-out">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"
+                                        stroke-linejoin="round" class="lucide lucide-arrow-up-right">
+                                        <path d="M7 7h10v10"></path>
+                                        <path d="M7 17 17 7"></path>
+                                    </svg>
+                                </div></a></div>
+                    </div>
+                </div>
+                <div class="relative flex flex-col gap-3 md:gap-6">
+                    <div class="wrapper relative w-full flex flex-col overflow-hidden "><svg
+                            xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1900 320" fill="#EA4C25">
+                            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-size="80" font-family="Arial, sans-serif" class="svgtext letter">FalconCodes</text>
+                        </svg></div>
+                    <div
+                        class="flex w-full items-center justify-between gap-2 container text-[0.5rem] sm:text-xs font-sans text-slate-300">
+                        <p>© 2025 FalconCodes Group</p><a target="_blank" rel="noreferrer" class="max-w-fit"
+                            href="https://unmirror.co"><span class="hover:opacity-80 cursor-pointer">Designed by mzughbor studio.</span></a>
+                        <div class="flex items-center"><a
+                                class="group overflow-hidden max-w-fit flex items-center gap-1 md:gap-2"
+                                href="/privacy--terms">Privacy &amp; Terms</a></div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script src="article-images.js"></script>
+        <script src="menu.js"></script>
+        <!--<script src="number-animation.js"></script>-->
+        <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+        <script src="https://unpkg.com/gsap@3/dist/SplitText.min.js"></script>
+        <script src="number-loader-gsap.js"></script>
+        <script src="loader.js"></script>
+        <script src="video-scroll-effect.js"></script>
+    
+    </body>
+
+</html>
