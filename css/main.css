@@ -2473,6 +2473,31 @@ body {
     background-color: rgb(20 165 134/var(--tw-bg-opacity, 1))
 }
 
+.bg-brand-emerald.shrink-animation {
+    animation: shrinkAndMove 1s ease-in-out forwards;
+}
+
+@keyframes shrinkAndMove {
+    0% {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 9997;
+        transform: scale(1);
+    }
+    100% {        
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: -1%;
+        height: 70%;
+        z-index: 9997;
+        transform: scale(0.8);
+    }
+}
+
 .bg-brand-rose {
     --tw-bg-opacity: 1;
     background-color: rgb(255 184 224/var(--tw-bg-opacity, 1))
