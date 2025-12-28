@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 id: 2,
                 title: "Developing smartphone applications",
                 description: "We focus on ease of use, and we bring your idea to life by delivering it to your customers daily. We design and develop smart applications for iOS and Android systems, with stability and scalability.",
-                image: "/api/media/file/kidney_navigators.webp",
+                image: "",
                 date: "May 05",
                 color: "#0A0A0A",
                 readMoreUrl: "/articles/mobile-app-development"
@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 id: 3,
                 title: "Technical Consulting and Digital Compliance",
                 description: "We offer consultations to help you make sound technical decisions that comply with regulatory requirements.",
-                image: "/api/media/file/life_on_image.webp",
+                image: "",
                 date: "August 17",
                 color: "#FFFFFF",
                 readMoreUrl: "/articles/technical-consulting"
