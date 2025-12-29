@@ -358,3 +358,12 @@ p.clock span {
 }
 
 /********* HORZIZONTAL SCROLL END ************/
+
+.text-foreground {
+    margin: 7px;
+    text-decoration: none;
+}
+
+.f-social {
+    margin-top: 1.5vw;
+}
