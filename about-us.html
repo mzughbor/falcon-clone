@@ -695,6 +695,24 @@
             }
 
         }
+        .image-with-text-overlay {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .image-overlay-text {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            margin: 0;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px 15px;
+            border-radius: 4px;
+            font-size: 14px;
+            max-width: 70%;
+            z-index: 2;
+        }
     </style>
 
 </head>
@@ -809,13 +827,9 @@
             <div class="content">
                 <div class="work-info-holder">
                     <div class="case-header-holder loaded">
-                        <img src="assets/test/test-big.jpg" loading="lazy" alt="some_image" sizes="100vw"
-                            class="case-header-img" />
-                        <div class="f-video-embed w-embed">
-                            <video class="casepagevid lazy" autoplay="" muted="" loop="" height="auto" width="100%"
-                                object-fit="cover" playsinline="">
-                                <source src="" type="video/mp4">
-                            </video>
+                        <div class="image-with-text-overlay">
+                            <img src="assets/test/test-big.jpg" loading="lazy" alt="some_image" sizes="100vw" class="case-header-img" />
+                            <!--<p class="image-overlay-text">Smart Solutions</p>-->
                         </div>
                     </div>
                     <div class="case-h1-holder loaded">
