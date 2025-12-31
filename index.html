@@ -30,6 +30,38 @@
     <link rel="stylesheet" href="css/header-styles.css" />
     <link rel="stylesheet" href="css/cursor.css" />
     <link rel="stylesheet" href="css/apendx.css" />
+    <link rel="stylesheet" href="css/services.css" />
+    <style>
+        @keyframes scroll-partners {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(calc(-50% - 1.5vw));
+            }
+        }
+        .partners-scroll-wrapper:hover {
+            animation-play-state: paused;
+        }
+        .partners-scroll-container::-webkit-scrollbar {
+            display: none;
+        }
+        .partners-scroll-container {
+            scrollbar-width: none;
+        }
+        @media (max-width: 991px) {
+            .partners-case .partners-header h2 {
+                font-size: 5vw !important;
+            }
+            .partners-case .partners-header p {
+                font-size: 2.5vw !important;
+            }
+            .partners-case .partner-logo {
+                width: 120px !important;
+                height: 70px !important;
+            }
+        }
+    </style>
 </head>
 
 <body data-barba="wrapper" class="body">
@@ -49,6 +81,9 @@
                 <a href="/services" class="menu-link w-inline-block">
                     <div>Services <sup class="superscript"></sup></div>
                 </a>
+                <a href="/about-us" class="menu-link w-inline-block">
+                    <div>About Us</div>
+                </a>
                 <a href="/profile" class="menu-link w-inline-block">
                     <div>Profile</div>
                 </a>
@@ -60,8 +95,22 @@
                 </a>
             </div>
             <div class="menu-links-holder">
+                <div class="language-switcher" style="display: flex; align-items: center; gap: 0.5rem; margin-right: 2vw; position: relative;">
+                    <button id="lang-btn" class="menu-link language-btn" style="cursor: pointer; background: none; border: none; padding: 0; color: #fff; font-size: 1.3vw; font-weight: 400; display: flex; align-items: center; gap: 0.5rem;">
+                        <span id="current-lang">EN</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transition: transform 0.3s ease;">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div id="lang-dropdown" class="lang-dropdown" style="display: none; position: absolute; top: 100%; right: 0; margin-top: 0.5rem; background: #161616; border: 1px solid #242424; min-width: 120px; z-index: 1000; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);">
+                        <button class="lang-option" data-lang="en" style="width: 100%; padding: 0.75rem 1rem; background: none; border: none; color: #fff; text-align: left; cursor: pointer; font-size: 1.1vw; transition: background 0.2s;" onmouseover="this.style.background='#242424'" onmouseout="this.style.background='transparent'">English</button>
+                        <button class="lang-option" data-lang="ar" style="width: 100%; padding: 0.75rem 1rem; background: none; border: none; color: #fff; text-align: left; cursor: pointer; font-size: 1.1vw; transition: background 0.2s; border-top: 1px solid #242424;" onmouseover="this.style.background='#242424'" onmouseout="this.style.background='transparent'">العربية</button>
+                    </div>
+                </div>
+                <a href="tel:+201080303330" class="menu-link right" style="margin-right: 2vw;">
+                    <p class="clock">+20 10 80303330</p>
+                </a>
                 <div href="#" class="menu-link right">
-                    <div class="cph-time-text">Time</div>
                     <p timezone="+1" class="clock">12<span class="clockdots">:</span>00</p>
                 </div>
             </div>
@@ -85,80 +134,88 @@
                     <div class="f-header-holder">
                         <div class="f-logo-holder">
                             <div class="logotype-holder">
-                                <div data-splitting="chars" class="falconcode-logo-text"></div>
-                                <div data-w-id="9e05902f-ed75-1132-5d43-415967bda1c3" data-is-ix2-target="1"
-                                    class="logo-lottie show" data-animation-type="lottie"
-                                    data-src="https://cdn.prod.website-files.com/63640f262fc5ea5751eb1965/63b6a458054cfe52cfc5efe7_bb-logo.json"
-                                    data-loop="0" data-direction="1" data-autoplay="0" data-renderer="svg"
-                                    data-default-duration="1.4254583270639956" data-duration="2"
-                                    data-ix2-initial-state="0">
+                                <img src="logo/logo-main-big.png" loading="lazy" alt="Falcon" class="logo-falcon" style="width: 100%; height: auto; object-fit: contain;" />
+                                <!--
+                                <div class="logo-split-container" style="display: flex; width: 100%; align-items: center; gap: 0;">
+                                    <div class="logo-left" style="width: 50%; display: flex; align-items: center; justify-content: flex-start;">
+                                        <img src="logo/logo-removebg-preview.png" loading="lazy" alt="Falcon" class="logo-falcon" style="width: 100%; height: auto; object-fit: contain;" 
+                                             onerror="this.onerror=null; this.src='logo/logo.jpeg';" />
+                                    </div>
+                                    <div class="logo-right" style="width: 53%; display: flex; align-items: center; justify-content: flex-start;">
+                                        <img src="logo/of-codes-removebg-preview.png" loading="lazy" alt="of Codes" class="logo-of-codes" style="width: 100%; height: auto; object-fit: contain;" 
+                                             onerror="this.onerror=null; this.src='logo/of-codes.jpeg';" />
+                                    </div>
                                 </div>
-                                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" length="auto"
-                                    viewBox="0 0 1900 320" fill="#ffffff"><!-- change font color  #00bcd4-->
-                                    <text x="48%" y="55%" dominant-baseline="middle" text-anchor="middle"
-                                        font-size="262" font-family="system-ui" font-weight="700"
-                                        letter-spacing="-0.05em" font-style="normal" fill="#ffffff"
-                                        class="svgtext letter">
-                                        FALCON of Code</text>
-                                </svg>
+                                -->
                                 <div class="dark-logo-overlay"></div>
                             </div>
                             <div class="small-header _2">
                                 <span class="text-span-2">fɒlkən/<em>adjective.</em>
                                 </span>Falcons are birds of prey in the genus Falco.
                             </div>
-                            <div class="f-social flex gap-4">
-                                <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"
-                                    aria-label="Facebook"
-                                    class="text-foreground hover:text-brand-emerald transition-colors duration-300">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" class="lucide lucide-facebook">
-                                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z">
-                                        </path>
-                                    </svg>
-                                </a>
-                                <a href="https://www.twitter.com/" target="_blank" rel="noopener noreferrer"
-                                    aria-label="Twitter"
-                                    class="text-foreground hover:text-brand-emerald transition-colors duration-300">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" class="lucide lucide-twitter">
-                                        <path 
-                                        d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
-                                        </path>
-                                    </svg>
-                                </a>
-                                <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"
-                                    aria-label="Instagram"
-                                    class="text-foreground hover:text-brand-emerald transition-colors duration-300">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" class="lucide lucide-instagram">
-                                        <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
-                                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                                        <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
-                                    </svg>
-                                </a>
-                                <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer"
-                                    aria-label="LinkedIn"
-                                    class="text-foreground hover:text-brand-emerald transition-colors duration-300">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin">
-                                        <path
-                                            d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
-                                        </path>
-                                        <rect width="4" height="12" x="2" y="9"></rect>
-                                        <circle cx="4" cy="4" r="2"></circle>
-                                    </svg>
-                                </a>
+                            <div class="f-social flex gap-4" style="flex-direction: column; align-items: flex-start; gap: 1.5rem;">
+                                <div class="social-icon-block">
+                                    <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"
+                                        aria-label="Facebook"
+                                        class="text-foreground hover:text-brand-emerald transition-colors duration-300">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24"
+                                            fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" class="lucide lucide-facebook">
+                                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z">
+                                            </path>
+                                        </svg>
+                                    </a>
+                                </div>
+                                <div class="social-icon-block">
+                                    <a href="https://www.twitter.com/" target="_blank" rel="noopener noreferrer"
+                                        aria-label="Twitter"
+                                        class="text-foreground hover:text-brand-emerald transition-colors duration-300">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24"
+                                            fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" class="lucide lucide-twitter">
+                                            <path 
+                                            d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
+                                            </path>
+                                        </svg>
+                                    </a>
+                                </div>
+                                <div class="social-icon-block">
+                                    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"
+                                        aria-label="Instagram"
+                                        class="text-foreground hover:text-brand-emerald transition-colors duration-300">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24"
+                                            fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" class="lucide lucide-instagram">
+                                            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                            <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+                                        </svg>
+                                    </a>
+                                </div>
+                                <div class="social-icon-block">
+                                    <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer"
+                                        aria-label="LinkedIn"
+                                        class="text-foreground hover:text-brand-emerald transition-colors duration-300">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin">
+                                            <path
+                                                d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                            </path>
+                                            <rect width="4" height="12" x="2" y="9"></rect>
+                                            <circle cx="4" cy="4" r="2"></circle>
+                                        </svg>
+                                    </a>
+                                </div>
                             </div>
                         </div>
 
                         <div class="f-intro-text-holder">
                             <h1 data-splitting="words" class="h1">
-                                An <span>Independent</span> Digital Transformation
-                                studio. Based in Kuwait. We combine Identity, Digital Design &amp; Software
-                                Development – Specializing in printings.
+                                An <span>Independent</span> Digital Transformation studio. <br>
+                                Based in Kuwait. We combine Identity, Digital Design, and Software Development—specializing
+                                in high-end printing. Like a falcon, we merge strategic foresight with swift execution to
+                                transform abstract ideas into functional, beautiful platforms that speak the language of progress.
+                                At Falcon of Code, we don’t just build products; we engineer the bridge to your future,
+                                turning every digital challenge into an exceptional opportunity.
                             </h1>
                         </div>
                     </div>
@@ -191,10 +248,40 @@
                                     </a>
                                     <link rel="prefetch" href="/about-us" />
                                     <div class="f-grid-info-holder">
-                                        <div data-splitting="chars" class="f-case-title-text">About us.</div>
+                                        <div data-splitting="chars" class="f-case-title-text">About us page</div>
                                         <div class="f-services-holder">
                                             <div class="f-category-holder">
-                                                <div>Falcon of Codes Company</div>
+                                                <div></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div role="listitem" class="f-case-holder w-dyn-item">
+                                    <div class="f-case-link vision-values-mission-box" style="position: relative; display: block; width: 100%; min-height: 400px;">
+                                        <img loading="lazy" alt="Vision Values Mission Background" src="assets/Abstract20Cell5e65.png" class="f-case-img" style="object-fit: cover; opacity: 0.3;" />
+                                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(22, 22, 22, 0.95); display: flex; flex-direction: column; justify-content: center; padding: 3vw; z-index: 2;">
+                                            <div style="max-width: 800px; margin: 0 auto; width: 100%;">
+                                                <div style="margin-bottom: 3vw;">
+                                                    <h3 style="color: #fff; font-size: 1.8vw; font-weight: 600; margin-bottom: 1vw; letter-spacing: -0.02em;">Our Vision</h3>
+                                                    <p style="color: #e0e0e0; font-size: 1.2vw; line-height: 1.6; font-weight: 300;">We aim to be the pulse of technology, transforming every digital challenge into a bridge for the future where your identity reaches heights limited only by our collective creativity.</p>
+                                                </div>
+                                                <div style="margin-bottom: 3vw;">
+                                                    <h3 style="color: #fff; font-size: 1.8vw; font-weight: 600; margin-bottom: 1vw; letter-spacing: -0.02em;">Our Values</h3>
+                                                    <p style="color: #e0e0e0; font-size: 1.2vw; line-height: 1.6; font-weight: 300;">Our strength lies in the perfect marriage of strategic foresight and surgical execution, believing that functional beauty and data-driven security are the ultimate measures of success.</p>
+                                                </div>
+                                                <div>
+                                                    <h3 style="color: #fff; font-size: 1.8vw; font-weight: 600; margin-bottom: 1vw; letter-spacing: -0.02em;">Our Mission</h3>
+                                                    <p style="color: #e0e0e0; font-size: 1.2vw; line-height: 1.6; font-weight: 300;">We engineer scalable digital platforms that translate abstract ideas into tangible success stories, ensuring every solution speaks the language of progress and professional excellence.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="f-grid-info-holder">
+                                        <div data-splitting="chars" class="f-case-title-text">Vision & Values</div>
+                                        <div class="f-services-holder">
+                                            <div class="f-category-holder">
+                                                <div></div>
                                             </div>
                                         </div>
                                     </div>
@@ -229,7 +316,7 @@
                                         <div data-splitting="chars" class="f-case-title-text">Services</div>
                                         <div class="f-services-holder">
                                             <div class="f-category-holder">
-                                                <div>Find your custom solution.</div>
+                                                <div></div>
                                             </div>
                                         </div>
                                     </div>
@@ -240,12 +327,12 @@
                                         <img loading="lazy" alt="" src="" class="f-case-img w-dyn-bind-empty">
                                         <div class="f-video-embed w-embed">
                                             <video autoplay="" muted="" loop="" height="auto" width="100%" object-fit="cover" playsinline="" class="show">
-                                                <source src="videos/sliding-imgs-x-y.mp4" type="video/mp4">
+                                                <source src="videos/0_4444_Prores_720x720.mp4" type="video/mp4">
                                             </video>
                                         </div>
                                         <div class="grid-hover">
                                             <img loading="lazy" alt="" src="" class="f-case-img w-dyn-bind-empty">
-                                            <img loading="lazy" alt="" src="assets/2520.avif" sizes="100vw" class="f-case-img scaled-grid-img">
+                                            <img loading="lazy" alt="" src="" sizes="100vw" class="f-case-img scaled-grid-img w-dyn-bind-empty">
                                             <div class="f-video-embed w-embed">
                                                 <video class="lazy show" autoplay="" muted="" loop="" height="auto" width="100%" object-fit="cover" playsinline="">
                                                     <source src="" type="video/mp4">
@@ -260,10 +347,10 @@
                                     </a>
                                     <link rel="prefetch" href="">
                                     <div class="f-grid-info-holder">
-                                        <div data-splitting="chars" class="f-case-title-text">From our work</div>
+                                        <div data-splitting="chars" class="f-case-title-text">AI solutions</div>
                                         <div class="f-services-holder">
                                             <div class="f-category-holder">
-                                                <div>Latest Projects</div>
+                                                <div></div>
                                             </div>
                                         </div>
                                     </div>
@@ -300,10 +387,137 @@
                                     </a>
                                     <link rel="prefetch" href="" />
                                     <div class="f-grid-info-holder">
-                                        <div data-splitting="chars" class="f-case-title-text">Profile of work</div>
+                                        <div data-splitting="chars" class="f-case-title-text">Explore Our Services</div>
                                         <div class="f-services-holder">
                                             <div class="f-category-holder">
-                                                <div>See our recent mobile applications projects.</div>
+                                                <div></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div role="listitem" class="f-case-holder w-dyn-item">
+                                    <div class="f-case-link partners-case w-inline-block" style="background-color: #161616; min-height: 400px; display: flex; flex-direction: column; justify-content: center; padding: 4vw;">
+                                        <div class="partners-container" style="width: 100%;">
+                                            <div class="partners-scroll-container" style="overflow: hidden; position: relative; width: 100%;">
+                                                <div class="partners-scroll-wrapper" style="display: flex; gap: 3vw; padding: 0 1vw; animation: scroll-partners 60s linear infinite; width: fit-content;">
+                                                    <!-- Partner logos -->
+                                                    <div class="partner-logo" style="flex-shrink: 0; width: 180px; height: 100px; display: flex; align-items: center; justify-content: center; padding: 0.5vw;">
+                                                        <img src="partners-logos/partner-1.png" alt="Partner 1" loading="lazy" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(100%) brightness(0.8); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%) brightness(1)'" onmouseout="this.style.filter='grayscale(100%) brightness(0.8)'" />
+                                                    </div>
+                                                    <div class="partner-logo" style="flex-shrink: 0; width: 180px; height: 100px; display: flex; align-items: center; justify-content: center; padding: 0.5vw;">
+                                                        <img src="partners-logos/partner-2.png" alt="Partner 2" loading="lazy" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(100%) brightness(0.8); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%) brightness(1)'" onmouseout="this.style.filter='grayscale(100%) brightness(0.8)'" />
+                                                    </div>
+                                                    <div class="partner-logo" style="flex-shrink: 0; width: 180px; height: 100px; display: flex; align-items: center; justify-content: center; padding: 0.5vw;">
+                                                        <img src="partners-logos/partner-3.png" alt="Partner 3" loading="lazy" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(100%) brightness(0.8); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%) brightness(1)'" onmouseout="this.style.filter='grayscale(100%) brightness(0.8)'" />
+                                                    </div>
+                                                    <div class="partner-logo" style="flex-shrink: 0; width: 180px; height: 100px; display: flex; align-items: center; justify-content: center; padding: 0.5vw;">
+                                                        <img src="partners-logos/partner-4.png" alt="Partner 4" loading="lazy" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(100%) brightness(0.8); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%) brightness(1)'" onmouseout="this.style.filter='grayscale(100%) brightness(0.8)'" />
+                                                    </div>
+                                                    <div class="partner-logo" style="flex-shrink: 0; width: 180px; height: 100px; display: flex; align-items: center; justify-content: center; padding: 0.5vw;">
+                                                        <img src="partners-logos/partner-5.png" alt="Partner 5" loading="lazy" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(100%) brightness(0.8); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%) brightness(1)'" onmouseout="this.style.filter='grayscale(100%) brightness(0.8)'" />
+                                                    </div>
+                                                    <div class="partner-logo" style="flex-shrink: 0; width: 180px; height: 100px; display: flex; align-items: center; justify-content: center; padding: 0.5vw;">
+                                                        <img src="partners-logos/partner-6.png" alt="Partner 6" loading="lazy" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(100%) brightness(0.8); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%) brightness(1)'" onmouseout="this.style.filter='grayscale(100%) brightness(0.8)'" />
+                                                    </div>
+                                                    <div class="partner-logo" style="flex-shrink: 0; width: 180px; height: 100px; display: flex; align-items: center; justify-content: center; padding: 0.5vw;">
+                                                        <img src="partners-logos/partner-7.png" alt="Partner 7" loading="lazy" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(100%) brightness(0.8); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%) brightness(1)'" onmouseout="this.style.filter='grayscale(100%) brightness(0.8)'" />
+                                                    </div>
+                                                    <div class="partner-logo" style="flex-shrink: 0; width: 180px; height: 100px; display: flex; align-items: center; justify-content: center; padding: 0.5vw;">
+                                                        <img src="partners-logos/partner-8.png" alt="Partner 8" loading="lazy" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(100%) brightness(0.8); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%) brightness(1)'" onmouseout="this.style.filter='grayscale(100%) brightness(0.8)'" />
+                                                    </div>
+                                                    <div class="partner-logo" style="flex-shrink: 0; width: 180px; height: 100px; display: flex; align-items: center; justify-content: center; padding: 0.5vw;">
+                                                        <img src="partners-logos/partner-9.png" alt="Partner 9" loading="lazy" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(100%) brightness(0.8); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%) brightness(1)'" onmouseout="this.style.filter='grayscale(100%) brightness(0.8)'" />
+                                                    </div>
+                                                    <div class="partner-logo" style="flex-shrink: 0; width: 180px; height: 100px; display: flex; align-items: center; justify-content: center; padding: 0.5vw;">
+                                                        <img src="partners-logos/partner-10.png" alt="Partner 10" loading="lazy" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(100%) brightness(0.8); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%) brightness(1)'" onmouseout="this.style.filter='grayscale(100%) brightness(0.8)'" />
+                                                    </div>
+                                                    <div class="partner-logo" style="flex-shrink: 0; width: 180px; height: 100px; display: flex; align-items: center; justify-content: center; padding: 0.5vw;">
+                                                        <img src="partners-logos/partner-11.png" alt="Partner 11" loading="lazy" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(100%) brightness(0.8); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%) brightness(1)'" onmouseout="this.style.filter='grayscale(100%) brightness(0.8)'" />
+                                                    </div>
+                                                    <div class="partner-logo" style="flex-shrink: 0; width: 180px; height: 100px; display: flex; align-items: center; justify-content: center; padding: 0.5vw;">
+                                                        <img src="partners-logos/partner-12.png" alt="Partner 12" loading="lazy" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(100%) brightness(0.8); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%) brightness(1)'" onmouseout="this.style.filter='grayscale(100%) brightness(0.8)'" />
+                                                    </div>
+                                                    <div class="partner-logo" style="flex-shrink: 0; width: 180px; height: 100px; display: flex; align-items: center; justify-content: center; padding: 0.5vw;">
+                                                        <img src="partners-logos/partner-13.png" alt="Partner 13" loading="lazy" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(100%) brightness(0.8); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%) brightness(1)'" onmouseout="this.style.filter='grayscale(100%) brightness(0.8)'" />
+                                                    </div>
+                                                    <div class="partner-logo" style="flex-shrink: 0; width: 180px; height: 100px; display: flex; align-items: center; justify-content: center; padding: 0.5vw;">
+                                                        <img src="partners-logos/partner-14.png" alt="Partner 14" loading="lazy" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(100%) brightness(0.8); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%) brightness(1)'" onmouseout="this.style.filter='grayscale(100%) brightness(0.8)'" />
+                                                    </div>
+                                                    <div class="partner-logo" style="flex-shrink: 0; width: 180px; height: 100px; display: flex; align-items: center; justify-content: center; padding: 0.5vw;">
+                                                        <img src="partners-logos/partner-15.png" alt="Partner 15" loading="lazy" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(100%) brightness(0.8); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%) brightness(1)'" onmouseout="this.style.filter='grayscale(100%) brightness(0.8)'" />
+                                                    </div>
+                                                    <div class="partner-logo" style="flex-shrink: 0; width: 180px; height: 100px; display: flex; align-items: center; justify-content: center; padding: 0.5vw;">
+                                                        <img src="partners-logos/partner-16.png" alt="Partner 16" loading="lazy" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(100%) brightness(0.8); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%) brightness(1)'" onmouseout="this.style.filter='grayscale(100%) brightness(0.8)'" />
+                                                    </div>
+                                                    <div class="partner-logo" style="flex-shrink: 0; width: 180px; height: 100px; display: flex; align-items: center; justify-content: center; padding: 0.5vw;">
+                                                        <img src="partners-logos/partner-17.png" alt="Partner 17" loading="lazy" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(100%) brightness(0.8); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%) brightness(1)'" onmouseout="this.style.filter='grayscale(100%) brightness(0.8)'" />
+                                                    </div>
+                                                    <div class="partner-logo" style="flex-shrink: 0; width: 180px; height: 100px; display: flex; align-items: center; justify-content: center; padding: 0.5vw;">
+                                                        <img src="partners-logos/partner-18.png" alt="Partner 18" loading="lazy" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(100%) brightness(0.8); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%) brightness(1)'" onmouseout="this.style.filter='grayscale(100%) brightness(0.8)'" />
+                                                    </div>
+                                                    <div class="partner-logo" style="flex-shrink: 0; width: 180px; height: 100px; display: flex; align-items: center; justify-content: center; padding: 0.5vw;">
+                                                        <img src="partners-logos/partner-19.png" alt="Partner 19" loading="lazy" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(100%) brightness(0.8); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%) brightness(1)'" onmouseout="this.style.filter='grayscale(100%) brightness(0.8)'" />
+                                                    </div>
+                                                    <div class="partner-logo" style="flex-shrink: 0; width: 180px; height: 100px; display: flex; align-items: center; justify-content: center; padding: 0.5vw;">
+                                                        <img src="partners-logos/partner-20.png" alt="Partner 20" loading="lazy" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(100%) brightness(0.8); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%) brightness(1)'" onmouseout="this.style.filter='grayscale(100%) brightness(0.8)'" />
+                                                    </div>
+                                                    <div class="partner-logo" style="flex-shrink: 0; width: 180px; height: 100px; display: flex; align-items: center; justify-content: center; padding: 0.5vw;">
+                                                        <img src="partners-logos/partner-21.png" alt="Partner 21" loading="lazy" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(100%) brightness(0.8); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%) brightness(1)'" onmouseout="this.style.filter='grayscale(100%) brightness(0.8)'" />
+                                                    </div>
+                                                    <div class="partner-logo" style="flex-shrink: 0; width: 180px; height: 100px; display: flex; align-items: center; justify-content: center; padding: 0.5vw;">
+                                                        <img src="partners-logos/partner-22.png" alt="Partner 22" loading="lazy" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(100%) brightness(0.8); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%) brightness(1)'" onmouseout="this.style.filter='grayscale(100%) brightness(0.8)'" />
+                                                    </div>
+                                                    <div class="partner-logo" style="flex-shrink: 0; width: 180px; height: 100px; display: flex; align-items: center; justify-content: center; padding: 0.5vw;">
+                                                        <img src="partners-logos/partner-23.png" alt="Partner 23" loading="lazy" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(100%) brightness(0.8); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%) brightness(1)'" onmouseout="this.style.filter='grayscale(100%) brightness(0.8)'" />
+                                                    </div>
+                                                    <div class="partner-logo" style="flex-shrink: 0; width: 180px; height: 100px; display: flex; align-items: center; justify-content: center; padding: 0.5vw;">
+                                                        <img src="partners-logos/partner-24.png" alt="Partner 24" loading="lazy" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(100%) brightness(0.8); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%) brightness(1)'" onmouseout="this.style.filter='grayscale(100%) brightness(0.8)'" />
+                                                    </div>
+                                                    <div class="partner-logo" style="flex-shrink: 0; width: 180px; height: 100px; display: flex; align-items: center; justify-content: center; padding: 0.5vw;">
+                                                        <img src="partners-logos/partner-25.png" alt="Partner 25" loading="lazy" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(100%) brightness(0.8); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%) brightness(1)'" onmouseout="this.style.filter='grayscale(100%) brightness(0.8)'" />
+                                                    </div>
+                                                    <div class="partner-logo" style="flex-shrink: 0; width: 180px; height: 100px; display: flex; align-items: center; justify-content: center; padding: 0.5vw;">
+                                                        <img src="partners-logos/partner-26.png" alt="Partner 26" loading="lazy" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(100%) brightness(0.8); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%) brightness(1)'" onmouseout="this.style.filter='grayscale(100%) brightness(0.8)'" />
+                                                    </div>
+                                                    <div class="partner-logo" style="flex-shrink: 0; width: 180px; height: 100px; display: flex; align-items: center; justify-content: center; padding: 0.5vw;">
+                                                        <img src="partners-logos/partner-27.png" alt="Partner 27" loading="lazy" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(100%) brightness(0.8); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%) brightness(1)'" onmouseout="this.style.filter='grayscale(100%) brightness(0.8)'" />
+                                                    </div>
+                                                    <div class="partner-logo" style="flex-shrink: 0; width: 180px; height: 100px; display: flex; align-items: center; justify-content: center; padding: 0.5vw;">
+                                                        <img src="partners-logos/partner-28.png" alt="Partner 28" loading="lazy" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(100%) brightness(0.8); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%) brightness(1)'" onmouseout="this.style.filter='grayscale(100%) brightness(0.8)'" />
+                                                    </div>
+                                                    <!-- Duplicate set for seamless loop -->
+                                                    <div class="partner-logo" style="flex-shrink: 0; width: 180px; height: 100px; display: flex; align-items: center; justify-content: center; padding: 0.5vw;">
+                                                        <img src="partners-logos/partner-1.png" alt="Partner 1" loading="lazy" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(100%) brightness(0.8); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%) brightness(1)'" onmouseout="this.style.filter='grayscale(100%) brightness(0.8)'" />
+                                                    </div>
+                                                    <div class="partner-logo" style="flex-shrink: 0; width: 180px; height: 100px; display: flex; align-items: center; justify-content: center; padding: 0.5vw;">
+                                                        <img src="partners-logos/partner-2.png" alt="Partner 2" loading="lazy" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(100%) brightness(0.8); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%) brightness(1)'" onmouseout="this.style.filter='grayscale(100%) brightness(0.8)'" />
+                                                    </div>
+                                                    <div class="partner-logo" style="flex-shrink: 0; width: 180px; height: 100px; display: flex; align-items: center; justify-content: center; padding: 0.5vw;">
+                                                        <img src="partners-logos/partner-3.png" alt="Partner 3" loading="lazy" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(100%) brightness(0.8); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%) brightness(1)'" onmouseout="this.style.filter='grayscale(100%) brightness(0.8)'" />
+                                                    </div>
+                                                    <div class="partner-logo" style="flex-shrink: 0; width: 180px; height: 100px; display: flex; align-items: center; justify-content: center; padding: 0.5vw;">
+                                                        <img src="partners-logos/partner-4.png" alt="Partner 4" loading="lazy" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(100%) brightness(0.8); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%) brightness(1)'" onmouseout="this.style.filter='grayscale(100%) brightness(0.8)'" />
+                                                    </div>
+                                                    <div class="partner-logo" style="flex-shrink: 0; width: 180px; height: 100px; display: flex; align-items: center; justify-content: center; padding: 0.5vw;">
+                                                        <img src="partners-logos/partner-5.png" alt="Partner 5" loading="lazy" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(100%) brightness(0.8); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%) brightness(1)'" onmouseout="this.style.filter='grayscale(100%) brightness(0.8)'" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="partners-header" style="text-align: center; margin-top: 3vw;">
+                                                <!--<h2 data-splitting="chars" class="f-case-title-text" style="font-size: 3vw; font-weight: 700; letter-spacing: -0.05em; line-height: 0.9; color: #fff; margin-bottom: 1vw;">
+                                                    Our Partners
+                                                </h2>
+                                                -->
+                                                <p style="color: #999; font-size: 1vw; font-weight: 300;">Trusted by leading organizations</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="f-grid-info-holder">
+                                        <div data-splitting="chars" class="f-case-title-text">Our Partners</div>
+                                        <div class="f-services-holder">
+                                            <div class="f-category-holder">
+                                                <div></div>
                                             </div>
                                         </div>
                                     </div>
@@ -311,7 +525,7 @@
 
                                 <div role="listitem" class="f-case-holder w-dyn-item">
                                     <div class="f-case-link w-inline-block">
-                                        <img loading="lazy" alt="some imgs" src="assets/87452.avif" class="f-case-img" />
+                                        <img loading="lazy" alt="some imgs" src="assets/87453.webp" class="f-case-img" />
                                         <div class="f-video-embed w-embed">
                                             <video autoplay="" muted="" loop="" height="auto" width="100%"
                                                 object-fit="cover" playsinline="">
@@ -361,7 +575,7 @@
                                         <div data-splitting="chars" class="f-case-title-text">Contact Us</div>
                                         <div class="f-services-holder">
                                             <div class="f-category-holder">
-                                                <div>Send us a message</div>
+                                                <div></div>
                                             </div>
                                         </div>
                                     </div>
@@ -824,6 +1038,10 @@
                 //----------------------
 
             },
+            nextPrev: () => {
+                // Placeholder function to prevent errors - can be implemented later if needed
+                // This function is called but not defined, causing potential issues
+            },
         }
 
         function resetWebflow(data) {
@@ -1124,6 +1342,76 @@
                 // Reset the form
                 $('#contact-form')[0].reset();
             });
+
+            // Language Switcher functionality
+            const langBtn = document.getElementById('lang-btn');
+            const langDropdown = document.getElementById('lang-dropdown');
+            const currentLang = document.getElementById('current-lang');
+            const langOptions = document.querySelectorAll('.lang-option');
+
+            // Toggle dropdown
+            if (langBtn && langDropdown) {
+                langBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const isVisible = langDropdown.style.display === 'block';
+                    langDropdown.style.display = isVisible ? 'none' : 'block';
+                    
+                    // Rotate arrow icon
+                    const arrow = langBtn.querySelector('svg');
+                    if (arrow) {
+                        arrow.style.transform = isVisible ? 'rotate(0deg)' : 'rotate(180deg)';
+                    }
+                });
+
+                // Close dropdown when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!langBtn.contains(e.target) && !langDropdown.contains(e.target)) {
+                        langDropdown.style.display = 'none';
+                        const arrow = langBtn.querySelector('svg');
+                        if (arrow) {
+                            arrow.style.transform = 'rotate(0deg)';
+                        }
+                    }
+                });
+
+                // Handle language selection
+                langOptions.forEach(option => {
+                    option.addEventListener('click', function() {
+                        const selectedLang = this.getAttribute('data-lang');
+                        const langText = selectedLang === 'en' ? 'EN' : 'AR';
+                        
+                        // Update current language display
+                        currentLang.textContent = langText;
+                        
+                        // Store in localStorage (for persistence)
+                        localStorage.setItem('selectedLanguage', selectedLang);
+                        
+                        // Close dropdown
+                        langDropdown.style.display = 'none';
+                        const arrow = langBtn.querySelector('svg');
+                        if (arrow) {
+                            arrow.style.transform = 'rotate(0deg)';
+                        }
+
+                        // Here you would typically trigger language change
+                        // For now, just log it (since there's no backend)
+                        console.log('Language changed to:', selectedLang);
+                        
+                        // Optional: Add visual feedback
+                        this.style.background = '#242424';
+                        setTimeout(() => {
+                            this.style.background = 'transparent';
+                        }, 200);
+                    });
+                });
+
+                // Load saved language preference
+                const savedLang = localStorage.getItem('selectedLanguage');
+                if (savedLang) {
+                    const langText = savedLang === 'en' ? 'EN' : 'AR';
+                    currentLang.textContent = langText;
+                }
+            }
         });
 
     </script>

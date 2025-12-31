@@ -2599,6 +2599,9 @@ p {
     justify-content: space-between
 }
 
+.social-icon-block {
+    margin-bottom: 0.5rem;
+}
 
 /* Contact Form Styles */
 .contact-form-container {
@@ -3156,7 +3159,7 @@ p {
     align-items: flex-start;
     width: 40%;
     display: flex;
-    position: relative
+    position: relative;
 }
 
 .client-description-rich-text {

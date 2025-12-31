@@ -221,7 +221,7 @@
         }
 
         .menu {
-            mix-blend-mode: difference;
+            mix-blend-mode: difference; /* change this after islam send white logo*/
             pointer-events: none;
         }
 
@@ -231,6 +231,18 @@
 
         .menu-link {
             pointer-events: auto;
+        }
+
+        /* Exclude logo from mix-blend-mode color manipulation */
+        .logo-wrapper {
+            isolation: isolate;
+            mix-blend-mode: normal;
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo-wrapper.logo {
+            mix-blend-mode: normal;
         }
 
         /****** CURSOR CSS START ****/
@@ -721,6 +733,9 @@
     <div class="menu">
         <div class="menu-link-holder">
             <a href="/" class="menu-logo w-inline-block">
+                <div class="logo-wrapper">
+                    <img src="assets/main-logo.png" loading="lazy" alt="Falcon Codes Logo" class="logo" />
+                </div>
                 <div class="bb-logo-embed in-mneu w-embed">
                     <!--<img src="assets/logo.svg" loading="lazy" alt="" class="logo" />-->
                 </div>
@@ -728,6 +743,9 @@
             <div class="menu-links-holder main">
                 <a href="/services" class="menu-link w-inline-block">
                     <div>Services <sup class="superscript"></sup></div>
+                </a>
+                <a href="/about-us" class="menu-link w-inline-block">
+                    <div>About Us</div>
                 </a>
                 <a href="/profile" class="menu-link w-inline-block">
                     <div>Profile</div>
@@ -740,8 +758,22 @@
                 </a>
             </div>
             <div class="menu-links-holder">
+                <div class="language-switcher" style="display: flex; align-items: center; gap: 0.5rem; margin-right: 2vw; position: relative;">
+                    <button id="lang-btn" class="menu-link language-btn" style="cursor: pointer; background: none; border: none; padding: 0; color: #fff; font-size: 1.3vw; font-weight: 400; display: flex; align-items: center; gap: 0.5rem;">
+                        <span id="current-lang">EN</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transition: transform 0.3s ease;">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div id="lang-dropdown" class="lang-dropdown" style="display: none; position: absolute; top: 100%; right: 0; margin-top: 0.5rem; background: #161616; border: 1px solid #242424; min-width: 120px; z-index: 1000; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);">
+                        <button class="lang-option" data-lang="en" style="width: 100%; padding: 0.75rem 1rem; background: none; border: none; color: #fff; text-align: left; cursor: pointer; font-size: 1.1vw; transition: background 0.2s;" onmouseover="this.style.background='#242424'" onmouseout="this.style.background='transparent'">English</button>
+                        <button class="lang-option" data-lang="ar" style="width: 100%; padding: 0.75rem 1rem; background: none; border: none; color: #fff; text-align: left; cursor: pointer; font-size: 1.1vw; transition: background 0.2s; border-top: 1px solid #242424;" onmouseover="this.style.background='#242424'" onmouseout="this.style.background='transparent'">العربية</button>
+                    </div>
+                </div>
+                <a href="tel:+201080303330" class="menu-link right" style="margin-right: 2vw;">
+                    <p class="clock">+20 10 80303330</p>
+                </a>
                 <div href="#" class="menu-link right">
-                    <div class="cph-time-text">Time</div>
                     <p timezone="+1" class="clock">12<span class="clockdots">:</span>00</p>
                 </div>
             </div>
@@ -828,7 +860,7 @@
                 <div class="work-info-holder">
                     <div class="case-header-holder loaded">
                         <div class="image-with-text-overlay">
-                            <img src="assets/test/test-big.jpg" loading="lazy" alt="some_image" sizes="100vw" class="case-header-img" />
+                            <img src="assets/test/pos-big.jpg" loading="lazy" alt="some_image" sizes="100vw" class="case-header-img" />
                             <!--<p class="image-overlay-text">Smart Solutions</p>-->
                         </div>
                     </div>
@@ -1497,7 +1529,7 @@
                     .case-header-holder {
                         position: relative;
                         width: 100%;
-                        height: calc(100dvh - 7vw);
+                        height: calc(100dvh - 8vw);
                     }
 
                     /* WORK PAGE CSS END */
@@ -1803,7 +1835,7 @@
                         .case-header-holder {
                             position: relative;
                             width: 100%;
-                            height: calc(100svh - 20vw);
+                            height: calc(100svh - 165vw);
                         }
 
                         .case-header-holder.loaded {
@@ -2452,9 +2484,7 @@
             $("body").css("overflow", "auto");
             base.hoverStates();
             base.lazyLoadVid();
-            setTimeout(function () {
-                base.swiperInitAbout();
-            }, 1000);
+            // Removed base.swiperInitAbout() call - was adding unwanted services content after footer
         });
 
     </script>
@@ -2542,6 +2572,75 @@
                 $('.cursor').removeClass('case-hover');
             });
 
+            // Language Switcher functionality
+            const langBtn = document.getElementById('lang-btn');
+            const langDropdown = document.getElementById('lang-dropdown');
+            const currentLang = document.getElementById('current-lang');
+            const langOptions = document.querySelectorAll('.lang-option');
+
+            // Toggle dropdown
+            if (langBtn && langDropdown) {
+                langBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const isVisible = langDropdown.style.display === 'block';
+                    langDropdown.style.display = isVisible ? 'none' : 'block';
+                    
+                    // Rotate arrow icon
+                    const arrow = langBtn.querySelector('svg');
+                    if (arrow) {
+                        arrow.style.transform = isVisible ? 'rotate(0deg)' : 'rotate(180deg)';
+                    }
+                });
+
+                // Close dropdown when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!langBtn.contains(e.target) && !langDropdown.contains(e.target)) {
+                        langDropdown.style.display = 'none';
+                        const arrow = langBtn.querySelector('svg');
+                        if (arrow) {
+                            arrow.style.transform = 'rotate(0deg)';
+                        }
+                    }
+                });
+
+                // Handle language selection
+                langOptions.forEach(option => {
+                    option.addEventListener('click', function() {
+                        const selectedLang = this.getAttribute('data-lang');
+                        const langText = selectedLang === 'en' ? 'EN' : 'AR';
+                        
+                        // Update current language display
+                        currentLang.textContent = langText;
+                        
+                        // Store in localStorage (for persistence)
+                        localStorage.setItem('selectedLanguage', selectedLang);
+                        
+                        // Close dropdown
+                        langDropdown.style.display = 'none';
+                        const arrow = langBtn.querySelector('svg');
+                        if (arrow) {
+                            arrow.style.transform = 'rotate(0deg)';
+                        }
+
+                        // Here you would typically trigger language change
+                        // For now, just log it (since there's no backend)
+                        console.log('Language changed to:', selectedLang);
+                        
+                        // Optional: Add visual feedback
+                        this.style.background = '#242424';
+                        setTimeout(() => {
+                            this.style.background = 'transparent';
+                        }, 200);
+                    });
+                });
+
+                // Load saved language preference
+                const savedLang = localStorage.getItem('selectedLanguage');
+                if (savedLang) {
+                    const langText = savedLang === 'en' ? 'EN' : 'AR';
+                    currentLang.textContent = langText;
+                }
+            }
         });
 
     </script>

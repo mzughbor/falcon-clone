@@ -367,3 +367,49 @@ p.clock span {
 .f-social {
     margin-top: 1.5vw;
 }
+
+/* Fix sticky positioning - ensure parent containers don't interfere */
+/* CRITICAL: f-sticky-holder must expand based on content, not be constrained to 100% */
+/* The height: 100% in base CSS constrains it - we need it to expand naturally */
+.f-sticky-holder {
+    /* Override height: 100% to allow natural expansion based on f-cases-holder content */
+    height: auto !important;
+    /* Ensure minimum height for sticky to work */
+    min-height: 100vh;
+}
+
+/* Ensure content and con-inner don't have overflow that breaks sticky */
+.content {
+    overflow: visible !important;
+}
+
+.con-inner {
+    overflow: visible !important;
+}
+
+/* CRITICAL FIX: Make f-header-holder stick like the menu does */
+/* Menu uses: position: fixed; top: 0; z-index: 925 - always visible at top */
+/* f-header-holder uses: position: sticky; top: 0 - sticks to top when scrolling */
+/* Only f-header-holder should be sticky, not its children */
+.f-header-holder {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 2 !important; /* Lower than menu (925) but above content */
+    /* Ensure the negative margin works correctly - this makes header not take up space */
+    margin-bottom: -100vh !important;
+    /* Ensure it sticks consistently like menu - always visible at top when scrolling */
+}
+
+/* f-logo-holder is a normal child - it moves with f-header-holder */
+/* Don't make it sticky - that would cause conflicts */
+.f-header-holder .f-logo-holder {
+    position: relative !important; /* Normal positioning, moves with parent */
+}
+
+/* CRITICAL: When .con has .fixed class (during Barba transitions), 
+   sticky won't work because fixed creates new stacking context.
+   But this is temporary (500ms), so sticky will work after transition */
+.con.fixed .f-sticky-holder {
+    height: auto !important;
+    overflow: visible !important;
+}

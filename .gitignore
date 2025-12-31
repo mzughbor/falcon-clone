@@ -1,4 +1,6 @@
-/videos
-.mp4
-.mp3
+# Ignore all video files
+*.mp4
+*.mp3
 
+# But include this specific video file
+!videos/0_4444_Prores_720x720.mp4
