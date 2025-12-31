@@ -1100,6 +1100,12 @@
                                         $('a').removeClass("no-touchy")
                                         $('.cursor').removeClass("waiting-state")
                                         $(window).scrollTop(0);
+                                        
+                                        // Force reflow to restore sticky positioning after .fixed is removed
+                                        // This ensures sticky elements recalculate their position
+                                        if (document.querySelector('.f-header-holder')) {
+                                            document.querySelector('.f-header-holder').offsetHeight;
+                                        }
                                     }, 500)
 
                                     resetWebflow(transitionData);
@@ -1153,6 +1159,12 @@
                                         $('.cursor').removeClass("waiting-state")
                                         base.nextPrev();
                                         $(window).scrollTop(0);
+                                        
+                                        // Force reflow to restore sticky positioning after .fixed is removed
+                                        // This ensures sticky elements recalculate their position
+                                        if (document.querySelector('.f-header-holder')) {
+                                            document.querySelector('.f-header-holder').offsetHeight;
+                                        }
                                     }, 500)
 
                                     resetWebflow(transitionData);
@@ -1222,6 +1234,18 @@
             $("body").css("overflow", "auto");
             base.hoverStates();
             base.lazyLoadVid();
+            
+            // Force reflow to restore sticky positioning after page transition
+            // This ensures sticky elements recalculate their position after Barba.js transition
+            setTimeout(function() {
+                if (document.querySelector('.f-header-holder')) {
+                    document.querySelector('.f-header-holder').offsetHeight;
+                }
+                if (document.querySelector('.f-logo-holder')) {
+                    document.querySelector('.f-logo-holder').offsetHeight;
+                }
+            }, 600); // After .fixed is removed (500ms + 100ms buffer)
+            
             setTimeout(function () {
                 base.swiperInitAbout();
             }, 1000);
