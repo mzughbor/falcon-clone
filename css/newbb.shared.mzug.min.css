@@ -2319,7 +2319,8 @@ p {
     width: 100%;
     position: relative;
     background: #035297;
-    background: radial-gradient(circle, rgba(3, 82, 151, 1) 0%, rgba(1, 7, 12, 1) 100%);
+    /*background: radial-gradient(circle, rgba(3, 82, 151, 1) 0%, rgba(1, 7, 12, 1) 100%);*/
+    background: radial-gradient(circle,rgba(3, 82, 151, 1) 0%, rgba(8, 34, 59, 1) 100%);
 }
 
 .content.beta {
@@ -2466,7 +2467,8 @@ p {
     justify-content: flex-start;
     align-items: center;
     width: 100%;
-    margin-top: 1.25vw;
+    padding-top: 1.25vw;
+    padding-bottom: 1.25vw;
     padding-left: 1vw;
     padding-right: 1vw;
     display: flex;
@@ -2759,7 +2761,9 @@ p {
     z-index: 10;
     margin-top: 1vw;
     position: sticky;
-    left: 0
+    left: 0;
+    margin-left: 1.25vw;
+    margin-right: 1.25vw;
 }
 
 .f-case-title-text {
@@ -3614,7 +3618,9 @@ p {
     padding-left: 0;
     display: flex;
     position: relative;
-    bottom: 0
+    bottom: 0;
+    padding-left: 1.25vw;
+    padding-right: 1.25vw;
 }
 
 .arr-text-2 {

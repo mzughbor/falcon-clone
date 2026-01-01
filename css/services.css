@@ -321,6 +321,41 @@ body {
     transform: rotate(90deg) translate3d(0, calc(-100vh + 0px), 0);
 }
 
+/* Sticky Header for Service Sections - positioned outside rotated container */
+.service-section-header.sticky-header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background-color: transparent;
+    pointer-events: none;
+    padding: 2vw 1vw 1vw;
+    /* Since it's outside the rotated container, normal sticky positioning works */
+}
+
+.service-section-header.sticky-header h2 {
+    pointer-events: auto;
+}
+
+/* Section header positioning */
+.section-1-header,
+.section-2-header,
+.section-3-header,
+.section-4-header {
+    /* Position at top of content area */
+    top: 0;
+}
+
+.service-section-wrapper {
+    position: relative;
+}
+
+.service-scrollable-content {
+    /* This container holds the scrollable content */
+    position: relative;
+}
+
 /* Fix for tablets between 768px and 980px - disable horizontal scroll transform */
 @media screen and (min-width: 768px) and (max-width: 980px) {
     .con.hori {
@@ -667,7 +702,7 @@ body > .footer {
 
 /* Partners case container */
 .partners-case {
-    background-color: #161616 !important;
+    background-color: #14565f;
     min-height: 400px !important;
     display: flex !important;
     flex-direction: column !important;
@@ -717,13 +752,15 @@ body > .footer {
     max-width: 100% !important;
     max-height: 100% !important;
     object-fit: contain !important;
-    filter: grayscale(100%) brightness(0.8) !important;
-    transition: filter 0.3s ease !important;
+    filter: none !important; /* Remove grayscale - show colors */
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important; /* Smooth scale transition */
+    transform: scale(1) !important; /* Default scale */
 }
 
-/* Partner logo hover effect */
+/* Partner logo hover effect - smooth scale up */
 .partner-logo:hover img {
-    filter: grayscale(0%) brightness(1) !important;
+    transform: scale(1.15) !important; /* Smoothly scale up to 115% on hover */
+    filter: none !important; /* Keep colors */
 }
 
 /* Partners header */
@@ -734,7 +771,7 @@ body > .footer {
 
 /* Partners header paragraph */
 .partners-header p {
-    color: #999 !important;
+    color: #f1f1f1 !important;
     font-size: 1vw !important;
     font-weight: 300 !important;
 }
