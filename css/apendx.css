@@ -364,8 +364,97 @@ p.clock span {
     text-decoration: none;
 }
 
+/* Default: Vertical layout for bigger screens (like original) */
 .f-social {
     margin-top: 1.5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0rem;
+}
+
+/* Social icon blocks as block elements for vertical layout */
+.social-icon-block {
+    display: block;
+    margin: -1rem 0;
+}
+
+.social-icon-block svg {
+    display: block;
+    width: 30px;
+    height: 30px;
+}
+
+/* Responsive adjustments for laptop screens (around 1366px width) - switch to horizontal */
+@media screen and (max-width: 1600px) and (min-width: 1200px) {
+    .f-social {
+        margin-top: 1vw;
+        flex-direction: row;
+        align-items: center;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+    }
+    
+    .social-icon-block {
+        display: inline-block !important;
+        vertical-align: middle;
+    }
+    
+    .social-icon-block svg {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+/* Smaller laptop screens (1366px and below) - horizontal layout */
+@media screen and (max-width: 1366px) {
+    .f-social {
+        margin-top: 0.8vw;
+        flex-direction: row;
+        align-items: center;
+        gap: 0.6rem;
+        flex-wrap: wrap;
+    }
+    
+    .social-icon-block {
+        display: inline-block !important;
+        vertical-align: middle;
+    }
+    
+    .social-icon-block svg {
+        width: 24px;
+        height: 24px;
+    }
+    
+    /* Ensure intro text doesn't overlap with social icons */
+    .f-logo-holder {
+        padding-bottom: 0.5vw !important;
+    }
+    
+    .f-intro-text-holder {
+        padding-top: 1vw !important;
+    }
+}
+
+/* Very small screens - horizontal layout */
+@media screen and (max-width: 1024px) {
+    .f-social {
+        margin-top: 0.5vw;
+        flex-direction: row;
+        align-items: center;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+    }
+    
+    .social-icon-block {
+        display: inline-block !important;
+        vertical-align: middle;
+    }
+    
+    .social-icon-block svg {
+        width: 20px;
+        height: 20px;
+    }
 }
 
 /* Fix sticky positioning - ensure parent containers don't interfere */
@@ -470,4 +559,69 @@ p.clock span {
 /* Ensure body/html can scroll properly after transitions */
 body:not(.no-scroll) {
     overflow: auto !important;
+}
+
+/* Mobile screens (less than 480px) - disable all sticky/fixed positioning */
+@media screen and (max-width: 479px) {
+    /* Disable fixed positioning for logo holder on mobile */
+    .f-logo-holder,
+    .con:not(.fixed) .f-logo-holder,
+    .con.fixed .f-logo-holder {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        width: auto !important;
+        margin-top: 0 !important;
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+        padding-bottom: 1rem !important;
+    }
+    
+    /* Disable fixed positioning for intro text holder on mobile */
+    .f-intro-text-holder,
+    .con:not(.fixed) .f-intro-text-holder,
+    .con.fixed .f-intro-text-holder {
+        position: relative !important;
+        bottom: auto !important;
+        left: auto !important;
+        width: 100% !important;
+        padding-bottom: 1rem !important;
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+        padding-top: 1rem !important;
+        font-size: 1.2rem !important;
+        margin-top: 1rem !important;
+    }
+    
+    /* Disable sticky positioning for header holder on mobile */
+    .f-header-holder,
+    .con:not(.fixed) .f-header-holder {
+        position: relative !important;
+        top: auto !important;
+        margin-bottom: 0 !important;
+    }
+    
+    /* Reset sticky holder for mobile */
+    .f-sticky-holder {
+        min-height: auto !important;
+        height: auto !important;
+    }
+    
+    /* Adjust social icons for mobile */
+    .f-social {
+        margin-top: 1rem !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 0.75rem !important;
+        justify-content: flex-start !important;
+    }
+    
+    .social-icon-block {
+        display: inline-block !important;
+    }
+    
+    .social-icon-block svg {
+        width: 24px !important;
+        height: 24px !important;
+    }
 }

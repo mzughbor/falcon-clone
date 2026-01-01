@@ -31,37 +31,6 @@
     <link rel="stylesheet" href="css/cursor.css" />
     <link rel="stylesheet" href="css/apendx.css" />
     <link rel="stylesheet" href="css/services.css" />
-    <style>
-        @keyframes scroll-partners {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(calc(-50% - 1.5vw));
-            }
-        }
-        .partners-scroll-wrapper:hover {
-            animation-play-state: paused;
-        }
-        .partners-scroll-container::-webkit-scrollbar {
-            display: none;
-        }
-        .partners-scroll-container {
-            scrollbar-width: none;
-        }
-        @media (max-width: 991px) {
-            .partners-case .partners-header h2 {
-                font-size: 5vw !important;
-            }
-            .partners-case .partners-header p {
-                font-size: 2.5vw !important;
-            }
-            .partners-case .partner-logo {
-                width: 120px !important;
-                height: 70px !important;
-            }
-        }
-    </style>
 </head>
 
 <body data-barba="wrapper" class="body">
@@ -114,6 +83,52 @@
                     <p timezone="+1" class="clock">12<span class="clockdots">:</span>00</p>
                 </div>
             </div>
+            <!-- Hamburger Menu Button -->
+            <button class="hamburger-menu-btn" id="hamburger-menu-btn" aria-label="Toggle menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </div>
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobile-menu-overlay">
+        <div class="mobile-menu-content">
+            <div class="mobile-menu-header">
+                <a href="/" class="mobile-menu-logo">
+                    <img src="assets/falconcodes-logo-white-1.png" loading="lazy" alt="" class="mobile-logo-img" />
+                </a>
+                <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Close menu">
+                    <span class="close-line"></span>
+                    <span class="close-line"></span>
+                </button>
+            </div>
+            <nav class="mobile-menu-nav">
+                <a href="/services" class="mobile-menu-link">Services</a>
+                <a href="/about-us" class="mobile-menu-link">About Us</a>
+                <a href="/profile" class="mobile-menu-link">Profile</a>
+                <a href="/contact" class="mobile-menu-link">Contact</a>
+            </nav>
+            <div class="mobile-menu-footer">
+                <div class="mobile-menu-contact">
+                    <a href="tel:+201080303330" class="mobile-menu-phone">+20 10 80303330</a>
+                    <div class="mobile-menu-time">
+                        <p timezone="+1" class="clock">12<span class="clockdots">:</span>00</p>
+                    </div>
+                </div>
+                <div class="mobile-menu-lang">
+                    <button id="mobile-lang-btn" class="mobile-lang-btn">
+                        <span id="mobile-current-lang">EN</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div id="mobile-lang-dropdown" class="mobile-lang-dropdown" style="display: none;">
+                        <button class="mobile-lang-option" data-lang="en">English</button>
+                        <button class="mobile-lang-option" data-lang="ar">العربية</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <div class="cursor">
@@ -153,8 +168,8 @@
                                 <span class="text-span-2">fɒlkən/<em>adjective.</em>
                                 </span>Falcons are birds of prey in the genus Falco.
                             </div>
-                            <div class="f-social flex gap-4" style="flex-direction: column; align-items: flex-start; gap: 1.5rem;">
-                                <div class="social-icon-block">
+                            <div class="f-social">
+                                <span class="social-icon-block">
                                     <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"
                                         aria-label="Facebook"
                                         class="text-foreground hover:text-brand-emerald transition-colors duration-300">
@@ -165,8 +180,8 @@
                                             </path>
                                         </svg>
                                     </a>
-                                </div>
-                                <div class="social-icon-block">
+                                </span>
+                                <span class="social-icon-block">
                                     <a href="https://www.twitter.com/" target="_blank" rel="noopener noreferrer"
                                         aria-label="Twitter"
                                         class="text-foreground hover:text-brand-emerald transition-colors duration-300">
@@ -178,8 +193,8 @@
                                             </path>
                                         </svg>
                                     </a>
-                                </div>
-                                <div class="social-icon-block">
+                                </span>
+                                <span class="social-icon-block">
                                     <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"
                                         aria-label="Instagram"
                                         class="text-foreground hover:text-brand-emerald transition-colors duration-300">
@@ -191,8 +206,8 @@
                                             <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
                                         </svg>
                                     </a>
-                                </div>
-                                <div class="social-icon-block">
+                                </span>
+                                <span class="social-icon-block">
                                     <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer"
                                         aria-label="LinkedIn"
                                         class="text-foreground hover:text-brand-emerald transition-colors duration-300">
@@ -204,7 +219,7 @@
                                             <circle cx="4" cy="4" r="2"></circle>
                                         </svg>
                                     </a>
-                                </div>
+                                </span>
                             </div>
                         </div>
 
@@ -397,119 +412,116 @@
                                 </div>
 
                                 <div role="listitem" class="f-case-holder w-dyn-item">
-                                    <div class="f-case-link partners-case w-inline-block" style="background-color: #161616; min-height: 400px; display: flex; flex-direction: column; justify-content: center; padding: 4vw;">
-                                        <div class="partners-container" style="width: 100%;">
-                                            <div class="partners-scroll-container" style="overflow: hidden; position: relative; width: 100%;">
-                                                <div class="partners-scroll-wrapper" style="display: flex; gap: 3vw; padding: 0 1vw; animation: scroll-partners 60s linear infinite; width: fit-content;">
+                                    <div class="f-case-link partners-case w-inline-block">
+                                        <div class="partners-container">
+                                            <div class="partners-scroll-container">
+                                                <div class="partners-scroll-wrapper">
                                                     <!-- Partner logos -->
-                                                    <div class="partner-logo" style="flex-shrink: 0; width: 180px; height: 100px; display: flex; align-items: center; justify-content: center; padding: 0.5vw;">
-                                                        <img src="partners-logos/partner-1.png" alt="Partner 1" loading="lazy" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(100%) brightness(0.8); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%) brightness(1)'" onmouseout="this.style.filter='grayscale(100%) brightness(0.8)'" />
+                                                    <div class="partner-logo">
+                                                        <img src="partners-logos/partner-1.png" alt="Partner 1" loading="lazy" />
                                                     </div>
-                                                    <div class="partner-logo" style="flex-shrink: 0; width: 180px; height: 100px; display: flex; align-items: center; justify-content: center; padding: 0.5vw;">
-                                                        <img src="partners-logos/partner-2.png" alt="Partner 2" loading="lazy" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(100%) brightness(0.8); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%) brightness(1)'" onmouseout="this.style.filter='grayscale(100%) brightness(0.8)'" />
+                                                    <div class="partner-logo">
+                                                        <img src="partners-logos/partner-2.png" alt="Partner 2" loading="lazy" />
                                                     </div>
-                                                    <div class="partner-logo" style="flex-shrink: 0; width: 180px; height: 100px; display: flex; align-items: center; justify-content: center; padding: 0.5vw;">
-                                                        <img src="partners-logos/partner-3.png" alt="Partner 3" loading="lazy" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(100%) brightness(0.8); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%) brightness(1)'" onmouseout="this.style.filter='grayscale(100%) brightness(0.8)'" />
+                                                    <div class="partner-logo">
+                                                        <img src="partners-logos/partner-3.png" alt="Partner 3" loading="lazy" />
                                                     </div>
-                                                    <div class="partner-logo" style="flex-shrink: 0; width: 180px; height: 100px; display: flex; align-items: center; justify-content: center; padding: 0.5vw;">
-                                                        <img src="partners-logos/partner-4.png" alt="Partner 4" loading="lazy" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(100%) brightness(0.8); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%) brightness(1)'" onmouseout="this.style.filter='grayscale(100%) brightness(0.8)'" />
+                                                    <div class="partner-logo">
+                                                        <img src="partners-logos/partner-4.png" alt="Partner 4" loading="lazy" />
                                                     </div>
-                                                    <div class="partner-logo" style="flex-shrink: 0; width: 180px; height: 100px; display: flex; align-items: center; justify-content: center; padding: 0.5vw;">
-                                                        <img src="partners-logos/partner-5.png" alt="Partner 5" loading="lazy" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(100%) brightness(0.8); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%) brightness(1)'" onmouseout="this.style.filter='grayscale(100%) brightness(0.8)'" />
+                                                    <div class="partner-logo">
+                                                        <img src="partners-logos/partner-5.png" alt="Partner 5" loading="lazy" />
                                                     </div>
-                                                    <div class="partner-logo" style="flex-shrink: 0; width: 180px; height: 100px; display: flex; align-items: center; justify-content: center; padding: 0.5vw;">
-                                                        <img src="partners-logos/partner-6.png" alt="Partner 6" loading="lazy" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(100%) brightness(0.8); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%) brightness(1)'" onmouseout="this.style.filter='grayscale(100%) brightness(0.8)'" />
+                                                    <div class="partner-logo">
+                                                        <img src="partners-logos/partner-6.png" alt="Partner 6" loading="lazy" />
                                                     </div>
-                                                    <div class="partner-logo" style="flex-shrink: 0; width: 180px; height: 100px; display: flex; align-items: center; justify-content: center; padding: 0.5vw;">
-                                                        <img src="partners-logos/partner-7.png" alt="Partner 7" loading="lazy" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(100%) brightness(0.8); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%) brightness(1)'" onmouseout="this.style.filter='grayscale(100%) brightness(0.8)'" />
+                                                    <div class="partner-logo">
+                                                        <img src="partners-logos/partner-7.png" alt="Partner 7" loading="lazy" />
                                                     </div>
-                                                    <div class="partner-logo" style="flex-shrink: 0; width: 180px; height: 100px; display: flex; align-items: center; justify-content: center; padding: 0.5vw;">
-                                                        <img src="partners-logos/partner-8.png" alt="Partner 8" loading="lazy" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(100%) brightness(0.8); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%) brightness(1)'" onmouseout="this.style.filter='grayscale(100%) brightness(0.8)'" />
+                                                    <div class="partner-logo">
+                                                        <img src="partners-logos/partner-8.png" alt="Partner 8" loading="lazy" />
                                                     </div>
-                                                    <div class="partner-logo" style="flex-shrink: 0; width: 180px; height: 100px; display: flex; align-items: center; justify-content: center; padding: 0.5vw;">
-                                                        <img src="partners-logos/partner-9.png" alt="Partner 9" loading="lazy" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(100%) brightness(0.8); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%) brightness(1)'" onmouseout="this.style.filter='grayscale(100%) brightness(0.8)'" />
+                                                    <div class="partner-logo">
+                                                        <img src="partners-logos/partner-9.png" alt="Partner 9" loading="lazy" />
                                                     </div>
-                                                    <div class="partner-logo" style="flex-shrink: 0; width: 180px; height: 100px; display: flex; align-items: center; justify-content: center; padding: 0.5vw;">
-                                                        <img src="partners-logos/partner-10.png" alt="Partner 10" loading="lazy" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(100%) brightness(0.8); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%) brightness(1)'" onmouseout="this.style.filter='grayscale(100%) brightness(0.8)'" />
+                                                    <div class="partner-logo">
+                                                        <img src="partners-logos/partner-10.png" alt="Partner 10" loading="lazy" />
                                                     </div>
-                                                    <div class="partner-logo" style="flex-shrink: 0; width: 180px; height: 100px; display: flex; align-items: center; justify-content: center; padding: 0.5vw;">
-                                                        <img src="partners-logos/partner-11.png" alt="Partner 11" loading="lazy" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(100%) brightness(0.8); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%) brightness(1)'" onmouseout="this.style.filter='grayscale(100%) brightness(0.8)'" />
+                                                    <div class="partner-logo">
+                                                        <img src="partners-logos/partner-11.png" alt="Partner 11" loading="lazy" />
                                                     </div>
-                                                    <div class="partner-logo" style="flex-shrink: 0; width: 180px; height: 100px; display: flex; align-items: center; justify-content: center; padding: 0.5vw;">
-                                                        <img src="partners-logos/partner-12.png" alt="Partner 12" loading="lazy" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(100%) brightness(0.8); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%) brightness(1)'" onmouseout="this.style.filter='grayscale(100%) brightness(0.8)'" />
+                                                    <div class="partner-logo">
+                                                        <img src="partners-logos/partner-12.png" alt="Partner 12" loading="lazy" />
                                                     </div>
-                                                    <div class="partner-logo" style="flex-shrink: 0; width: 180px; height: 100px; display: flex; align-items: center; justify-content: center; padding: 0.5vw;">
-                                                        <img src="partners-logos/partner-13.png" alt="Partner 13" loading="lazy" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(100%) brightness(0.8); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%) brightness(1)'" onmouseout="this.style.filter='grayscale(100%) brightness(0.8)'" />
+                                                    <div class="partner-logo">
+                                                        <img src="partners-logos/partner-13.png" alt="Partner 13" loading="lazy" />
                                                     </div>
-                                                    <div class="partner-logo" style="flex-shrink: 0; width: 180px; height: 100px; display: flex; align-items: center; justify-content: center; padding: 0.5vw;">
-                                                        <img src="partners-logos/partner-14.png" alt="Partner 14" loading="lazy" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(100%) brightness(0.8); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%) brightness(1)'" onmouseout="this.style.filter='grayscale(100%) brightness(0.8)'" />
+                                                    <div class="partner-logo">
+                                                        <img src="partners-logos/partner-14.png" alt="Partner 14" loading="lazy" />
                                                     </div>
-                                                    <div class="partner-logo" style="flex-shrink: 0; width: 180px; height: 100px; display: flex; align-items: center; justify-content: center; padding: 0.5vw;">
-                                                        <img src="partners-logos/partner-15.png" alt="Partner 15" loading="lazy" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(100%) brightness(0.8); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%) brightness(1)'" onmouseout="this.style.filter='grayscale(100%) brightness(0.8)'" />
+                                                    <div class="partner-logo">
+                                                        <img src="partners-logos/partner-15.png" alt="Partner 15" loading="lazy" />
                                                     </div>
-                                                    <div class="partner-logo" style="flex-shrink: 0; width: 180px; height: 100px; display: flex; align-items: center; justify-content: center; padding: 0.5vw;">
-                                                        <img src="partners-logos/partner-16.png" alt="Partner 16" loading="lazy" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(100%) brightness(0.8); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%) brightness(1)'" onmouseout="this.style.filter='grayscale(100%) brightness(0.8)'" />
+                                                    <div class="partner-logo">
+                                                        <img src="partners-logos/partner-16.png" alt="Partner 16" loading="lazy" />
                                                     </div>
-                                                    <div class="partner-logo" style="flex-shrink: 0; width: 180px; height: 100px; display: flex; align-items: center; justify-content: center; padding: 0.5vw;">
-                                                        <img src="partners-logos/partner-17.png" alt="Partner 17" loading="lazy" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(100%) brightness(0.8); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%) brightness(1)'" onmouseout="this.style.filter='grayscale(100%) brightness(0.8)'" />
+                                                    <div class="partner-logo">
+                                                        <img src="partners-logos/partner-17.png" alt="Partner 17" loading="lazy" />
                                                     </div>
-                                                    <div class="partner-logo" style="flex-shrink: 0; width: 180px; height: 100px; display: flex; align-items: center; justify-content: center; padding: 0.5vw;">
-                                                        <img src="partners-logos/partner-18.png" alt="Partner 18" loading="lazy" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(100%) brightness(0.8); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%) brightness(1)'" onmouseout="this.style.filter='grayscale(100%) brightness(0.8)'" />
+                                                    <div class="partner-logo">
+                                                        <img src="partners-logos/partner-18.png" alt="Partner 18" loading="lazy" />
                                                     </div>
-                                                    <div class="partner-logo" style="flex-shrink: 0; width: 180px; height: 100px; display: flex; align-items: center; justify-content: center; padding: 0.5vw;">
-                                                        <img src="partners-logos/partner-19.png" alt="Partner 19" loading="lazy" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(100%) brightness(0.8); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%) brightness(1)'" onmouseout="this.style.filter='grayscale(100%) brightness(0.8)'" />
+                                                    <div class="partner-logo">
+                                                        <img src="partners-logos/partner-19.png" alt="Partner 19" loading="lazy" />
                                                     </div>
-                                                    <div class="partner-logo" style="flex-shrink: 0; width: 180px; height: 100px; display: flex; align-items: center; justify-content: center; padding: 0.5vw;">
-                                                        <img src="partners-logos/partner-20.png" alt="Partner 20" loading="lazy" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(100%) brightness(0.8); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%) brightness(1)'" onmouseout="this.style.filter='grayscale(100%) brightness(0.8)'" />
+                                                    <div class="partner-logo">
+                                                        <img src="partners-logos/partner-20.png" alt="Partner 20" loading="lazy" />
                                                     </div>
-                                                    <div class="partner-logo" style="flex-shrink: 0; width: 180px; height: 100px; display: flex; align-items: center; justify-content: center; padding: 0.5vw;">
-                                                        <img src="partners-logos/partner-21.png" alt="Partner 21" loading="lazy" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(100%) brightness(0.8); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%) brightness(1)'" onmouseout="this.style.filter='grayscale(100%) brightness(0.8)'" />
+                                                    <div class="partner-logo">
+                                                        <img src="partners-logos/partner-21.png" alt="Partner 21" loading="lazy" />
                                                     </div>
-                                                    <div class="partner-logo" style="flex-shrink: 0; width: 180px; height: 100px; display: flex; align-items: center; justify-content: center; padding: 0.5vw;">
-                                                        <img src="partners-logos/partner-22.png" alt="Partner 22" loading="lazy" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(100%) brightness(0.8); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%) brightness(1)'" onmouseout="this.style.filter='grayscale(100%) brightness(0.8)'" />
+                                                    <div class="partner-logo">
+                                                        <img src="partners-logos/partner-22.png" alt="Partner 22" loading="lazy" />
                                                     </div>
-                                                    <div class="partner-logo" style="flex-shrink: 0; width: 180px; height: 100px; display: flex; align-items: center; justify-content: center; padding: 0.5vw;">
-                                                        <img src="partners-logos/partner-23.png" alt="Partner 23" loading="lazy" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(100%) brightness(0.8); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%) brightness(1)'" onmouseout="this.style.filter='grayscale(100%) brightness(0.8)'" />
+                                                    <div class="partner-logo">
+                                                        <img src="partners-logos/partner-23.png" alt="Partner 23" loading="lazy" />
                                                     </div>
-                                                    <div class="partner-logo" style="flex-shrink: 0; width: 180px; height: 100px; display: flex; align-items: center; justify-content: center; padding: 0.5vw;">
-                                                        <img src="partners-logos/partner-24.png" alt="Partner 24" loading="lazy" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(100%) brightness(0.8); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%) brightness(1)'" onmouseout="this.style.filter='grayscale(100%) brightness(0.8)'" />
+                                                    <div class="partner-logo">
+                                                        <img src="partners-logos/partner-24.png" alt="Partner 24" loading="lazy" />
                                                     </div>
-                                                    <div class="partner-logo" style="flex-shrink: 0; width: 180px; height: 100px; display: flex; align-items: center; justify-content: center; padding: 0.5vw;">
-                                                        <img src="partners-logos/partner-25.png" alt="Partner 25" loading="lazy" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(100%) brightness(0.8); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%) brightness(1)'" onmouseout="this.style.filter='grayscale(100%) brightness(0.8)'" />
+                                                    <div class="partner-logo">
+                                                        <img src="partners-logos/partner-25.png" alt="Partner 25" loading="lazy" />
                                                     </div>
-                                                    <div class="partner-logo" style="flex-shrink: 0; width: 180px; height: 100px; display: flex; align-items: center; justify-content: center; padding: 0.5vw;">
-                                                        <img src="partners-logos/partner-26.png" alt="Partner 26" loading="lazy" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(100%) brightness(0.8); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%) brightness(1)'" onmouseout="this.style.filter='grayscale(100%) brightness(0.8)'" />
+                                                    <div class="partner-logo">
+                                                        <img src="partners-logos/partner-26.png" alt="Partner 26" loading="lazy" />
                                                     </div>
-                                                    <div class="partner-logo" style="flex-shrink: 0; width: 180px; height: 100px; display: flex; align-items: center; justify-content: center; padding: 0.5vw;">
-                                                        <img src="partners-logos/partner-27.png" alt="Partner 27" loading="lazy" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(100%) brightness(0.8); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%) brightness(1)'" onmouseout="this.style.filter='grayscale(100%) brightness(0.8)'" />
+                                                    <div class="partner-logo">
+                                                        <img src="partners-logos/partner-27.png" alt="Partner 27" loading="lazy" />
                                                     </div>
-                                                    <div class="partner-logo" style="flex-shrink: 0; width: 180px; height: 100px; display: flex; align-items: center; justify-content: center; padding: 0.5vw;">
-                                                        <img src="partners-logos/partner-28.png" alt="Partner 28" loading="lazy" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(100%) brightness(0.8); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%) brightness(1)'" onmouseout="this.style.filter='grayscale(100%) brightness(0.8)'" />
+                                                    <div class="partner-logo">
+                                                        <img src="partners-logos/partner-28.png" alt="Partner 28" loading="lazy" />
                                                     </div>
                                                     <!-- Duplicate set for seamless loop -->
-                                                    <div class="partner-logo" style="flex-shrink: 0; width: 180px; height: 100px; display: flex; align-items: center; justify-content: center; padding: 0.5vw;">
-                                                        <img src="partners-logos/partner-1.png" alt="Partner 1" loading="lazy" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(100%) brightness(0.8); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%) brightness(1)'" onmouseout="this.style.filter='grayscale(100%) brightness(0.8)'" />
+                                                    <div class="partner-logo">
+                                                        <img src="partners-logos/partner-1.png" alt="Partner 1" loading="lazy" />
                                                     </div>
-                                                    <div class="partner-logo" style="flex-shrink: 0; width: 180px; height: 100px; display: flex; align-items: center; justify-content: center; padding: 0.5vw;">
-                                                        <img src="partners-logos/partner-2.png" alt="Partner 2" loading="lazy" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(100%) brightness(0.8); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%) brightness(1)'" onmouseout="this.style.filter='grayscale(100%) brightness(0.8)'" />
+                                                    <div class="partner-logo">
+                                                        <img src="partners-logos/partner-2.png" alt="Partner 2" loading="lazy" />
                                                     </div>
-                                                    <div class="partner-logo" style="flex-shrink: 0; width: 180px; height: 100px; display: flex; align-items: center; justify-content: center; padding: 0.5vw;">
-                                                        <img src="partners-logos/partner-3.png" alt="Partner 3" loading="lazy" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(100%) brightness(0.8); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%) brightness(1)'" onmouseout="this.style.filter='grayscale(100%) brightness(0.8)'" />
+                                                    <div class="partner-logo">
+                                                        <img src="partners-logos/partner-3.png" alt="Partner 3" loading="lazy" />
                                                     </div>
-                                                    <div class="partner-logo" style="flex-shrink: 0; width: 180px; height: 100px; display: flex; align-items: center; justify-content: center; padding: 0.5vw;">
-                                                        <img src="partners-logos/partner-4.png" alt="Partner 4" loading="lazy" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(100%) brightness(0.8); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%) brightness(1)'" onmouseout="this.style.filter='grayscale(100%) brightness(0.8)'" />
+                                                    <div class="partner-logo">
+                                                        <img src="partners-logos/partner-4.png" alt="Partner 4" loading="lazy" />
                                                     </div>
-                                                    <div class="partner-logo" style="flex-shrink: 0; width: 180px; height: 100px; display: flex; align-items: center; justify-content: center; padding: 0.5vw;">
-                                                        <img src="partners-logos/partner-5.png" alt="Partner 5" loading="lazy" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(100%) brightness(0.8); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%) brightness(1)'" onmouseout="this.style.filter='grayscale(100%) brightness(0.8)'" />
+                                                    <div class="partner-logo">
+                                                        <img src="partners-logos/partner-5.png" alt="Partner 5" loading="lazy" />
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="partners-header" style="text-align: center; margin-top: 3vw;">
-                                                <!--<h2 data-splitting="chars" class="f-case-title-text" style="font-size: 3vw; font-weight: 700; letter-spacing: -0.05em; line-height: 0.9; color: #fff; margin-bottom: 1vw;">
-                                                    Our Partners
-                                                </h2>
-                                                -->
-                                                <p style="color: #999; font-size: 1vw; font-weight: 300;">Trusted by leading organizations</p>
+                                            <div class="partners-header">
+                                                <!--<h2 data-splitting="chars" class="f-case-title-text">Our Partners</h2>-->
+                                                <p>Trusted by leading organizations</p>
                                             </div>
                                         </div>
                                     </div>
@@ -523,7 +535,7 @@
                                     </div>
                                 </div>
 
-                                <div role="listitem" class="f-case-holder w-dyn-item">
+                                <div role="listitem" class="f-case-holder w-dyn-item need-extra-space">
                                     <div class="f-case-link w-inline-block">
                                         <img loading="lazy" alt="some imgs" src="assets/87453.webp" class="f-case-img" />
                                         <div class="f-video-embed w-embed">
@@ -1054,6 +1066,68 @@
             window.Webflow && window.Webflow.require("ix2").init();
         }
 
+        // Function to ensure CSS files are loaded based on the target page
+        function ensurePageCSS(data) {
+            // Get the current URL pathname
+            const pathname = window.location.pathname.toLowerCase();
+            
+            // Check and load CSS files based on the page
+            const cssFiles = [];
+            
+            if (pathname.includes('/services')) {
+                cssFiles.push('css/services.css');
+            } else if (pathname.includes('/contact')) {
+                cssFiles.push('css/services.css');
+                cssFiles.push('css/contact.css');
+            } else if (pathname.includes('/about-us')) {
+                // Add any about-us specific CSS if needed
+            }
+            
+            // Load CSS files if they don't exist
+            cssFiles.forEach(cssFile => {
+                const existingLink = document.querySelector(`link[href="${cssFile}"]`);
+                if (!existingLink) {
+                    const link = document.createElement('link');
+                    link.rel = 'stylesheet';
+                    link.href = cssFile;
+                    link.type = 'text/css';
+                    document.head.appendChild(link);
+                    
+                    // Wait for CSS to load before forcing reflow
+                    link.onload = function() {
+                        document.body.offsetHeight;
+                    };
+                }
+            });
+            
+            // Force reflow to ensure styles are applied (even if CSS was already loaded)
+            if (cssFiles.length > 0) {
+                setTimeout(() => {
+                    document.body.offsetHeight;
+                }, 100);
+            }
+        }
+
+        // Function to reinitialize page-specific functionality
+        function reinitializePage(data) {
+            if (!data || !data.next) return;
+            
+            // Re-initialize Splitting for text animations
+            setTimeout(() => {
+                Splitting();
+            }, 100);
+            
+            // Re-initialize text in view observers
+            setTimeout(() => {
+                base.textInView();
+            }, 200);
+            
+            // Re-initialize hover states
+            setTimeout(() => {
+                base.hoverStates();
+            }, 300);
+        }
+
         barba.init({
             preventRunning: true,
             transitions: [
@@ -1109,6 +1183,12 @@
                                     }, 500)
 
                                     resetWebflow(transitionData);
+                                    
+                                    // Ensure CSS files are loaded for the new page
+                                    ensurePageCSS(transitionData);
+                                    
+                                    // Reinitialize page-specific functionality
+                                    reinitializePage(transitionData);
 
                                 }
                             }
@@ -1168,6 +1248,12 @@
                                     }, 500)
 
                                     resetWebflow(transitionData);
+                                    
+                                    // Ensure CSS files are loaded for the new page
+                                    ensurePageCSS(transitionData);
+                                    
+                                    // Reinitialize page-specific functionality
+                                    reinitializePage(transitionData);
 
                                 }
                             }
@@ -1191,6 +1277,11 @@
                     afterEnter(data) {
                         base.playVid();
                         base.nextPrev();
+                        
+                        // Ensure CSS and reinitialize after transition
+                        ensurePageCSS(data);
+                        reinitializePage(data);
+                        
                         setTimeout(function () {
                             base.playVid();
                             base.nextPrev();
@@ -1214,6 +1305,11 @@
                         base.playVid();
                         base.lazyLoadVid();
                         base.hoverStates();
+                        
+                        // Ensure CSS and reinitialize after transition
+                        ensurePageCSS(data);
+                        reinitializePage(data);
+                        
                         setTimeout(function () {
                             base.playVid();
                             base.nextPrev();
@@ -1227,13 +1323,19 @@
             $("body").css("overflow", "hidden");
         });
 
-        barba.hooks.after(() => {
+        barba.hooks.after((data) => {
 
             var vids = document.querySelectorAll(".casevid, .f-video-2"); vids.forEach(vid => { var playPromise = vid.play(); if (playPromise !== undefined) { playPromise.then(_ => { }).catch(error => { }); }; });
 
             $("body").css("overflow", "auto");
             base.hoverStates();
             base.lazyLoadVid();
+            
+            // Ensure CSS files are loaded after transition
+            ensurePageCSS(data);
+            
+            // Reinitialize page-specific functionality
+            reinitializePage(data);
             
             // Force reflow to restore sticky positioning after page transition
             // This ensures sticky elements recalculate their position after Barba.js transition
@@ -1434,6 +1536,120 @@
                 if (savedLang) {
                     const langText = savedLang === 'en' ? 'EN' : 'AR';
                     currentLang.textContent = langText;
+                }
+            }
+
+            // Hamburger Menu Toggle
+            function initHamburgerMenu() {
+                const hamburgerBtn = document.getElementById('hamburger-menu-btn');
+                const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+                const mobileMenuClose = document.getElementById('mobile-menu-close');
+                const body = document.body;
+
+                console.log('Hamburger menu elements:', { hamburgerBtn, mobileMenuOverlay, mobileMenuClose });
+
+                function openMobileMenu() {
+                    console.log('Opening mobile menu');
+                    if (hamburgerBtn) hamburgerBtn.classList.add('active');
+                    if (mobileMenuOverlay) mobileMenuOverlay.classList.add('active');
+                    if (body) body.classList.add('menu-open');
+                }
+
+                function closeMobileMenu() {
+                    console.log('Closing mobile menu');
+                    if (hamburgerBtn) hamburgerBtn.classList.remove('active');
+                    if (mobileMenuOverlay) mobileMenuOverlay.classList.remove('active');
+                    if (body) body.classList.remove('menu-open');
+                }
+
+                if (hamburgerBtn && mobileMenuOverlay) {
+                    console.log('Setting up hamburger menu listeners');
+                    hamburgerBtn.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        console.log('Hamburger button clicked');
+                        if (mobileMenuOverlay.classList.contains('active')) {
+                            closeMobileMenu();
+                        } else {
+                            openMobileMenu();
+                        }
+                    });
+
+                    if (mobileMenuClose) {
+                        mobileMenuClose.addEventListener('click', function(e) {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            console.log('Close button clicked');
+                            closeMobileMenu();
+                        });
+                    }
+
+                    // Close menu when clicking on overlay background
+                    mobileMenuOverlay.addEventListener('click', function(e) {
+                        if (e.target === mobileMenuOverlay) {
+                            console.log('Overlay background clicked');
+                            closeMobileMenu();
+                        }
+                    });
+
+                    // Close menu when clicking on menu links
+                    const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+                    mobileMenuLinks.forEach(link => {
+                        link.addEventListener('click', function() {
+                            console.log('Menu link clicked');
+                            closeMobileMenu();
+                        });
+                    });
+                } else {
+                    console.error('Hamburger menu elements not found:', { hamburgerBtn, mobileMenuOverlay });
+                }
+            }
+
+            // Initialize hamburger menu
+            initHamburgerMenu();
+
+            // Mobile Language Switcher
+            const mobileLangBtn = document.getElementById('mobile-lang-btn');
+            const mobileLangDropdown = document.getElementById('mobile-lang-dropdown');
+            const mobileCurrentLang = document.getElementById('mobile-current-lang');
+            const mobileLangOptions = document.querySelectorAll('.mobile-lang-option');
+
+            if (mobileLangBtn && mobileLangDropdown) {
+                mobileLangBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const isVisible = mobileLangDropdown.style.display === 'block';
+                    mobileLangDropdown.style.display = isVisible ? 'none' : 'block';
+                });
+
+                // Handle mobile language selection
+                mobileLangOptions.forEach(option => {
+                    option.addEventListener('click', function() {
+                        const selectedLang = this.getAttribute('data-lang');
+                        const langText = selectedLang === 'en' ? 'EN' : 'AR';
+                        
+                        // Update both language displays
+                        if (mobileCurrentLang) {
+                            mobileCurrentLang.textContent = langText;
+                        }
+                        if (currentLang) {
+                            currentLang.textContent = langText;
+                        }
+                        
+                        // Store in localStorage
+                        localStorage.setItem('selectedLanguage', selectedLang);
+                        
+                        // Close dropdown
+                        mobileLangDropdown.style.display = 'none';
+                        
+                        console.log('Language changed to:', selectedLang);
+                    });
+                });
+
+                // Load saved language preference for mobile
+                const savedLangMobile = localStorage.getItem('selectedLanguage');
+                if (savedLangMobile && mobileCurrentLang) {
+                    const langText = savedLangMobile === 'en' ? 'EN' : 'AR';
+                    mobileCurrentLang.textContent = langText;
                 }
             }
         });

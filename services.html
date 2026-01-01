@@ -51,10 +51,10 @@
         <div class="menu-link-holder">
             <a href="/" class="menu-logo w-inline-block">
                 <div class="logo-wrapper">
-                    <img src="assets/main-logo.png" loading="lazy" alt="Falcon Codes Logo" class="logo" />
+                    <img src="logo/white-logo-v.png" loading="lazy" alt="Falcon Codes Logo" class="logo" />
                 </div>
                 <div class="bb-logo-embed in-mneu w-embed">
-                    <!--<img src="assets/logo.svg" loading="lazy" alt="" class="logo" />-->
+                    <!-- Logo SVG removed - using image instead -->
                 </div>
             </a>
             <div class="menu-links-holder main">
@@ -103,6 +103,52 @@
                 </a>
                 <div href="#" class="menu-link right">
                     <p timezone="+1" class="clock">12<span class="clockdots">:</span>00</p>
+                </div>
+            </div>
+            <!-- Hamburger Menu Button -->
+            <button class="hamburger-menu-btn" id="hamburger-menu-btn" aria-label="Toggle menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </div>
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobile-menu-overlay">
+        <div class="mobile-menu-content">
+            <div class="mobile-menu-header">
+                <a href="/" class="mobile-menu-logo">
+                    <img src="logo/white-logo-v.png" loading="lazy" alt="Falcon Codes" class="logo" />
+                </a>
+                <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Close menu">
+                    <span class="close-line"></span>
+                    <span class="close-line"></span>
+                </button>
+            </div>
+            <nav class="mobile-menu-nav">
+                <a href="/services" class="mobile-menu-link">Services</a>
+                <a href="/about-us" class="mobile-menu-link">About Us</a>
+                <a href="/profile" class="mobile-menu-link">Profile</a>
+                <a href="/contact" class="mobile-menu-link">Contact</a>
+            </nav>
+            <div class="mobile-menu-footer">
+                <div class="mobile-menu-contact">
+                    <a href="tel:+201080303330" class="mobile-menu-phone">+20 10 80303330</a>
+                    <div class="mobile-menu-time">
+                        <p timezone="+1" class="clock">12<span class="clockdots">:</span>00</p>
+                    </div>
+                </div>
+                <div class="mobile-menu-lang">
+                    <button id="mobile-lang-btn" class="mobile-lang-btn">
+                        <span id="mobile-current-lang">EN</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div id="mobile-lang-dropdown" class="mobile-lang-dropdown" style="display: none;">
+                        <button class="mobile-lang-option" data-lang="en">English</button>
+                        <button class="mobile-lang-option" data-lang="ar">العربية</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -200,7 +246,7 @@
                         <h1 data-splitting="chars" class="h1-subpage">Services</h1>
                     </div>
                     <!-- Section 1: Software & Web Development -->
-                    <div class="service-section-wrapper" style="margin-bottom: 4vw;">
+                    <div class="service-section-wrapper">
                         <div class="service-section-header" style="padding: 2vw 1vw 1vw;">
                             <h2 data-splitting="chars" class="f-case-title-text work-page"
                                 style="font-size: 4vw; font-weight: 700; letter-spacing: -0.05em; line-height: 0.9; color: #fff; margin-bottom: 2vw; margin-top: 3vw;">
@@ -393,13 +439,13 @@
                     <div class="h1-subpage-holder hidden">
                         <h1 data-splitting="chars" class="h1-subpage">Services</h1>
                     </div>
-                    <div class="service-section-wrapper" style="margin-bottom: 4vw;">
+                    <div class="service-section-wrapper">
                         <div class="service-section-header" style="padding: 2vw 1vw 1vw;">
                             <h2 data-splitting="chars" class="f-case-title-text work-page"
                                 style="font-size: 4vw; font-weight: 700; letter-spacing: -0.05em; line-height: 0.9; color: #fff; margin-bottom: 2vw; margin-top: 3vw;">
                                 Digital Solutions</h2>
                         </div>
-                        <div class="digital-marketing-section-wrapper" style="margin-bottom: 4vw;">
+                        <div class="digital-marketing-section-wrapper">
                             <div class="work-page-grid-holder" style="height: calc(100vh - 12vw);">
                                 <div class="f-work-col-list-wrap work-page w-dyn-list">
                                     <div role="list" class="f-work-col-list work-page w-dyn-items">
@@ -590,7 +636,7 @@
                     <div class="h1-subpage-holder hidden">
                         <h1 data-splitting="chars" class="h1-subpage">Services</h1>
                     </div>
-                    <div class="service-section-wrapper" style="margin-bottom: 4vw;">
+                    <div class="service-section-wrapper">
                         <div class="service-section-header" style="padding: 2vw 1vw 1vw;">
                             <h2 data-splitting="chars" class="f-case-title-text work-page"
                                 style="font-size: 4vw; font-weight: 700; letter-spacing: -0.05em; line-height: 0.9; color: #fff; margin-bottom: 2vw; margin-top: 3vw;">
@@ -783,7 +829,7 @@
                     <div class="h1-subpage-holder hidden">
                         <h1 data-splitting="chars" class="h1-subpage">Services</h1>
                     </div>
-                    <div class="service-section-wrapper" style="margin-bottom: 4vw;">
+                    <div class="service-section-wrapper">
                         <div class="service-section-header" style="padding: 2vw 1vw 1vw;">
                             <h2 data-splitting="chars" class="f-case-title-text work-page"
                                 style="font-size: 4vw; font-weight: 700; letter-spacing: -0.05em; line-height: 0.9; color: #fff; margin-bottom: 2vw; margin-top: 3vw;">
@@ -945,13 +991,13 @@
                                             <div class="f-services-holder">
                                                 <div class="f-category-holder">
                                                     <div>Representation in litigations and settlement negotiations.</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-            </div>
-        </div>
-    </div>
                     </div>
                 </div>
             </div>
@@ -1730,10 +1776,125 @@
                     currentLang.textContent = langText;
                 }
             }
+
+            // Hamburger Menu Toggle
+            function initHamburgerMenu() {
+                const hamburgerBtn = document.getElementById('hamburger-menu-btn');
+                const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+                const mobileMenuClose = document.getElementById('mobile-menu-close');
+                const body = document.body;
+
+                function openMobileMenu() {
+                    if (hamburgerBtn) hamburgerBtn.classList.add('active');
+                    if (mobileMenuOverlay) mobileMenuOverlay.classList.add('active');
+                    if (body) body.classList.add('menu-open');
+                }
+
+                function closeMobileMenu() {
+                    if (hamburgerBtn) hamburgerBtn.classList.remove('active');
+                    if (mobileMenuOverlay) mobileMenuOverlay.classList.remove('active');
+                    if (body) body.classList.remove('menu-open');
+                }
+
+                if (hamburgerBtn && mobileMenuOverlay) {
+                    hamburgerBtn.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        if (mobileMenuOverlay.classList.contains('active')) {
+                            closeMobileMenu();
+                        } else {
+                            openMobileMenu();
+                        }
+                    });
+
+                    if (mobileMenuClose) {
+                        mobileMenuClose.addEventListener('click', function (e) {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            closeMobileMenu();
+                        });
+                    }
+
+                    // Close menu when clicking on overlay background
+                    mobileMenuOverlay.addEventListener('click', function (e) {
+                        if (e.target === mobileMenuOverlay) {
+                            closeMobileMenu();
+                        }
+                    });
+
+                    // Close menu when clicking on menu links
+                    const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+                    mobileMenuLinks.forEach(link => {
+                        link.addEventListener('click', function () {
+                            closeMobileMenu();
+                        });
+                    });
+                }
+            }
+
+            // Initialize hamburger menu
+            initHamburgerMenu();
+
+            // Mobile Language Switcher
+            const mobileLangBtn = document.getElementById('mobile-lang-btn');
+            const mobileLangDropdown = document.getElementById('mobile-lang-dropdown');
+            const mobileCurrentLang = document.getElementById('mobile-current-lang');
+            const mobileLangOptions = document.querySelectorAll('.mobile-lang-option');
+
+            if (mobileLangBtn && mobileLangDropdown) {
+                mobileLangBtn.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    const isVisible = mobileLangDropdown.style.display === 'block';
+                    mobileLangDropdown.style.display = isVisible ? 'none' : 'block';
+                });
+
+                // Handle mobile language selection
+                mobileLangOptions.forEach(option => {
+                    option.addEventListener('click', function () {
+                        const selectedLang = this.getAttribute('data-lang');
+                        const langText = selectedLang === 'en' ? 'EN' : 'AR';
+
+                        // Update both language displays
+                        if (mobileCurrentLang) {
+                            mobileCurrentLang.textContent = langText;
+                        }
+                        if (currentLang) {
+                            currentLang.textContent = langText;
+                        }
+
+                        // Store in localStorage
+                        localStorage.setItem('selectedLanguage', selectedLang);
+
+                        // Close dropdown
+                        mobileLangDropdown.style.display = 'none';
+
+                        console.log('Language changed to:', selectedLang);
+                    });
+                });
+
+                // Load saved language preference for mobile
+                const savedLangMobile = localStorage.getItem('selectedLanguage');
+                if (savedLangMobile && mobileCurrentLang) {
+                    const langText = savedLangMobile === 'en' ? 'EN' : 'AR';
+                    mobileCurrentLang.textContent = langText;
+                }
+            }
         });
 
         // Scroll Lock for Services Sections
         (function() {
+            // Check if device is mobile or tablet (less than 1024px)
+            // Turn ON JS scrolling logic for 1024px and above
+            // Turn OFF JS scrolling logic for less than 1024px
+            function isMobileOrTablet() {
+                return window.innerWidth < 1024 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            }
+
+            // Don't run horizontal scroll code on mobile/tablet (less than 1024px)
+            if (isMobileOrTablet()) {
+                return;
+            }
+
             const sections = document.querySelectorAll('.con.hori');
             let isScrolling = false;
             let scrollTimeout;

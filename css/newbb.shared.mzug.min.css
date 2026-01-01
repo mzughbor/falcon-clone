@@ -931,6 +931,11 @@ textarea.w-select {
 
 @media screen and (max-width:767px) {
 
+    .say-hello-holder {
+        transform: translateY(-110%);
+        top: 25%;
+    }
+
     .w-hidden-main,
     .w-hidden-medium {
         display: inherit !important
@@ -2042,40 +2047,6 @@ textarea.w-select {
     position: static
 }
 
-@media screen and (max-width:991px) {
-    .w-nav[data-collapse=medium] .w-nav-menu {
-        display: none
-    }
-
-    .w-nav[data-collapse=medium] .w-nav-button {
-        display: block
-    }
-}
-
-@media screen and (max-width:767px) {
-    .w-nav[data-collapse=small] .w-nav-menu {
-        display: none
-    }
-
-    .w-nav[data-collapse=small] .w-nav-button {
-        display: block
-    }
-
-    .w-nav-brand {
-        padding-left: 10px
-    }
-}
-
-@media screen and (max-width:479px) {
-    .w-nav[data-collapse=tiny] .w-nav-menu {
-        display: none
-    }
-
-    .w-nav[data-collapse=tiny] .w-nav-button {
-        display: block
-    }
-}
-
 .w-tabs {
     position: relative
 }
@@ -2631,7 +2602,6 @@ p {
     width: 100%;
     max-width: 500px;
     background: transparent;
-    padding: 2rem;
 }
 
 .form-group {
@@ -4048,7 +4018,7 @@ p {
     justify-content: space-between;
     align-items: flex-end;
     width: 100%;
-    padding: 2vw 1%;
+    padding: 3vw 4%;
     display: flex;
     position: relative
 }
@@ -4057,7 +4027,7 @@ p {
     width: 100%;
     display: flex;
     position: absolute;
-    top: 50%;
+    top: 110%;
     left: 0;
     overflow: hidden;
     transform: translateY(-55%)
@@ -4473,6 +4443,42 @@ p {
     transition: height 1s cubic-bezier(.645, .045, .355, 1), width 1s cubic-bezier(.645, .045, .355, 1)
 }
 
+
+@media screen and (max-width:991px) {
+    .w-nav[data-collapse=medium] .w-nav-menu {
+        display: none
+    }
+
+    .w-nav[data-collapse=medium] .w-nav-button {
+        display: block
+    }
+}
+
+@media screen and (max-width:767px) {
+    .w-nav[data-collapse=small] .w-nav-menu {
+        display: none
+    }
+
+    .w-nav[data-collapse=small] .w-nav-button {
+        display: block
+    }
+
+    .w-nav-brand {
+        padding-left: 10px
+    }
+}
+
+@media screen and (max-width:479px) {
+    .w-nav[data-collapse=tiny] .w-nav-menu {
+        display: none
+    }
+
+    .w-nav[data-collapse=tiny] .w-nav-button {
+        display: block
+    }
+}
+
+
 @media screen and (max-width:479px) {
 
     .form-group {
@@ -4578,7 +4584,8 @@ p {
     }
 
     .logo {
-        width: 20vw
+        width: 25vw;
+        margin-left: 2vw !important;
     }
 
     .menu-link {
@@ -4668,7 +4675,8 @@ p {
 
     .h1-subpage-holder.hidden {
         padding-left: 2%;
-        display: block
+        display: block;
+        margin-top: 2rem;
     }
 
     .h1-subpage.studio {
@@ -4979,7 +4987,7 @@ p {
     }
 
     .f-work-col-list.work-page {
-        background-color: #101010;
+        /*background-color: #101010;*/
         width: 100%;
         height: auto;
         padding-top: 0;
@@ -5022,7 +5030,8 @@ p {
     }
 
     .say-hello-holder {
-        transform: translateY(-110%)
+        transform: translateY(-110%);
+        top: 19%;
     }
 
     .contact-info-holder {
