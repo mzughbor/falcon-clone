@@ -843,7 +843,7 @@
     </style>
 </head>
 
-<body data-barba="wrapper">
+<body>
     <div class="menu">
         <div class="menu-link-holder">
             <a href="index.html" class="menu-logo w-inline-block">
@@ -855,19 +855,22 @@
                 </div>
             </a>
             <div class="menu-links-holder main">
-                <a href="/services" class="menu-link w-inline-block">
+                <a href="services.html" class="menu-link w-inline-block">
                     <div>Services <sup class="superscript"></sup></div>
                 </a>
-                <a href="/about-us" class="menu-link w-inline-block">
+                <a href="about-us.html" class="menu-link w-inline-block">
                     <div>About Us</div>
                 </a>
-                <a href="/profile" class="menu-link w-inline-block">
+                <a href="profile.html" class="menu-link w-inline-block">
                     <div>Profile</div>
                 </a>
-                <a href="/gallery" class="menu-link w-inline-block">
+                <a href="#" class="menu-link w-inline-block">
                     <div>Gallery</div>
                 </a>
-                <a href="/contact" aria-current="page" class="menu-link last w-inline-block w--current">
+                <a href="index.html#partners" class="menu-link w-inline-block">
+                    <div>Our Partners</div>
+                </a>
+                <a href="contact.html" aria-current="page" class="menu-link last w-inline-block w--current">
                     <div>Contact</div>
                 </a>
             </div>
@@ -912,10 +915,12 @@
                 </button>
             </div>
             <nav class="mobile-menu-nav">
-                <a href="/services" class="mobile-menu-link">Services</a>
-                <a href="/about-us" class="mobile-menu-link">About Us</a>
-                <a href="/profile" class="mobile-menu-link">Profile</a>
-                <a href="/contact" class="mobile-menu-link">Contact</a>
+                <a href="services.html" class="mobile-menu-link">Services</a>
+                <a href="about-us.html" class="mobile-menu-link">About Us</a>
+                <a href="profile.html" class="mobile-menu-link">Profile</a>
+                <a href="#" class="mobile-menu-link">Gallery</a>
+                <a href="index.html#partners" class="mobile-menu-link">Our Partners</a>
+                <a href="contact.html" class="mobile-menu-link">Contact</a>
             </nav>
             <div class="mobile-menu-footer">
                 <div class="mobile-menu-contact">
@@ -1014,7 +1019,7 @@
             <div class="cursor-text">View Work </div>
         </div>
     </div>
-    <div data-barba="container" data-barba-namespace="base" class="con">
+    <div class="con">
         <div data-scroll-container="" class="con-inner">
             <div class="content contact">
                 <div class="contact-details-holder">
@@ -1707,7 +1712,6 @@
         type="text/javascript"></script>
     <script async src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@16.1.0/dist/lazyload.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
-    <script src="https://unpkg.com/@barba/core"></script>
     <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
     <script> Splitting(); gsap.registerPlugin(ScrollTrigger); </script>
     <script src="https://vjs.zencdn.net/7.8.4/video.js"></script>
@@ -1920,189 +1924,25 @@
             },
         }
 
-        function resetWebflow(data) {
-            let parser = new DOMParser();
-            let dom = parser.parseFromString(data.next.html, "text/html");
-            let webflowPageId = $(dom).find("html").attr("data-wf-page");
-            $("html").attr("data-wf-page", webflowPageId);
-            window.Webflow && window.Webflow.destroy();
-            window.Webflow && window.Webflow.ready();
-            window.Webflow && window.Webflow.require("ix2").init();
-        }
-
-        barba.init({
-            preventRunning: true,
-            transitions: [
-                {
-                    sync: true,
-                    from: {
-                        namespace: ["base"]
-                    },
-                    leave(data) {
-                        console.log('barba leave')
-                        $('.load-overlay').addClass("loading")
-                        $('a').addClass("no-touchy")
-                        $('.cursor').addClass("loading")
-                        return gsap.fromTo(
-                            data.current.container,
-                            { y: 0 },
-                            {
-                                y: -600,
-                                ease: "power3.inOut",
-                                duration: 1.5
-                            }
-                        );
-                    },
-                    enter(data) {
-                        console.log('barba enter')
-                        let transitionData = data;
-                        $(data.next.container).addClass("fixed");
-                        return gsap.fromTo(
-                            data.next.container,
-                            { y: 600 },
-                            {
-                                y: 0, delay: 0,
-                                ease: "power3.inOut",
-                                duration: 1.5,
-                                onComplete: () => {
-                                    $(window).scrollTop(0);
-                                    setTimeout(function () {
-                                        $('.cursor').removeClass("loading")
-                                        $('.cursor').addClass("waiting-state")
-                                    }, 0)
-                                    setTimeout(function () {
-                                        $(data.next.container).removeClass("fixed");
-                                        $('.load-overlay').removeClass("loading")
-                                        $('a').removeClass("no-touchy")
-                                        $('.cursor').removeClass("waiting-state")
-                                        $(window).scrollTop(0);
-                                    }, 500)
-
-                                    resetWebflow(transitionData);
-
-                                }
-                            }
-                        );
-                    }
-                },
-                {
-                    sync: true,
-                    from: {
-                        namespace: ["front"]
-                    },
-                    leave(data) {
-                        console.log('barba leave')
-                        $('.load-overlay').addClass("loading")
-                        $('a').addClass("no-touchy")
-                        $('.cursor').addClass("loading")
-                        return gsap.fromTo(
-                            data.current.container,
-                            { y: 0 },
-                            {
-                                y: -600,
-                                ease: "power3.inOut",
-                                duration: 1.5
-                            }
-                        );
-                    },
-                    enter(data) {
-                        console.log('barba enter')
-                        let transitionData = data;
-                        $(data.next.container).addClass("fixed");
-                        return gsap.fromTo(
-                            data.next.container,
-                            { y: 600 },
-                            {
-                                y: 0, delay: 0,
-                                ease: "power3.inOut",
-                                duration: 1.5,
-                                onComplete: () => {
-                                    $(window).scrollTop(0);
-                                    setTimeout(function () {
-                                        $('.cursor').removeClass("loading")
-                                        $('.cursor').addClass("waiting-state")
-                                    }, 0)
-                                    setTimeout(function () {
-                                        $(data.next.container).removeClass("fixed");
-                                        $('.load-overlay').removeClass("loading")
-                                        $('a').removeClass("no-touchy")
-                                        $('.cursor').removeClass("waiting-state")
-                                        base.nextPrev();
-                                        $(window).scrollTop(0);
-                                    }, 500)
-
-                                    resetWebflow(transitionData);
-
-                                }
-                            }
-                        );
-                    }
-                }
-            ],
-
-
-
-
-
-            views: [
-                {
-                    namespace: "front",
-                    beforeEnter() {
-                        base.splitting();
-                        base.beforeEnterRevealMenuItem();
-                        base.loadVideo();
-                        base.menuFrontpage();
-                        base.textInView();
-                        base.playVid();
-                        base.nextPrev();
-                    },
-                    afterEnter(data) {
-                        base.playVid();
-                        base.nextPrev();
-                        setTimeout(function () {
-                            base.playVid();
-                            base.nextPrev();
-                        }, 1500)
-                    }
-                },
-                {
-                    namespace: "base",
-                    beforeEnter() {
-                        base.splitting();
-                        base.beforeEnterRevealMenuItem();
-                        base.loadVideo();
-                        base.menuSubpage();
-                        base.casePageLoad();
-                        base.textInView();
-                        base.playVid();
-                        base.hoverStates();
-                        base.lazyLoadVid();
-                    },
-                    afterEnter(data) {
-                        base.playVid();
-                        base.lazyLoadVid();
-                        base.hoverStates();
-                        setTimeout(function () {
-                            base.playVid();
-                            base.nextPrev();
-                        }, 1500)
-                    }
-                }
-            ]
-        });
-
-        barba.hooks.beforeLeave(() => {
-            $("body").css("overflow", "hidden");
-        });
-
-        barba.hooks.after(() => {
-
-            var vids = document.querySelectorAll(".casevid, .f-video-2"); vids.forEach(vid => { var playPromise = vid.play(); if (playPromise !== undefined) { playPromise.then(_ => { }).catch(error => { }); }; });
-
-            $("body").css("overflow", "auto");
+        // Direct page initialization (Barba.js removed)
+        $(document).ready(function() {
+            base.splitting();
+            base.beforeEnterRevealMenuItem();
+            base.loadVideo();
+            base.menuSubpage();
+            base.casePageLoad();
+            base.textInView();
             base.hoverStates();
             base.lazyLoadVid();
-            // Removed base.swiperInitAbout() call - was adding unwanted content
+            
+            // Handle "Our Partners" links - navigate to index.html#partners
+            $('a[href*="#partners"]').on('click', function(e) {
+                const href = $(this).attr('href');
+                if (href.includes('index.html')) {
+                    e.preventDefault();
+                    window.location.href = href;
+                }
+            });
         });
 
     </script>

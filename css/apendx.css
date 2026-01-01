@@ -16,6 +16,29 @@
     transition: opacity 0.3s ease, z-index 0s 0.3s !important; /* Smooth fade in, delay z-index change */
 }
 
+/* Hide dark-logo-overlay only on screens smaller than 480px */
+@media screen and (max-width: 479px) {
+    .dark-logo-overlay {
+        display: none !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+    }
+    
+    .dark-logo-overlay.scrolled {
+        display: none !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+    }
+    
+    /* Keep menu-links-holder visible on mobile (don't hide phone/time) */
+    .menu-links-holder:not(.main).scrolled {
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+    }
+}
+
 /* Show overlay when scrolled past first section - covers "of codes" image */
 .dark-logo-overlay.scrolled {
     opacity: 1 !important;
@@ -804,5 +827,12 @@ body:not(.no-scroll) {
     .social-icon-block svg {
         width: 24px !important;
         height: 24px !important;
+    }
+    
+    /* Keep menu-links-holder visible on mobile (don't hide phone/time) */
+    .menu-links-holder:not(.main).scrolled {
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
     }
 }

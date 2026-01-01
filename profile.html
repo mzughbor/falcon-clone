@@ -32,6 +32,18 @@
         <link rel="stylesheet" href="css/apendx.css" />
 
         <style>
+            /* Exclude logo from mix-blend-mode color manipulation */
+            .logo-wrapper {
+                isolation: isolate;
+                mix-blend-mode: normal;
+                position: relative;
+                z-index: 1;
+            }
+
+            .logo-wrapper .logo {
+                mix-blend-mode: normal;
+            }
+            
             /*lenis -- IMPORTANT*/
             html {
                 scroll-behavior: initial;
@@ -698,20 +710,31 @@
         </style>
 </head>
 
-<body data-barba="wrapper" class="body">
+<body class="body">
     <div class="menu">
         <div class="menu-link-holder">
             <a href="index.html" class="menu-logo w-inline-block">
-                <img src="assets/logo.svg" loading="lazy" alt="main logo" class="logo" />
+                <div class="logo-wrapper">
+                    <img src="logo/white-logo-v.png" loading="lazy" alt="Falcon Codes Logo" class="logo" />
+                </div>
             </a>
             <div class="menu-links-holder main">
-                <a href="/services" class="menu-link w-inline-block">
+                <a href="services.html" class="menu-link w-inline-block">
                     <div>Services <sup class="superscript"></sup></div>
                 </a>
-                <a href="/profile" class="menu-link w-inline-block">
+                <a href="about-us.html" class="menu-link w-inline-block">
+                    <div>About Us</div>
+                </a>
+                <a href="profile.html" class="menu-link w-inline-block">
                     <div>Profile</div>
                 </a>
-                <a href="/contact" class="menu-link last w-inline-block">
+                <a href="#" class="menu-link w-inline-block">
+                    <div>Gallery</div>
+                </a>
+                <a href="index.html#partners" class="menu-link w-inline-block">
+                    <div>Our Partners</div>
+                </a>
+                <a href="contact.html" class="menu-link last w-inline-block">
                     <div>Contact</div>
                 </a>
             </div>
@@ -728,11 +751,11 @@
             <div class="o-embed w-embed"><svg xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="auto" viewBox="0 0 449 449"
                     version="1.1" position="absolute" left="0" top="0">
-                    <title>baseborn-o</title>
+                    <title>FalconCode</title>
                     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                         <path
                             d="M125.8448,124.943192 C42.9118,207.877192 244.7638,409.728192 327.6968,326.795192 C410.4218,244.069192 208.5718,42.2171921 125.8448,124.943192 M70.6248,71.3791921 C101.8548,40.1501921 135.7728,19.0541921 171.3448,8.29919214 C207.5368,-2.66080786 243.1098,-2.66080786 278.6808,7.67919214 C314.4598,18.6411921 347.7578,39.1151921 378.5738,69.9301921 C409.1818,100.540192 429.8628,134.044192 440.6168,169.616192 C451.3718,205.601192 451.7848,241.587192 441.2378,278.193192 C430.8978,314.179192 409.8018,348.097192 378.5738,379.326192 C347.5508,410.348192 313.8398,431.236192 278.0608,441.371192 C241.8678,451.505192 206.0888,450.883192 170.1038,440.130192 C134.5318,429.376192 101.2338,408.487192 70.6248,377.879192 C39.8098,347.063192 19.1278,313.972192 8.1668,278.194192 C-2.5872,243.035192 -2.5872,207.463192 7.9608,171.683192 C18.5078,136.319192 39.3968,102.608192 70.6248,71.3791921"
-                            id="baseborn-o" fill="#161616" fill-rule="nonzero" />
+                            id="falcon-o" fill="#161616" fill-rule="nonzero" />
                     </g>
                 </svg>
 
@@ -798,59 +821,20 @@
             <div class="cursor-text">View Work </div>
         </div>
     </div>
-    <div data-barba="container" data-barba-namespace="base" class="con">
+    <div class="con">
         <div data-scroll-container="" class="con-inner">
             <div class="content">
                 <div class="h1-subpage-holder">
-                    <h1 data-splitting="chars" class="h1-subpage studio">Born in<br />digital<br /></h1>
+                    <h1 data-splitting="chars" class="h1-subpage studio">About<br />Falcon of Code<br /></h1>
                 </div>
                 <div class="ts-holder">
-                    <div class="person-holder _1">
-                        <div class="ts-image-holder _1"><img
-                                src="https://cdn.prod.website-files.com/63640f262fc5ea5751eb1965/63b6a64b133ca7a6651b46e6_tore-bentsen-shot.webp"
-                                loading="eager" sizes="(max-width: 2000px) 100vw, 2000px"
-                                srcset="https://cdn.prod.website-files.com/63640f262fc5ea5751eb1965/63b6a64b133ca7a6651b46e6_tore-bentsen-shot-p-500.webp 500w, https://cdn.prod.website-files.com/63640f262fc5ea5751eb1965/63b6a64b133ca7a6651b46e6_tore-bentsen-shot-p-800.webp 800w, https://cdn.prod.website-files.com/63640f262fc5ea5751eb1965/63b6a64b133ca7a6651b46e6_tore-bentsen-shot-p-1080.webp 1080w, https://cdn.prod.website-files.com/63640f262fc5ea5751eb1965/63b6a64b133ca7a6651b46e6_tore-bentsen-shot-p-1600.webp 1600w, https://cdn.prod.website-files.com/63640f262fc5ea5751eb1965/63b6a64b133ca7a6651b46e6_tore-bentsen-shot-p-2000.webp 2000w, https://cdn.prod.website-files.com/63640f262fc5ea5751eb1965/63b6a64b133ca7a6651b46e6_tore-bentsen-shot.webp 2000w"
-                                alt="Portrait of Tore S. Bentsen who is the Interactive Designer at Baseborn Studio in Copenhagen"
-                                class="ts-img" /></div>
-                        <div class="person-info-holder">
-                            <div class="person-name-holder">
-                                <div data-splitting="chars" class="person-name-text">Tore S. Bentsen</div>
-                            </div>
-                            <div class="person-title-holder">
-                                <div class="person-title-text">Interactive Designer &amp; Co-Founder</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="person-holder _2">
-                        <div class="ts-image-holder _2"><img
-                                src="https://cdn.prod.website-files.com/63640f262fc5ea5751eb1965/63b6a64c3ce0bd0747becccc_simon-holm-shot.webp"
-                                loading="lazy" sizes="(max-width: 2000px) 100vw, 2000px"
-                                srcset="https://cdn.prod.website-files.com/63640f262fc5ea5751eb1965/63b6a64c3ce0bd0747becccc_simon-holm-shot-p-500.webp 500w, https://cdn.prod.website-files.com/63640f262fc5ea5751eb1965/63b6a64c3ce0bd0747becccc_simon-holm-shot-p-800.webp 800w, https://cdn.prod.website-files.com/63640f262fc5ea5751eb1965/63b6a64c3ce0bd0747becccc_simon-holm-shot-p-1080.webp 1080w, https://cdn.prod.website-files.com/63640f262fc5ea5751eb1965/63b6a64c3ce0bd0747becccc_simon-holm-shot-p-1600.webp 1600w, https://cdn.prod.website-files.com/63640f262fc5ea5751eb1965/63b6a64c3ce0bd0747becccc_simon-holm-shot-p-2000.webp 2000w, https://cdn.prod.website-files.com/63640f262fc5ea5751eb1965/63b6a64c3ce0bd0747becccc_simon-holm-shot.webp 2000w"
-                                alt="Portrait of Simon H. Larsen who is the Branding and Identity Designer at Baseborn Studio in Copenhagen"
-                                class="ts-img" /></div>
-                        <div class="person-info-holder">
-                            <div class="person-name-holder">
-                                <div data-splitting="chars" class="person-name-text">Simon H. Larsen</div>
-                            </div>
-                            <div class="person-title-holder">
-                                <div class="person-title-text">Brand Designer &amp; Co-Founder</div>
-                            </div>
-                        </div>
-                    </div>
                     <div class="services-collaborators-text-holder about-small-text">
-                        <div data-splitting="lines" class="about-p">We&#x27;re an independent digital-first design
-                            studio, combining branding, motion design &amp; digital design to help amazing clients stand
-                            out from the crowd in a digital first world. </div>
+                        <div data-splitting="lines" class="about-p">At Falcon of Code, we consider ourselves the pulse of technology and the driving force behind technical solutions. We see technology differently; it&#x27;s not just code and images, but the language of progress and the bridge to the future.</div>
                     </div>
                 </div>
                 <div class="we-belive-holder">
                     <div class="small-about-p-holder">
-                        <div data-splitting="lines" class="small-about-p">We believe that for a brand to break through
-                            the barrier of today&#x27;s digital world, it needs to be a memorable experience across all
-                            platforms. <br /><br />Our philosophy is that working closely with our clients and following
-                            a fun and engaging process filled with great workshops and conversations gives the best
-                            result.<br /><br />With more than 20+ years of experience – Tore &amp; Simon have worked
-                            with various small and big clients, creating award-winning brands &amp; digital experiences.
+                        <div data-splitting="lines" class="small-about-p">Our vision is founded on the firm belief that every digital challenge holds within it the seeds of an exceptional opportunity, and our mission is to cultivate these seeds to yield smart, forward-thinking solutions that inspire the market. <br /><br />Like a falcon, combining keen eyesight with swift swoop, we combine comprehensive strategic vision with exceptional execution precision. We are partners in transforming abstract ideas into tangible digital platforms. We embrace technical complexities because they are the wellspring of our creativity, and we believe that functional beauty is the true measure of success for any digital solution.<br /><br />Our team comprises an exceptional blend of technical visionaries and accomplished implementers. Every project becomes a new success story, told in the language of numbers and satisfaction. At Falcon of Code, technical prowess meets business acumen to create a more efficient, humane, and dazzling digital reality. Your digital identity starts here, and its limits are the skies of our creativity.
                         </div>
                     </div>
                 </div>
@@ -864,78 +848,162 @@
                     <div class="about-services-66-holder">
                         <div class="about-services-main-list-holder">
                             <div class="about-services-h3-holder">
-                                <h3 class="small-h3">Branding</h3>
+                                <h3 class="small-h3">Website &amp; App Development</h3>
                             </div>
                             <div class="about-services-list-holder">
                                 <div class="about-service-tag-holder">
                                     <div class="text-ofh">
-                                        <div class="about-services-list-text">Visual Identity</div>
+                                        <div class="about-services-list-text">Website Design &amp; Development</div>
                                     </div>
                                 </div>
                                 <div class="about-service-tag-holder">
                                     <div class="text-ofh">
-                                        <div class="about-services-list-text">Logo Design</div>
+                                        <div class="about-services-list-text">E-commerce Development</div>
                                     </div>
                                 </div>
                                 <div class="about-service-tag-holder">
                                     <div class="text-ofh">
-                                        <div class="about-services-list-text">Motion Design</div>
+                                        <div class="about-services-list-text">Mobile Apps (Android &amp; iOS)</div>
                                     </div>
                                 </div>
                                 <div class="about-service-tag-holder">
                                     <div class="text-ofh">
-                                        <div class="about-services-list-text">Packaging</div>
+                                        <div class="about-services-list-text">UI/UX Design</div>
                                     </div>
                                 </div>
                                 <div class="about-service-tag-holder">
                                     <div class="text-ofh">
-                                        <div class="about-services-list-text">Brand Guidelines</div>
+                                        <div class="about-services-list-text">Network &amp; Server Management</div>
+                                    </div>
+                                </div>
+                                <div class="about-service-tag-holder">
+                                    <div class="text-ofh">
+                                        <div class="about-services-list-text">Cloud Hosting &amp; Computing</div>
+                                    </div>
+                                </div>
+                                <div class="about-service-tag-holder">
+                                    <div class="text-ofh">
+                                        <div class="about-services-list-text">Technical Support &amp; Maintenance</div>
+                                    </div>
+                                </div>
+                                <div class="about-service-tag-holder">
+                                    <div class="text-ofh">
+                                        <div class="about-services-list-text">Data Backup &amp; Recovery</div>
                                     </div>
                                 </div>
                                 <div class="about-service-tag-holder last">
                                     <div class="text-ofh">
-                                        <div class="about-services-list-text">Art Direction</div>
+                                        <div class="about-services-list-text">AI Solutions</div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="about-services-main-list-holder last">
                             <div class="about-services-h3-holder">
-                                <h3 class="small-h3">Digital</h3>
+                                <h3 class="small-h3">Digital Marketing</h3>
                             </div>
                             <div class="about-services-list-holder">
                                 <div class="about-service-tag-holder">
                                     <div class="text-ofh">
-                                        <div class="about-services-list-text">Web Design</div>
+                                        <div class="about-services-list-text">Social Media Management</div>
                                     </div>
                                 </div>
                                 <div class="about-service-tag-holder">
                                     <div class="text-ofh">
-                                        <div class="about-services-list-text">Web Development (Webflow)</div>
+                                        <div class="about-services-list-text">Content Creation</div>
                                     </div>
                                 </div>
                                 <div class="about-service-tag-holder">
                                     <div class="text-ofh">
-                                        <div class="about-services-list-text">E-commerce </div>
+                                        <div class="about-services-list-text">Paid Advertising (Facebook, Instagram, Google)</div>
                                     </div>
                                 </div>
                                 <div class="about-service-tag-holder">
                                     <div class="text-ofh">
-                                        <div class="about-services-list-text">User Experience</div>
+                                        <div class="about-services-list-text">SEO Optimization</div>
+                                    </div>
+                                </div>
+                                <div class="about-service-tag-holder">
+                                    <div class="text-ofh">
+                                        <div class="about-services-list-text">Brand Building &amp; Awareness</div>
+                                    </div>
+                                </div>
+                                <div class="about-service-tag-holder">
+                                    <div class="text-ofh">
+                                        <div class="about-services-list-text">Email Campaigns</div>
+                                    </div>
+                                </div>
+                                <div class="about-service-tag-holder">
+                                    <div class="text-ofh">
+                                        <div class="about-services-list-text">Data Analytics &amp; Campaign Management</div>
                                     </div>
                                 </div>
                                 <div class="about-service-tag-holder last">
                                     <div class="text-ofh">
-                                        <div class="about-services-list-text">Wireframing &amp; Prototyping</div>
+                                        <div class="about-services-list-text">Digital Transformation</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-services-66-holder" style="margin-top: 4vw;">
+                        <div class="about-services-main-list-holder">
+                            <div class="about-services-h3-holder">
+                                <h3 class="small-h3">Financial Auditing &amp; Review</h3>
+                            </div>
+                            <div class="about-services-list-holder">
+                                <div class="about-service-tag-holder">
+                                    <div class="text-ofh">
+                                        <div class="about-services-list-text">External &amp; Internal Auditing</div>
+                                    </div>
+                                </div>
+                                <div class="about-service-tag-holder">
+                                    <div class="text-ofh">
+                                        <div class="about-services-list-text">Financial Reports &amp; Statements</div>
+                                    </div>
+                                </div>
+                                <div class="about-service-tag-holder">
+                                    <div class="text-ofh">
+                                        <div class="about-services-list-text">Cost Accounting</div>
+                                    </div>
+                                </div>
+                                <div class="about-service-tag-holder last">
+                                    <div class="text-ofh">
+                                        <div class="about-services-list-text">Cash Flow &amp; Budget Management</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="about-services-main-list-holder last">
+                            <div class="about-services-h3-holder">
+                                <h3 class="small-h3">Legal Consulting</h3>
+                            </div>
+                            <div class="about-services-list-holder">
+                                <div class="about-service-tag-holder">
+                                    <div class="text-ofh">
+                                        <div class="about-services-list-text">Specialized Legal Consulting</div>
+                                    </div>
+                                </div>
+                                <div class="about-service-tag-holder">
+                                    <div class="text-ofh">
+                                        <div class="about-services-list-text">Contract Drafting &amp; Agreements</div>
+                                    </div>
+                                </div>
+                                <div class="about-service-tag-holder">
+                                    <div class="text-ofh">
+                                        <div class="about-services-list-text">Compliance &amp; Regulations</div>
+                                    </div>
+                                </div>
+                                <div class="about-service-tag-holder last">
+                                    <div class="text-ofh">
+                                        <div class="about-services-list-text">Dispute Resolution &amp; Litigation</div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="services-collaborators-text-holder">
-                        <div data-splitting="lines" class="toresimon-p">If everything your brand is looking for
-                            isn&#x27;t on the list, then don&#x27;t worry. <br /><br />We collaborate with great people
-                            to cover all aspects of your project.<br /></div>
+                        <div data-splitting="lines" class="toresimon-p">We transform your digital ideas into tangible reality.<br /><br />Custom services that grow with your dreams.<br /></div>
                     </div>
                 </div>
                 <div class="about-services-holder">
@@ -948,31 +1016,21 @@
                     <div class="services-holder">
                         <div class="principle-holder">
                             <div class="about-h3-holder">
-                                <h3 class="small-h3">Design is an experience</h3>
+                                <h3 class="small-h3">Our Areas of Excellence</h3>
                             </div>
-                            <div data-splitting="lines" class="small-about-p">Design is not just colors, fonts and
-                                motion - It&#x27;s about understanding your users needs and what gets their clock
-                                ticking. Truly understanding what takes design from just being design to creating a
-                                complete brand experience is what makes your business stand out from all the noise
-                                created in a digital doom-scroll era.<br /><br />We were created for one purpose – to
-                                help brands evolve into being experiences across all touchpoints.<br /></div>
+                            <div data-splitting="lines" class="small-about-p">Engineering digital experiences that speak the language of the customer. Building enterprise systems that speak the power of data. Crafting digital transformation pathways that create qualitative leaps. Protecting digital assets with a security shield that knows no vulnerabilities.<br /><br />What distinguishes us is not what we do, but how we do it; we listen deeply, design intelligently, develop meticulously, and deliver with professionalism.<br /></div>
                         </div>
                         <div class="principle-holder last">
                             <div class="about-h3-holder">
-                                <h3 class="small-h3">Fun and engaging process</h3>
+                                <h3 class="small-h3">Our Work Process</h3>
                             </div>
-                            <div data-splitting="lines" class="small-about-p">When you start a new project with us, we
-                                always want to learn as much about your business, your vision and your dreams as we
-                                possible can. We do this the best by having different workshops tailored for your needs
-                                - where we together dive deep into the world of design. This way we make sure that we
-                                hit exactly what you&#x27;re looking for.</div>
+                            <div data-splitting="lines" class="small-about-p">Design &amp; Development: Transforming ideas into interactive prototypes, then programming them. Testing &amp; Review: Testing all functions, performance, and security to ensure the product is error-free before launch. Launch &amp; Technical Support: Publishing the application or website, with continuous technical support and periodic maintenance, which may reach &quot;lifetime guarantee&quot; in some packages.</div>
                         </div>
                     </div>
                     <div class="services-collaborators-text-holder no-m-right">
                         <div class="principles-img-holder"><img
-                                src="https://cdn.prod.website-files.com/63640f262fc5ea5751eb1965/64244c501d52fb2d59f589dd_Canairi-Box-30.webp"
+                                src="assets/services/5313.jpg"
                                 loading="lazy" sizes="(max-width: 1500px) 100vw, 1500px"
-                                srcset="https://cdn.prod.website-files.com/63640f262fc5ea5751eb1965/64244c501d52fb2d59f589dd_Canairi-Box-30-p-500.webp 500w, https://cdn.prod.website-files.com/63640f262fc5ea5751eb1965/64244c501d52fb2d59f589dd_Canairi-Box-30-p-800.webp 800w, https://cdn.prod.website-files.com/63640f262fc5ea5751eb1965/64244c501d52fb2d59f589dd_Canairi-Box-30-p-1080.webp 1080w, https://cdn.prod.website-files.com/63640f262fc5ea5751eb1965/64244c501d52fb2d59f589dd_Canairi-Box-30.webp 1500w"
                                 alt="Packaging design for Birdie (Canairi)" class="principle-img" /></div>
                     </div>
                 </div>
@@ -1476,12 +1534,12 @@
     <div class="footer">
         <div class="footer-items">
             <div class="footer-flex">
-                <div class="footer-item-holder right"><a href="https://www.instagram.com/baseborn_studio/"
+                <div class="footer-item-holder right"><a href="https://www.instagram.com/falconcodes/"
                         target="_blank" class="footer-link-holder social w-inline-block">
                         <div>Instagram</div>
                     </a><a href="#" class="footer-link-holder social hidden w-inline-block">
                         <div>X (Twitter)</div>
-                    </a><a href="https://www.linkedin.com/company/baseborn/" target="_blank"
+                    </a><a href="https://www.linkedin.com/company/falconcodes/" target="_blank"
                         class="footer-link-holder social w-inline-block">
                         <div>LinkedIn</div>
                     </a></div>
@@ -1496,64 +1554,46 @@
                     <div>Contact</div>
                 </a>
                 <div class="footer-link-holder">
-                    <div>All Rights<br />Reserved<br />© 2024</div>
+                    <div>All Rights<br />Reserved<br />© 2025</div>
                 </div>
             </div>
             <div class="footer-flex smaller">
                 <div class="footer-item-holder first">
                     <div class="footer-h3-holder">
                         <h3 class="small-h3">Business Inquiries</h3>
-                    </div><a href="mailto:newbiz@baseborn.studio" class="footer-link-holder w-inline-block">
-                        <div>newbiz@baseborn.studio</div>
+                    </div><a href="mailto:newbiz@falconcodes.com" class="footer-link-holder w-inline-block">
+                        <div>newbiz@falconcodes.com</div>
                     </a>
                 </div>
                 <div class="footer-item-holder">
                     <div class="footer-h3-holder">
                         <h3 class="small-h3">General</h3>
-                    </div><a href="mailto:hello@baseborn.studio" class="footer-link-holder w-inline-block">
-                        <div>hello@baseborn.studio</div>
+                    </div><a href="mailto:hello@falconcodes.com" class="footer-link-holder w-inline-block">
+                        <div>hello@falconcodes.com</div>
                     </a>
                 </div>
                 <div class="footer-item-holder last">
                     <div class="footer-h3-holder">
                         <h3 class="small-h3">Call Us</h3>
-                    </div><a href="tel:+4542760898" class="footer-link-holder w-inline-block">
-                        <div>(+45) 42 76 08 98</div>
+                    </div><a href="tel:+201080303330" class="footer-link-holder w-inline-block">
+                        <div>+(20) 108 030 3330</div>
                     </a>
                 </div>
             </div>
         </div>
-        <div class="footer-logo-holder"><svg viewBox="0 0 3037 449" fill="050505" class="baseborn-logo">
-                <path
-                    d="M187.772,343.814292 C217.02,343.814292 233.399,328.313292 233.399,299.942292 C233.399,271.572292 215.558,256.363292 187.187,256.363292 L122.841,256.363292 L122.841,343.814292 L187.772,343.814292 Z M178.998,181.195292 C205.028,181.195292 221.115,166.571292 221.115,142.002292 C221.115,118.019292 204.443,104.858292 179.583,104.858292 L122.841,104.858292 L122.841,181.195292 L178.998,181.195292 Z M1.13686838e-13,435.653292 L1.13686838e-13,13.8962921 L216.435,13.8962921 C241.881,13.8962921 263.817,18.5762921 282.828,28.2282921 C320.266,47.5322921 340.447,82.0442921 340.447,121.529292 C340.447,162.769292 317.048,196.112292 279.026,208.688292 L279.026,209.858292 C328.163,224.775292 358.581,263.967292 358.581,314.566292 C358.581,336.502292 353.608,356.391292 343.372,374.817292 C322.898,411.669292 282.243,435.653292 228.719,435.653292 L1.13686838e-13,435.653292 Z">
-                </path>
-                <path
-                    d="M521.7022,275.373892 L607.6912,275.373892 L584.0012,190.262892 C578.1512,168.910892 572.3022,146.390892 566.4522,122.406892 L562.9422,122.406892 C557.3852,146.390892 551.5352,168.910892 545.3932,190.262892 L521.7022,275.373892 Z M345.0442,435.652892 L488.6522,13.8958921 L640.7422,13.8958921 L784.3492,435.652892 L652.7332,435.652892 L632.8452,364.872892 L496.8422,364.872892 L476.9532,435.652892 L345.0442,435.652892 Z">
-                </path>
-                <path
-                    d="M768.1094,303.744992 L895.0464,303.744992 C896.2154,333.869992 916.9814,351.418992 954.1274,351.418992 C984.5454,351.418992 1002.3854,340.012992 1002.3854,318.368992 C1002.3854,296.432992 988.0544,286.780992 947.1074,280.346992 C910.8394,274.788992 881.0064,267.183992 857.3154,257.824992 C810.2264,239.398992 782.1484,206.932992 782.1484,151.069992 C782.1484,120.358992 788.8754,94.3289921 802.3294,72.9769921 C828.9454,29.9829921 880.7134,6.87699214 953.5424,6.87699214 C987.7614,6.87699214 1017.0094,11.8489921 1041.8714,21.7939921 C1091.2994,41.9739921 1120.5484,84.0919921 1125.5204,146.389992 L998.8764,146.389992 C997.7064,115.094992 980.1574,98.4239921 950.6174,98.4239921 C922.5394,98.4239921 904.6974,111.292992 904.6974,132.642992 C904.6974,155.164992 920.7844,162.183992 960.8534,169.495992 C999.1694,176.223992 1030.1724,184.412992 1053.8624,193.478992 C1101.5374,212.197992 1129.6154,245.540992 1129.6154,303.159992 C1129.6154,396.753992 1066.4394,442.672992 953.2494,442.672992 C836.5494,442.672992 773.9594,394.413992 768.1094,303.744992">
-                </path>
-                <polygon
-                    points="1147.3985 435.653192 1147.3985 13.8961921 1454.2105 13.8961921 1454.2105 115.972192 1270.5325 115.972192 1270.5325 177.978192 1428.7645 177.978192 1428.7645 266.307192 1270.5325 266.307192 1270.5325 333.578192 1454.2105 333.578192 1454.2105 435.653192">
-                </polygon>
-                <path
-                    d="M1667.7628,343.814292 C1697.0108,343.814292 1713.3898,328.313292 1713.3898,299.942292 C1713.3898,271.572292 1695.5478,256.363292 1667.1778,256.363292 L1602.8318,256.363292 L1602.8318,343.814292 L1667.7628,343.814292 Z M1658.9888,181.195292 C1685.0188,181.195292 1701.1058,166.571292 1701.1058,142.002292 C1701.1058,118.019292 1684.4338,104.858292 1659.5738,104.858292 L1602.8318,104.858292 L1602.8318,181.195292 L1658.9888,181.195292 Z M1479.9908,435.653292 L1479.9908,13.8962921 L1696.4258,13.8962921 C1721.8708,13.8962921 1743.8078,18.5762921 1762.8188,28.2282921 C1800.2558,47.5322921 1820.4378,82.0442921 1820.4378,121.529292 C1820.4378,162.769292 1797.0388,196.112292 1759.0168,208.688292 L1759.0168,209.858292 C1808.1538,224.775292 1838.5718,263.967292 1838.5718,314.566292 C1838.5718,336.502292 1833.5988,356.391292 1823.3628,374.817292 C1802.8888,411.669292 1762.2338,435.653292 1708.7098,435.653292 L1479.9908,435.653292 Z">
-                </path>
-                <path
-                    d="M1960.8448,124.943192 C1877.9118,207.877192 2079.7638,409.728192 2162.6968,326.795192 C2245.4218,244.069192 2043.5718,42.2171921 1960.8448,124.943192 M1905.6248,71.3791921 C1936.8548,40.1501921 1970.7728,19.0541921 2006.3448,8.29919214 C2042.5368,-2.66080786 2078.1098,-2.66080786 2113.6808,7.67919214 C2149.4598,18.6411921 2182.7578,39.1151921 2213.5738,69.9301921 C2244.1818,100.540192 2264.8628,134.044192 2275.6168,169.616192 C2286.3718,205.601192 2286.7848,241.587192 2276.2378,278.193192 C2265.8978,314.179192 2244.8018,348.097192 2213.5738,379.326192 C2182.5508,410.348192 2148.8398,431.236192 2113.0608,441.371192 C2076.8678,451.505192 2041.0888,450.883192 2005.1038,440.130192 C1969.5318,429.376192 1936.2338,408.487192 1905.6248,377.879192 C1874.8098,347.063192 1854.1278,313.972192 1843.1668,278.194192 C1832.4128,243.035192 1832.4128,207.463192 1842.9608,171.683192 C1853.5078,136.319192 1874.3968,102.608192 1905.6248,71.3791921"
-                    class="bb-o"></path>
-                <path
-                    d="M2467.0694,199.621892 C2497.1954,199.621892 2521.4704,187.922892 2521.4704,154.871892 C2521.4704,142.002892 2518.8394,132.058892 2513.2814,124.746892 C2502.4604,110.707892 2486.0814,106.904892 2467.0694,106.904892 L2417.9324,106.904892 L2417.9324,199.621892 L2467.0694,199.621892 Z M2294.7984,435.652892 L2294.7984,13.8958921 L2497.4874,13.8958921 C2588.7414,13.8958921 2644.6054,64.7878921 2644.6054,153.116892 C2644.6054,213.660892 2615.6494,258.702892 2565.3424,278.298892 L2648.9924,435.652892 L2510.6494,435.652892 L2440.1614,290.290892 L2417.9324,290.290892 L2417.9324,435.652892 L2294.7984,435.652892 Z">
-                </path>
-                <path
-                    d="M2663.9532,435.653192 L2663.9532,13.8961921 L2784.4552,13.8961921 L2891.5032,197.574192 C2899.3992,211.321192 2908.1742,227.407192 2918.1182,245.249192 L2919.2882,245.249192 L2919.2882,14.1891921 L3036.2802,13.8961921 L3036.2802,435.653192 L2913.4382,435.653192 L2808.7302,256.655192 C2799.9562,241.154192 2791.1822,225.652192 2782.1152,209.566192 L2781.2372,209.566192 L2781.2372,435.653192 L2663.9532,435.653192 Z">
-                </path>
-            </svg></div>
+        <div class="footer-logo-holder">
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" length="auto" viewBox="0 0 1900 320" fill="#ffffff">
+                <text x="48%" y="55%" dominant-baseline="middle" text-anchor="middle" font-size="262"
+                    font-family="system-ui" font-weight="700" letter-spacing="-0.05em" font-style="normal"
+                    fill="#ffffff" class="svgtext letter">
+                    FALCON of Code</text>
+            </svg>
+        </div>
     </div>
     <div class="load-overlay">
         <div class="load-text-holder">
-            <div class="overlay-text-humble">Humble Origins</div>
-            <div class="load-small-text">SINCE 2022</div>
+            <div class="overlay-text-humble">Falcon Codes</div>
+            <div class="load-small-text">SINCE 2025</div>
         </div>
     </div>
     <div class="cursor cursor-small"></div>
@@ -1562,12 +1602,12 @@
             <div class="preload-center-center">
                 <div class="load-text-holder preload">
                     <div class="load-text-ofh top">
-                        <div class="loader-text">Baseborn.studio</div>
-                        <div class="overlay-text-humble preload-text-relative">Baseborn</div>
-                        <div class="overlay-text-humble preload-text-absolute">Humble Origins</div>
+                        <div class="loader-text">Falcon of Codes</div>
+                        <div class="overlay-text-humble preload-text-relative">FalconCode</div>
+                        <div class="overlay-text-humble preload-text-absolute">Information Technology</div>
                     </div>
                     <div class="load-text-ofh preload">
-                        <div class="load-small-text">SINCE 2022</div>
+                        <div class="load-small-text">SINCE 2025</div>
                         <div class="preloader-n-holder-2 w-embed">
                             <div id="percentage_number">0</div>
 
@@ -1592,11 +1632,11 @@
                     <div class="o-embed preload-o w-embed"><svg xmlns="http://www.w3.org/2000/svg"
                             xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="auto" viewBox="0 0 449 449"
                             version="1.1" position="absolute" left="0" top="0">
-                            <title>baseborn-o</title>
+                            <title>FalconCode</title>
                             <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                 <path
                                     d="M125.8448,124.943192 C42.9118,207.877192 244.7638,409.728192 327.6968,326.795192 C410.4218,244.069192 208.5718,42.2171921 125.8448,124.943192 M70.6248,71.3791921 C101.8548,40.1501921 135.7728,19.0541921 171.3448,8.29919214 C207.5368,-2.66080786 243.1098,-2.66080786 278.6808,7.67919214 C314.4598,18.6411921 347.7578,39.1151921 378.5738,69.9301921 C409.1818,100.540192 429.8628,134.044192 440.6168,169.616192 C451.3718,205.601192 451.7848,241.587192 441.2378,278.193192 C430.8978,314.179192 409.8018,348.097192 378.5738,379.326192 C347.5508,410.348192 313.8398,431.236192 278.0608,441.371192 C241.8678,451.505192 206.0888,450.883192 170.1038,440.130192 C134.5318,429.376192 101.2338,408.487192 70.6248,377.879192 C39.8098,347.063192 19.1278,313.972192 8.1668,278.194192 C-2.5872,243.035192 -2.5872,207.463192 7.9608,171.683192 C18.5078,136.319192 39.3968,102.608192 70.6248,71.3791921"
-                                    id="baseborn-o" fill="#fff" fill-rule="nonzero" />
+                                    id="falcon-o" fill="#fff" fill-rule="nonzero" />
                             </g>
                         </svg>
 
@@ -1684,7 +1724,6 @@
         type="text/javascript"></script>
     <script async src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@16.1.0/dist/lazyload.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
-    <script src="https://unpkg.com/@barba/core"></script>
     <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
     <script> Splitting(); gsap.registerPlugin(ScrollTrigger); </script>
     <script src="https://vjs.zencdn.net/7.8.4/video.js"></script>
@@ -1707,7 +1746,6 @@
             console.log("complete " + event.progress);
 
             $(window).scrollTop(0);
-            $('.baseborn-logo').removeClass('active');
             $('.load-intro-text-holder').addClass('loaded');
             setTimeout(function () {
                 $('.preloader-logomark-holder').addClass('loaded');
@@ -1717,7 +1755,6 @@
             }, 900);
             setTimeout(function () {
                 $('.load-intro-text.first-intro-text').addClass('loaded');
-                $('.baseborn-logo.frontpage').removeClass('active');
                 $('.f-cases-cl .f-case-link').removeClass('show');
             }, 1000);
             setTimeout(function () {
@@ -1731,7 +1768,6 @@
             }, 7000);
             setTimeout(function () {
                 $("body").css("overflow", "auto");
-                $('.baseborn-logo.frontpage').addClass('active');
             }, 2400);
             setTimeout(function () {
                 $("body").css("overflow", "auto");
@@ -1780,7 +1816,6 @@
                     $('.h1-subpage').addClass("show")
                     $('.ts-image-holder._1, .f-case-link').addClass("show")
                     $('.case-h1').addClass("show")
-                    $('.baseborn-logo.frontpage').addClass("active")
                 }, 700)
                 setTimeout(function () {
                     $('.ts-image-holder._2').addClass("show")
@@ -1899,191 +1934,25 @@
             },
         }
 
-        function resetWebflow(data) {
-            let parser = new DOMParser();
-            let dom = parser.parseFromString(data.next.html, "text/html");
-            let webflowPageId = $(dom).find("html").attr("data-wf-page");
-            $("html").attr("data-wf-page", webflowPageId);
-            window.Webflow && window.Webflow.destroy();
-            window.Webflow && window.Webflow.ready();
-            window.Webflow && window.Webflow.require("ix2").init();
-        }
-
-        barba.init({
-            preventRunning: true,
-            transitions: [
-                {
-                    sync: true,
-                    from: {
-                        namespace: ["base"]
-                    },
-                    leave(data) {
-                        console.log('barba leave')
-                        $('.load-overlay').addClass("loading")
-                        $('a').addClass("no-touchy")
-                        $('.cursor').addClass("loading")
-                        return gsap.fromTo(
-                            data.current.container,
-                            { y: 0 },
-                            {
-                                y: -600,
-                                ease: "power3.inOut",
-                                duration: 1.5
-                            }
-                        );
-                    },
-                    enter(data) {
-                        console.log('barba enter')
-                        let transitionData = data;
-                        $(data.next.container).addClass("fixed");
-                        return gsap.fromTo(
-                            data.next.container,
-                            { y: 600 },
-                            {
-                                y: 0, delay: 0,
-                                ease: "power3.inOut",
-                                duration: 1.5,
-                                onComplete: () => {
-                                    $(window).scrollTop(0);
-                                    setTimeout(function () {
-                                        $('.cursor').removeClass("loading")
-                                        $('.cursor').addClass("waiting-state")
-                                    }, 0)
-                                    setTimeout(function () {
-                                        $(data.next.container).removeClass("fixed");
-                                        $('.load-overlay').removeClass("loading")
-                                        $('a').removeClass("no-touchy")
-                                        $('.cursor').removeClass("waiting-state")
-                                        $(window).scrollTop(0);
-                                    }, 500)
-
-                                    resetWebflow(transitionData);
-
-                                }
-                            }
-                        );
-                    }
-                },
-                {
-                    sync: true,
-                    from: {
-                        namespace: ["front"]
-                    },
-                    leave(data) {
-                        console.log('barba leave')
-                        $('.load-overlay').addClass("loading")
-                        $('a').addClass("no-touchy")
-                        $('.cursor').addClass("loading")
-                        return gsap.fromTo(
-                            data.current.container,
-                            { y: 0 },
-                            {
-                                y: -600,
-                                ease: "power3.inOut",
-                                duration: 1.5
-                            }
-                        );
-                    },
-                    enter(data) {
-                        console.log('barba enter')
-                        let transitionData = data;
-                        $(data.next.container).addClass("fixed");
-                        return gsap.fromTo(
-                            data.next.container,
-                            { y: 600 },
-                            {
-                                y: 0, delay: 0,
-                                ease: "power3.inOut",
-                                duration: 1.5,
-                                onComplete: () => {
-                                    $(window).scrollTop(0);
-                                    setTimeout(function () {
-                                        $('.cursor').removeClass("loading")
-                                        $('.cursor').addClass("waiting-state")
-                                    }, 0)
-                                    setTimeout(function () {
-                                        $(data.next.container).removeClass("fixed");
-                                        $('.load-overlay').removeClass("loading")
-                                        $('a').removeClass("no-touchy")
-                                        $('.cursor').removeClass("waiting-state")
-                                        base.nextPrev();
-                                        $(window).scrollTop(0);
-                                    }, 500)
-
-                                    resetWebflow(transitionData);
-
-                                }
-                            }
-                        );
-                    }
-                }
-            ],
-
-
-
-
-
-            views: [
-                {
-                    namespace: "front",
-                    beforeEnter() {
-                        base.splitting();
-                        base.beforeEnterRevealMenuItem();
-                        base.loadVideo();
-                        base.menuFrontpage();
-                        base.textInView();
-                        base.playVid();
-                        base.nextPrev();
-                    },
-                    afterEnter(data) {
-                        base.playVid();
-                        base.nextPrev();
-                        setTimeout(function () {
-                            base.playVid();
-                            base.nextPrev();
-                        }, 1500)
-                    }
-                },
-                {
-                    namespace: "base",
-                    beforeEnter() {
-                        base.splitting();
-                        base.beforeEnterRevealMenuItem();
-                        base.loadVideo();
-                        base.menuSubpage();
-                        base.casePageLoad();
-                        base.textInView();
-                        base.playVid();
-                        base.hoverStates();
-                        base.lazyLoadVid();
-                    },
-                    afterEnter(data) {
-                        base.playVid();
-                        base.lazyLoadVid();
-                        base.hoverStates();
-                        setTimeout(function () {
-                            base.playVid();
-                            base.nextPrev();
-                        }, 1500)
-                    }
-                }
-            ]
-        });
-
-        barba.hooks.beforeLeave(() => {
-            $("body").css("overflow", "hidden");
-        });
-
-        barba.hooks.after(() => {
-
-            var vids = document.querySelectorAll(".casevid, .f-video-2"); vids.forEach(vid => { var playPromise = vid.play(); if (playPromise !== undefined) { playPromise.then(_ => { }).catch(error => { }); }; });
-
-            $("body").css("overflow", "auto");
+        // Direct page initialization (Barba.js removed)
+        $(document).ready(function() {
+            base.splitting();
+            base.beforeEnterRevealMenuItem();
+            base.loadVideo();
+            base.menuSubpage();
+            base.casePageLoad();
+            base.textInView();
             base.hoverStates();
             base.lazyLoadVid();
-            setTimeout(function () {
-                base.swiperInitAbout();
-            }, 1000);
+            
+            // Handle "Our Partners" links - navigate to index.html#partners
+            $('a[href*="#partners"]').on('click', function(e) {
+                const href = $(this).attr('href');
+                if (href.includes('index.html')) {
+                    e.preventDefault();
+                    window.location.href = href;
+                }
+            });
         });
 
     </script>

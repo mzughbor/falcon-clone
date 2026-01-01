@@ -33,7 +33,7 @@
     <link rel="stylesheet" href="css/services.css" />
 </head>
 
-<body data-barba="wrapper" class="body">
+<body class="body">
     <div class="menu">
         <div class="menu-link-holder">
             <a href="index.html" aria-current="page" class="menu-logo w-inline-block w--current">
@@ -47,22 +47,22 @@
                 </div>
             </a>
             <div class="menu-links-holder main">
-                <a href="/services" class="menu-link w-inline-block">
+                <a href="services.html" class="menu-link w-inline-block">
                     <div>Services <sup class="superscript"></sup></div>
                 </a>
-                <a href="/about-us" class="menu-link w-inline-block">
+                <a href="about-us.html" class="menu-link w-inline-block">
                     <div>About Us</div>
                 </a>
-                <a href="/profile" class="menu-link w-inline-block">
+                <a href="profile.html" class="menu-link w-inline-block">
                     <div>Profile</div>
                 </a>
-                <a href="/gallery" class="menu-link w-inline-block">
+                <a href="#" class="menu-link w-inline-block">
                     <div>Gallery</div>
                 </a>
                 <a href="#partners" class="menu-link w-inline-block" id="partners-menu-link">
                     <div>Our Partners</div>
                 </a>
-                <a href="/contact" class="menu-link last w-inline-block">
+                <a href="contact.html" class="menu-link last w-inline-block">
                     <div>Contact</div>
                 </a>
                 <div class="language-switcher">
@@ -110,11 +110,12 @@
                 </button>
             </div>
             <nav class="mobile-menu-nav">
-                <a href="/services" class="mobile-menu-link">Services</a>
-                <a href="/about-us" class="mobile-menu-link">About Us</a>
-                <a href="/profile" class="mobile-menu-link">Profile</a>
+                <a href="services.html" class="mobile-menu-link">Services</a>
+                <a href="about-us.html" class="mobile-menu-link">About Us</a>
+                <a href="profile.html" class="mobile-menu-link">Profile</a>
+                <a href="#" class="mobile-menu-link">Gallery</a>
                 <a href="#partners" class="mobile-menu-link" id="partners-mobile-menu-link">Our Partners</a>
-                <a href="/contact" class="mobile-menu-link">Contact</a>
+                <a href="contact.html" class="mobile-menu-link">Contact</a>
             </nav>
             <div class="mobile-menu-footer">
                 <div class="mobile-menu-contact">
@@ -149,7 +150,7 @@
             <div class="cursor-text">Falcon of Code </div>
         </div>
     </div>
-    <div data-barba="container" data-barba-namespace="front" class="con">
+    <div class="con front">
         <div data-scroll-container="" class="con-inner">
             <div class="content">
                 <div class="f-sticky-holder">
@@ -846,7 +847,8 @@
         type="text/javascript"></script>
     <script async src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@16.1.0/dist/lazyload.min.js"></script>
     <script src="/cdn/gsap.min.js"></script>
-    <script src="https://unpkg.com/@barba/core"></script>
+    <!-- Barba.js removed - using normal page navigation -->
+    <!-- <script src="https://unpkg.com/@barba/core"></script> -->
     <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
     <script> Splitting(); gsap.registerPlugin(ScrollTrigger); </script>
     <script src="https://vjs.zencdn.net/7.8.4/video.js"></script>
@@ -1063,301 +1065,32 @@
             },
         }
 
-        function resetWebflow(data) {
-            let parser = new DOMParser();
-            let dom = parser.parseFromString(data.next.html, "text/html");
-            let webflowPageId = $(dom).find("html").attr("data-wf-page");
-            $("html").attr("data-wf-page", webflowPageId);
-            window.Webflow && window.Webflow.destroy();
-            window.Webflow && window.Webflow.ready();
-            window.Webflow && window.Webflow.require("ix2").init();
-        }
+        // Barba.js functions removed - no longer needed with normal page navigation
+        // CSS and JS initialize automatically on page load
 
-        // Function to ensure CSS files are loaded based on the target page
-        function ensurePageCSS(data) {
-            // Get the current URL pathname
-            const pathname = window.location.pathname.toLowerCase();
-            
-            // Check and load CSS files based on the page
-            const cssFiles = [];
-            
-            if (pathname.includes('/services')) {
-                cssFiles.push('css/services.css');
-            } else if (pathname.includes('/contact')) {
-                cssFiles.push('css/services.css');
-                cssFiles.push('css/contact.css');
-            } else if (pathname.includes('/about-us')) {
-                // Add any about-us specific CSS if needed
-            }
-            
-            // Load CSS files if they don't exist
-            cssFiles.forEach(cssFile => {
-                const existingLink = document.querySelector(`link[href="${cssFile}"]`);
-                if (!existingLink) {
-                    const link = document.createElement('link');
-                    link.rel = 'stylesheet';
-                    link.href = cssFile;
-                    link.type = 'text/css';
-                    document.head.appendChild(link);
-                    
-                    // Wait for CSS to load before forcing reflow
-                    link.onload = function() {
-                        document.body.offsetHeight;
-                    };
-                }
-            });
-            
-            // Force reflow to ensure styles are applied (even if CSS was already loaded)
-            if (cssFiles.length > 0) {
-                setTimeout(() => {
-                    document.body.offsetHeight;
-                }, 100);
-            }
-        }
-
-        // Function to reinitialize page-specific functionality
-        function reinitializePage(data) {
-            if (!data || !data.next) return;
-            
-            // Re-initialize Splitting for text animations
-            setTimeout(() => {
-                Splitting();
-            }, 100);
-            
-            // Re-initialize text in view observers
-            setTimeout(() => {
+        // Barba.js removed - using normal page navigation
+        // Initialize page functionality on load
+        $(document).ready(function() {
+            // Check if we're on the front page
+            if (document.querySelector('.con.front')) {
+                base.splitting();
+                base.beforeEnterRevealMenuItem();
+                base.loadVideo();
+                base.menuFrontpage();
                 base.textInView();
-            }, 200);
-            
-            // Re-initialize hover states
-            setTimeout(() => {
+                base.playVid();
+                base.nextPrev();
+            } else {
+                base.splitting();
+                base.beforeEnterRevealMenuItem();
+                base.loadVideo();
+                base.menuSubpage();
+                base.casePageLoad();
+                base.textInView();
+                base.playVid();
                 base.hoverStates();
-            }, 300);
-        }
-
-        barba.init({
-            preventRunning: true,
-            transitions: [
-                {
-                    sync: true,
-                    from: {
-                        namespace: ["base"]
-                    },
-                    leave(data) {
-                        console.log('barba leave')
-                        $('.load-overlay').addClass("loading")
-                        $('a').addClass("no-touchy")
-                        $('.cursor').addClass("loading")
-                        return gsap.fromTo(
-                            data.current.container,
-                            { y: 0 },
-                            {
-                                y: -600,
-                                ease: "power3.inOut",
-                                duration: 1.5
-                            }
-                        );
-                    },
-                    enter(data) {
-                        console.log('barba enter')
-                        let transitionData = data;
-                        $(data.next.container).addClass("fixed");
-                        return gsap.fromTo(
-                            data.next.container,
-                            { y: 600 },
-                            {
-                                y: 0, delay: 0,
-                                ease: "power3.inOut",
-                                duration: 1.5,
-                                onComplete: () => {
-                                    $(window).scrollTop(0);
-                                    setTimeout(function () {
-                                        $('.cursor').removeClass("loading")
-                                        $('.cursor').addClass("waiting-state")
-                                    }, 0)
-                                    setTimeout(function () {
-                                        $(data.next.container).removeClass("fixed");
-                                        $('.load-overlay').removeClass("loading")
-                                        $('a').removeClass("no-touchy")
-                                        $('.cursor').removeClass("waiting-state")
-                                        $(window).scrollTop(0);
-                                        
-                                        // Force reflow to restore sticky positioning after .fixed is removed
-                                        // This ensures sticky elements recalculate their position
-                                        if (document.querySelector('.f-header-holder')) {
-                                            document.querySelector('.f-header-holder').offsetHeight;
-                                        }
-                                    }, 500)
-
-                                    resetWebflow(transitionData);
-                                    
-                                    // Ensure CSS files are loaded for the new page
-                                    ensurePageCSS(transitionData);
-                                    
-                                    // Reinitialize page-specific functionality
-                                    reinitializePage(transitionData);
-
-                                }
-                            }
-                        );
-                    }
-                },
-                {
-                    sync: true,
-                    from: {
-                        namespace: ["front"]
-                    },
-                    leave(data) {
-                        console.log('barba leave')
-                        $('.load-overlay').addClass("loading")
-                        $('a').addClass("no-touchy")
-                        $('.cursor').addClass("loading")
-                        return gsap.fromTo(
-                            data.current.container,
-                            { y: 0 },
-                            {
-                                y: -600,
-                                ease: "power3.inOut",
-                                duration: 1.5
-                            }
-                        );
-                    },
-                    enter(data) {
-                        console.log('barba enter')
-                        let transitionData = data;
-                        $(data.next.container).addClass("fixed");
-                        return gsap.fromTo(
-                            data.next.container,
-                            { y: 600 },
-                            {
-                                y: 0, delay: 0,
-                                ease: "power3.inOut",
-                                duration: 1.5,
-                                onComplete: () => {
-                                    $(window).scrollTop(0);
-                                    setTimeout(function () {
-                                        $('.cursor').removeClass("loading")
-                                        $('.cursor').addClass("waiting-state")
-                                    }, 0)
-                                    setTimeout(function () {
-                                        $(data.next.container).removeClass("fixed");
-                                        $('.load-overlay').removeClass("loading")
-                                        $('a').removeClass("no-touchy")
-                                        $('.cursor').removeClass("waiting-state")
-                                        base.nextPrev();
-                                        $(window).scrollTop(0);
-                                        
-                                        // Force reflow to restore sticky positioning after .fixed is removed
-                                        // This ensures sticky elements recalculate their position
-                                        if (document.querySelector('.f-header-holder')) {
-                                            document.querySelector('.f-header-holder').offsetHeight;
-                                        }
-                                    }, 500)
-
-                                    resetWebflow(transitionData);
-                                    
-                                    // Ensure CSS files are loaded for the new page
-                                    ensurePageCSS(transitionData);
-                                    
-                                    // Reinitialize page-specific functionality
-                                    reinitializePage(transitionData);
-
-                                }
-                            }
-                        );
-                    }
-                }
-            ],
-
-            views: [
-                {
-                    namespace: "front",
-                    beforeEnter() {
-                        base.splitting();
-                        base.beforeEnterRevealMenuItem();
-                        base.loadVideo();
-                        base.menuFrontpage();
-                        base.textInView();
-                        base.playVid();
-                        base.nextPrev();
-                    },
-                    afterEnter(data) {
-                        base.playVid();
-                        base.nextPrev();
-                        
-                        // Ensure CSS and reinitialize after transition
-                        ensurePageCSS(data);
-                        reinitializePage(data);
-                        
-                        setTimeout(function () {
-                            base.playVid();
-                            base.nextPrev();
-                        }, 1500)
-                    }
-                },
-                {
-                    namespace: "base",
-                    beforeEnter() {
-                        base.splitting();
-                        base.beforeEnterRevealMenuItem();
-                        base.loadVideo();
-                        base.menuSubpage();
-                        base.casePageLoad();
-                        base.textInView();
-                        base.playVid();
-                        base.hoverStates();
-                        base.lazyLoadVid();
-                    },
-                    afterEnter(data) {
-                        base.playVid();
-                        base.lazyLoadVid();
-                        base.hoverStates();
-                        
-                        // Ensure CSS and reinitialize after transition
-                        ensurePageCSS(data);
-                        reinitializePage(data);
-                        
-                        setTimeout(function () {
-                            base.playVid();
-                            base.nextPrev();
-                        }, 1500)
-                    }
-                }
-            ]
-        });
-
-        barba.hooks.beforeLeave(() => {
-            $("body").css("overflow", "hidden");
-        });
-
-        barba.hooks.after((data) => {
-
-            var vids = document.querySelectorAll(".casevid, .f-video-2"); vids.forEach(vid => { var playPromise = vid.play(); if (playPromise !== undefined) { playPromise.then(_ => { }).catch(error => { }); }; });
-
-            $("body").css("overflow", "auto");
-            base.hoverStates();
-            base.lazyLoadVid();
-            
-            // Ensure CSS files are loaded after transition
-            ensurePageCSS(data);
-            
-            // Reinitialize page-specific functionality
-            reinitializePage(data);
-            
-            // Force reflow to restore sticky positioning after page transition
-            // This ensures sticky elements recalculate their position after Barba.js transition
-            setTimeout(function() {
-                if (document.querySelector('.f-header-holder')) {
-                    document.querySelector('.f-header-holder').offsetHeight;
-                }
-                if (document.querySelector('.f-logo-holder')) {
-                    document.querySelector('.f-logo-holder').offsetHeight;
-                }
-            }, 600); // After .fixed is removed (500ms + 100ms buffer)
-            
-            setTimeout(function () {
-                base.swiperInitAbout();
-            }, 1000);
+                base.lazyLoadVid();
+            }
         });
 
     </script>
@@ -1646,6 +1379,19 @@
                 partnersMobileLink.addEventListener('click', scrollToPartners);
             }
 
+            // Handle #partners hash when navigating from other pages
+            if (window.location.hash === '#partners') {
+                setTimeout(function() {
+                    const partnersSection = document.getElementById('partners');
+                    if (partnersSection) {
+                        partnersSection.scrollIntoView({ 
+                            behavior: 'smooth', 
+                            block: 'start' 
+                        });
+                    }
+                }, 500); // Wait for page to fully load
+            }
+
             // Mobile Language Switcher
             const mobileLangBtn = document.getElementById('mobile-lang-btn');
             const mobileLangDropdown = document.getElementById('mobile-lang-dropdown');
@@ -1693,7 +1439,13 @@
             
             // Dark logo overlay - show/hide based on scroll position
             // Hide menu-links-holder (phone/time) after first scroll
+            // DISABLED on mobile screens (max-width: 479px)
             (function() {
+                // Don't run on mobile screens (below 480px)
+                if (window.innerWidth <= 479) {
+                    return;
+                }
+                
                 const overlay = document.querySelector('.dark-logo-overlay');
                 const menuLinksHolder = document.querySelector('.menu-links-holder:not(.main)');
                 const firstSection = document.querySelector('.f-cases-holder');
@@ -1702,6 +1454,18 @@
                 if (!overlay) return;
                 
                 function handleScroll() {
+                    // Double-check screen size on each scroll - hide only below 480px
+                    if (window.innerWidth <= 479) {
+                        overlay.classList.remove('scrolled');
+                        overlay.style.display = 'none';
+                        if (menuLinksHolder) {
+                            menuLinksHolder.classList.remove('scrolled');
+                        }
+                        return;
+                    } else {
+                        overlay.style.display = 'block';
+                    }
+                    
                     if (!firstSection || !headerHolder) return;
                     
                     // Get the position where first section starts (after intro text)
@@ -1731,19 +1495,23 @@
                 // Listen for scroll events
                 window.addEventListener('scroll', handleScroll, { passive: true });
                 
+                // Handle window resize - disable on mobile
+                window.addEventListener('resize', function() {
+                    if (window.innerWidth <= 479) {
+                        overlay.classList.remove('scrolled');
+                        overlay.style.display = 'none';
+                        if (menuLinksHolder) {
+                            menuLinksHolder.classList.remove('scrolled');
+                        }
+                    } else {
+                        overlay.style.display = 'block';
+                    }
+                });
+                
                 // Also check on page load in case page is already scrolled
                 setTimeout(function() {
                     handleScroll();
                 }, 100);
-                
-                // Re-check after page transitions (Barba.js)
-                if (typeof barba !== 'undefined') {
-                    barba.hooks.after(() => {
-                        setTimeout(function() {
-                            handleScroll();
-                        }, 100);
-                    });
-                }
             })();
         });
 

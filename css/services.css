@@ -527,6 +527,11 @@ body > .footer {
     .service-section-header {
         padding: 4vw 0 2vw !important;
     }
+    
+    /* Add margin-top for first section header on mobile to avoid logo overlap */
+    .service-section-header.sticky-header.section-1-header {
+        margin-top: 15vw !important;
+    }
 
     .service-section-header h2 {
         font-size: 6vw !important;
@@ -654,6 +659,11 @@ body > .footer {
     .service-section-wrapper {
         padding: 0 5vw !important;
         margin-bottom: 8vw !important;
+    }
+    
+    /* Add margin-top for first section header on mobile to avoid logo overlap */
+    .service-section-header.sticky-header.section-1-header {
+        margin-top: 18vw !important;
     }
 
     .service-section-header h2 {
