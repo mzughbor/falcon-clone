@@ -2169,9 +2169,33 @@ textarea.w-select {
 }
 
 @font-face {
-    font-family: Baseborn Sans;
-    src: url(https://cdn.prod.website-files.com/63640f262fc5ea5751eb1965/65421b9842ee316b29a653fd_BasebornSans.woff2)format("woff2"), url(https://cdn.prod.website-files.com/63640f262fc5ea5751eb1965/65421b98c7430cb65d6619ec_BasebornSans.ttf)format("truetype");
+    font-family: "Alte Haas Grotesk";
+    src: url(../fonts/AlteHaasGrotesk-Regular.ttf) format("truetype");
     font-weight: 400;
+    font-style: normal;
+    font-display: swap
+}
+
+@font-face {
+    font-family: "Alte Haas Grotesk";
+    src: url(../fonts/AlteHaasGrotesk-Bold.ttf) format("truetype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap
+}
+
+@font-face {
+    font-family: Baseborn Sans;
+    src: url(../fonts/AlteHaasGrotesk-Regular.ttf) format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap
+}
+
+@font-face {
+    font-family: Baseborn Sans;
+    src: url(../fonts/AlteHaasGrotesk-Bold.ttf) format("truetype");
+    font-weight: 700;
     font-style: normal;
     font-display: swap
 }
