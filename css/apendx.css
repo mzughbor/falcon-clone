@@ -685,7 +685,7 @@ p {
     color: inherit; /* Inherit color from parent */
     margin-top: 0;
     margin-bottom: 1em; /* Standard paragraph spacing */
-    font-family: "Baseborn Sans", "Alte Haas Grotesk", sans-serif; /* Match site font */
+    font-family: "Inter", "Alte Haas Grotesk", sans-serif; /* Match site font */
 }
 
 /* Intro text paragraph specific styling */

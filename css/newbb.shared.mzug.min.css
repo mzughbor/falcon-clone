@@ -2185,16 +2185,16 @@ textarea.w-select {
 }
 
 @font-face {
-    font-family: Baseborn Sans;
-    src: url(fonts/AlteHaasGrotesk-Regular.ttf) format("truetype");
+    font-family: Inter;
+    src: url(https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiA.woff2) format("woff2");
     font-weight: 400;
     font-style: normal;
     font-display: swap
 }
 
 @font-face {
-    font-family: Baseborn Sans;
-    src: url(fonts/AlteHaasGrotesk-Bold.ttf) format("truetype");
+    font-family: Inter;
+    src: url(https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiA.woff2) format("woff2");
     font-weight: 700;
     font-style: normal;
     font-display: swap
@@ -2769,7 +2769,7 @@ p {
 .f-case-title-text {
     letter-spacing: -.035vw;
     text-transform: uppercase;
-    font-family: Baseborn Sans, sans-serif;
+    font-family: Inter, sans-serif;
     font-size: 3vw;
     font-weight: 400;
     line-height: 1
@@ -2943,7 +2943,7 @@ p {
     padding-bottom: 0;
     padding-left: 0%;
     padding-right: 1%;
-    font-family: Baseborn Sans, sans-serif;
+    font-family: Inter, sans-serif;
     font-size: 19vw;
     font-weight: 400;
     line-height: .75;
@@ -3126,7 +3126,7 @@ p {
     width: 100%;
     padding-left: 1vw;
     padding-right: 1vw;
-    font-family: Baseborn Sans, sans-serif;
+    font-family: Inter, sans-serif;
     font-size: 7.8vw;
     font-weight: 400;
     line-height: 1;
@@ -3419,7 +3419,7 @@ p {
     letter-spacing: -.025vw;
     text-transform: uppercase;
     width: 100%;
-    font-family: Baseborn Sans, sans-serif;
+    font-family: Inter, sans-serif;
     font-size: 2vw;
     line-height: 1.1;
     position: relative
@@ -3437,7 +3437,7 @@ p {
 .small-h2 {
     letter-spacing: -.025vw;
     text-transform: uppercase;
-    font-family: Baseborn Sans, sans-serif;
+    font-family: Inter, sans-serif;
     font-size: 2vw;
     font-weight: 400;
     line-height: 1;
@@ -3518,7 +3518,7 @@ p {
     text-transform: uppercase;
     width: 110%;
     margin-left: -1.2vw;
-    font-family: Baseborn Sans, sans-serif;
+    font-family: Inter, sans-serif;
     font-size: 23.28vw;
     line-height: .8;
     position: relative
@@ -4228,7 +4228,7 @@ p {
     color: #050505;
     letter-spacing: -.025vw;
     text-transform: uppercase;
-    font-family: Baseborn Sans, sans-serif;
+    font-family: Inter, sans-serif;
     font-size: 2vw;
     line-height: 1;
     text-decoration: none;
@@ -4270,7 +4270,7 @@ p {
     color: #fff;
     text-align: center;
     text-transform: uppercase;
-    font-family: Baseborn Sans, sans-serif;
+    font-family: Inter, sans-serif;
     font-size: 8vw;
     line-height: 1;
     position: relative
