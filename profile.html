@@ -27,9 +27,9 @@
         <link href="favicon.ico" rel="apple-touch-icon" />
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
         <link href="https://vjs.zencdn.net/7.8.4/video-js.css" rel="stylesheet">
-        <link rel="stylesheet" href="css/header-styles.css" />
-        <link rel="stylesheet" href="css/cursor.css" />
-        <link rel="stylesheet" href="css/apendx.css" />
+        <link rel="stylesheet" href="css/header-styles.css?v=1.0" />
+        <link rel="stylesheet" href="css/cursor.css?v=1.0" />
+        <link rel="stylesheet" href="css/apendx.css?v=1.1" />
 
         <style>
             /* Exclude logo from mix-blend-mode color manipulation */
@@ -749,7 +749,7 @@
     <div class="cursor">
         <div class="follower-text-holder loading">
             <div class="o-embed w-embed"><svg xmlns="http://www.w3.org/2000/svg"
-                    xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="auto" viewBox="0 0 449 449"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="449" viewBox="0 0 449 449"
                     version="1.1" position="absolute" left="0" top="0">
                     <title>FalconCode</title>
                     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -1630,7 +1630,7 @@
                 </div>
                 <div class="preloader-logomark-holder">
                     <div class="o-embed preload-o w-embed"><svg xmlns="http://www.w3.org/2000/svg"
-                            xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="auto" viewBox="0 0 449 449"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="449" viewBox="0 0 449 449"
                             version="1.1" position="absolute" left="0" top="0">
                             <title>FalconCode</title>
                             <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -1724,8 +1724,14 @@
         type="text/javascript"></script>
     <script async src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@16.1.0/dist/lazyload.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
     <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
-    <script> Splitting(); gsap.registerPlugin(ScrollTrigger); </script>
+    <script> 
+        if (typeof gsap !== 'undefined') {
+            gsap.registerPlugin(ScrollTrigger);
+        }
+        Splitting(); 
+    </script>
     <script src="https://vjs.zencdn.net/7.8.4/video.js"></script>
     <script src="https://code.createjs.com/1.0.0/preloadjs.min.js"></script>
 
@@ -1735,16 +1741,8 @@
         var overlay = document.getElementById("preloader");
         var body = document.getElementsByTagName('body');
 
-        var img_queue = new createjs.LoadQueue();
-        img_queue.addEventListener("progress", event => {
-            var progress_percentage = Math.floor(event.progress * 100);
-            bar_percentage.style.width = progress_percentage + "%";
-            percentage_number.innerHTML = progress_percentage + "%";
-            console.log("progress " + Math.floor(event.progress * 100));
-        });
-        img_queue.addEventListener("complete", event => {
-            console.log("complete " + event.progress);
-
+        // Preloader completion function
+        function completePreloader() {
             $(window).scrollTop(0);
             $('.load-intro-text-holder').addClass('loaded');
             setTimeout(function () {
@@ -1764,7 +1762,9 @@
                 $('.preloader').addClass('remove');
             }, 1900);
             setTimeout(function () {
-                overlay.classList.add('remove');
+                if (overlay) {
+                    overlay.classList.add('remove');
+                }
             }, 7000);
             setTimeout(function () {
                 $("body").css("overflow", "auto");
@@ -1775,25 +1775,55 @@
                 $('.o-embed').removeClass('preload-o');
             }, 2600);
             $("body").css("overflow", "auto");
+        }
+
+        var img_queue = new createjs.LoadQueue();
+        var preloaderCompleted = false;
+        
+        img_queue.addEventListener("progress", event => {
+            if (bar_percentage && percentage_number) {
+                var progress_percentage = Math.floor(event.progress * 100);
+                bar_percentage.style.width = progress_percentage + "%";
+                percentage_number.innerHTML = progress_percentage + "%";
+            }
         });
-        img_queue.addEventListener("fileload", handleFileComplete);
-
-        img_queue.loadFile("https://simonholml.com/Canairi/Canairi_3D_Half_video_2.mp4");
-
-        function handleFileComplete(event) {
+        
+        img_queue.addEventListener("complete", event => {
+            if (!preloaderCompleted) {
+                preloaderCompleted = true;
+                completePreloader();
+            }
+        });
+        
+        img_queue.addEventListener("fileload", function(event) {
             var item = event.item;
             var type = item.type;
 
             if (type == createjs.Types.IMAGE) {
-                gallery_images.appendChild(event.result);
+                var gallery_images = document.getElementById('gallery_images');
+                if (gallery_images) {
+                    gallery_images.appendChild(event.result);
+                }
             }
+        });
 
-        }
+        // External video URL removed - SSL error
+        // img_queue.loadFile("https://simonholml.com/Canairi/Canairi_3D_Half_video_2.mp4");
+        
+        // Fallback: Always complete preloader after 1.5 seconds if it hasn't completed yet
+        setTimeout(function() {
+            if (!preloaderCompleted) {
+                // Complete preloader regardless of queue state
+                if (bar_percentage) bar_percentage.style.width = "100%";
+                if (percentage_number) percentage_number.innerHTML = "100%";
+                preloaderCompleted = true;
+                completePreloader();
+            }
+        }, 1500);
     </script>
 
     <script>
         document.addEventListener('DOMContentLoaded', (event) => {
-            console.log('dom content loaded');
             base.beforeEnterRevealMenuItem();
             base.playVid();
             base.hoverStates();
@@ -1860,7 +1890,8 @@
                 });
             },
             playVid: () => {
-                video.play();
+                // Video element not found - function disabled
+                // If you need video playback, ensure video element exists with id="video" or class="video"
             },
             loadVideo: () => {
                 document.querySelectorAll('.video-js').forEach((videoCon) => {
@@ -1880,7 +1911,6 @@
             textInView: () => {
                 let intersectionCallback = (entries, observer) => {
                     entries.forEach((entry) => {
-                        console.log(entry)
                         if (entry.isIntersecting) {
                             // if (entry.intersectionRatio > .5) {
                             entry.target.classList.add('show')
@@ -1904,15 +1934,19 @@
 
                 let intersectionCallbackVideo = (entries, observer) => {
                     entries.forEach((entry) => {
-                        console.log(entry)
                         if (entry.isIntersecting) {
                             // if (entry.intersectionRatio > .5) {
                             entry.target.classList.add('show')
-                            entry.target.play()
-                            entry.target.playbackspeed = 1
+                            const playPromise = entry.target.play();
+                            if (playPromise !== undefined) {
+                                playPromise.catch(error => {
+                                    // Video play was interrupted - ignore error
+                                });
+                            }
+                            entry.target.playbackRate = 1;
                         } else {
-                            entry.target.pause()
-                            entry.target.playbackspeed = 0
+                            entry.target.pause();
+                            entry.target.playbackRate = 0;
                         }
                     });
                 }
@@ -2000,33 +2034,47 @@
             var cursor = $(".cursor, .case-follower"),
                 follower = $(".cursor-follower");
 
+            // Only run cursor animation if elements exist
+            if (cursor.length === 0 && follower.length === 0) {
+                return;
+            }
+
             var posX = 0,
                 posY = 0;
 
             var mouseX = 0,
                 mouseY = 0;
 
-            TweenMax.to({}, 0.006, {
-                repeat: -1,
-                onRepeat: function () {
-                    posX += (mouseX - posX) / 9;
-                    posY += (mouseY - posY) / 9;
+            // Use GSAP 3.x API instead of TweenMax
+            if (typeof gsap !== 'undefined') {
+                gsap.to({}, {
+                    duration: 0.006,
+                    repeat: -1,
+                    onRepeat: function () {
+                        posX += (mouseX - posX) / 9;
+                        posY += (mouseY - posY) / 9;
 
-                    TweenMax.set(follower, {
-                        css: {
-                            left: posX - 0,
-                            top: posY - 0
+                        // Only set if elements exist
+                        if (follower.length > 0) {
+                            gsap.set(follower, {
+                                css: {
+                                    left: posX - 0,
+                                    top: posY - 0
+                                }
+                            });
                         }
-                    });
 
-                    TweenMax.set(cursor, {
-                        css: {
-                            left: mouseX,
-                            top: mouseY
+                        if (cursor.length > 0) {
+                            gsap.set(cursor, {
+                                css: {
+                                    left: mouseX,
+                                    top: mouseY
+                                }
+                            });
                         }
-                    });
-                }
-            });
+                    }
+                });
+            }
 
             $(document).on("mousemove", function (e) {
                 mouseX = e.clientX;

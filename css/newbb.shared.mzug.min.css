@@ -2170,7 +2170,7 @@ textarea.w-select {
 
 @font-face {
     font-family: "Alte Haas Grotesk";
-    src: url(../fonts/AlteHaasGrotesk-Regular.ttf) format("truetype");
+    src: url(fonts/AlteHaasGrotesk-Regular.ttf) format("truetype");
     font-weight: 400;
     font-style: normal;
     font-display: swap
@@ -2178,7 +2178,7 @@ textarea.w-select {
 
 @font-face {
     font-family: "Alte Haas Grotesk";
-    src: url(../fonts/AlteHaasGrotesk-Bold.ttf) format("truetype");
+    src: url(fonts/AlteHaasGrotesk-Bold.ttf) format("truetype");
     font-weight: 700;
     font-style: normal;
     font-display: swap
@@ -2186,7 +2186,7 @@ textarea.w-select {
 
 @font-face {
     font-family: Baseborn Sans;
-    src: url(../fonts/AlteHaasGrotesk-Regular.ttf) format("truetype");
+    src: url(fonts/AlteHaasGrotesk-Regular.ttf) format("truetype");
     font-weight: 400;
     font-style: normal;
     font-display: swap
@@ -2194,7 +2194,7 @@ textarea.w-select {
 
 @font-face {
     font-family: Baseborn Sans;
-    src: url(../fonts/AlteHaasGrotesk-Bold.ttf) format("truetype");
+    src: url(fonts/AlteHaasGrotesk-Bold.ttf) format("truetype");
     font-weight: 700;
     font-style: normal;
     font-display: swap
@@ -2441,7 +2441,7 @@ p {
     cursor: pointer;
     border-bottom: 1px solid #242424;
     width: 100%;
-    margin-bottom: 1vw;
+    /*margin-bottom: 1vw;*/
     padding-bottom: 1vw;
     position: relative
 }
@@ -2759,7 +2759,7 @@ p {
 
 .f-grid-info-holder {
     z-index: 10;
-    margin-top: 1vw;
+    margin-top: 1.5vw;
     position: sticky;
     left: 0;
     margin-left: 1.25vw;
